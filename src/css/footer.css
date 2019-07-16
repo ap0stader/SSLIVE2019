@@ -1,0 +1,51 @@
+/* USE ANT_DESIGN */
+
+a, p{
+    font-size: .3rem;
+}
+
+#footer {
+    width: 100%;
+    text-align: center;
+    background-color: #2e2e2e;
+    color: rgb(194, 194, 194);
+    padding: .5rem 0;
+}
+
+#footerlinks{
+    /* 解决inlink导致的幽灵空白节点 */
+    font-size: 0;
+}
+
+.footerlink{
+    display: inline;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 .25rem;
+}
+
+#footerpb, #footerlogos {
+    margin-top: .25rem;
+}
+
+.footerlogo {
+    display: inline-block;
+    height: 1rem;
+}
+
+#suitlogo {
+    padding-right: .25rem;
+    border-right: 2px #fff solid;
+}
+
+#passlogo {
+    padding-left: .25rem;
+    height: .75rem;
+    margin-bottom: .125rem;
+}
+
+.footertext {
+    margin-top: .25rem;
+    display: block;
+}

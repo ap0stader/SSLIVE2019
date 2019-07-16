@@ -1,0 +1,57 @@
+<!-- 判断浏览器环境是否符合要求，根据直播情况分发页面 -->
+<!-- 1.Javascript是否启用 -->
+<!-- 2.若是IE，版本是否在10以上 -->
+<!-- 3.直播是否已经开始 -->
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
+        <meta name="renderer" content="webkit"/>  
+        <meta name="force-rendering" content="webkit"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+        <title>SSLIVE</title>
+        <link rel="stylesheet" href="/src/css/cssreset.css">
+        <script src="/src/js/index.js"></script>
+        <style>
+            body{
+                background-color: #333;
+                width: 100%;
+                height: 100%;
+            }
+            .container{
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+            #index-logo{
+                max-width: 75%;
+                max-height: 25%;
+                margin-top: 150px;
+            }
+            .errmsg{
+                margin-top: 150px;
+                color: red;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <img src="/src/img/sslive-rectangle-white.png" alt="SSLIVE" id="index-logo">
+            <!-- Javascript是否启用 -->
+            <noscript>
+                <p class="errmsg">您的浏览器未启用Javascript，请启用</p>
+            </noscript>
+            <!-- IE版本是否在10以上 -->
+            <!--[if lte IE 10]>
+                <script>
+                    window.location.href="IE.html";
+                </script>
+            <![endif]-->
+            <script>
+                window.location.href="live.html";
+            </script>
+        </div>
+    </body>
+</html>
