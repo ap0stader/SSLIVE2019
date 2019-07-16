@@ -1,7 +1,8 @@
-<!-- 判断浏览器环境是否符合要求，根据直播情况分发页面 -->
-<!-- 1.Javascript是否启用 -->
-<!-- 2.若是IE，版本是否在10以上 -->
-<!-- 3.直播是否已经开始 -->
+<!-- index.html -->
+<!-- 功能： -->
+<!-- 1.判断Javascript是否启用 -->
+<!-- 2.判断浏览器版本是否足够 -->
+<!-- 3.根据直播情况分发页面 -->
 
 <html>
     <head>
@@ -11,8 +12,8 @@
         <meta name="force-rendering" content="webkit"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
         <title>SSLIVE</title>
+        <!-- 重置CSS，去除浏览器默认的所有样式 -->
         <link rel="stylesheet" href="/src/css/cssreset.css">
-        <script src="/src/js/index.js"></script>
         <style>
             body{
                 background-color: #333;
@@ -35,23 +36,29 @@
                 font-size: 50px;
             }
         </style>
+        <!-- jQuery使用CDN加载 -->
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script src="/src/js/index.js"></script>
     </head>
+
     <body>
         <div class="container">
             <img src="/src/img/sslive-rectangle-white.png" alt="SSLIVE" id="index-logo">
-            <!-- Javascript是否启用 -->
+            
+            <!-- 判断Javascript是否启用 -->
             <noscript>
                 <p class="errmsg">您的浏览器未启用Javascript，请启用</p>
             </noscript>
-            <!-- IE版本是否在10以上 -->
+
+            <!-- 判断IE版本是否足够（10以上） -->
             <!--[if lte IE 10]>
                 <script>
                     window.location.href="IE.html";
                 </script>
             <![endif]-->
-            <script>
-                window.location.href="live.html";
-            </script>
+
+            <!-- 用于报错 -->
+            <p class="errmsg" id="errmsg"></p>
         </div>
     </body>
 </html>

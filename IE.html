@@ -1,7 +1,6 @@
-<!-- 判断浏览器环境是否符合要求，根据直播情况分发页面 -->
-<!-- 1.Javascript是否启用 -->
-<!-- 2.若是IE，版本是否在10以上 -->
-<!-- 3.直播是否已经开始 -->
+<!-- IE.html -->
+<!-- 功能： -->
+<!-- 提醒用户 珍惜生命，远离IE -->
 
 <html>
     <head>
@@ -12,7 +11,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
         <title>SSLIVE</title>
         <link rel="stylesheet" href="/src/css/cssreset.css">
-        <script src="/src/js/index.js"></script>
         <style>
             body{
                 background-color: #333;
@@ -25,6 +23,7 @@
                 text-align: center;
             }
             #index-logo{
+                /* 在IE9及以下，%前面的数字需要在10及以上版本的基础上除以6 */
                 max-width: 12.5%;
                 max-height: 4.16%;
                 margin-top: 150px;
@@ -36,6 +35,7 @@
             }
         </style>
     </head>
+
     <body>
         <div class="container">
             <img src="/src/img/sslive-rectangle-white.png" alt="SSLIVE" id="index-logo">
