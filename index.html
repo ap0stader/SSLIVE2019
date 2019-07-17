@@ -54,7 +54,7 @@
                     var livetime = new Date(data.Time.year, data.Time.month, data.Time.date, data.Time.hour, data.Time.minute).getTime();//开播时间
                     var leftTime = livetime - nowtime;//计算时差
 
-                    // TODO 这儿的逻辑到底是啥ha？
+                    // TODO 这儿的逻辑到底是什么？
                     // 分发到直播页面条件：
                     // 1.剩余时间小于预设值  2.直播已经开始  3.开启debug模式
                     if ((leftTime < data.Delta && live) || debugmode) {

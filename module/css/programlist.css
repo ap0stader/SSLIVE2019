@@ -1,3 +1,6 @@
+/* programlist.css */
+
+/* 引用方正清刻本悦宋简体字体 */
 @font-face{
     font-family: FZQKBYSJT;
     src: url(/src/font/FZQKBYSJT.ttf) format('truetype')
@@ -18,12 +21,15 @@ p{
 .swiper-slide {
     padding: 24px;
     width: 288px;
+    /* 如果100%，slide的下部分的弧角将无法显示 */
     height: 80%;
+    /* 防止在IE浏览器中意外缩短 */
+    min-height: 288px;
     background-color: rgb(249, 233, 211);
     border-radius: 15px;
     color: #000;
+    /* 如果溢出框，则应该提供滚动 */
     overflow-y: auto;
-    display: inline-block;
 }
 
 .icon {
@@ -37,8 +43,9 @@ p{
 }
 
 .swiper-slide h2 {
+    /* 避免其下面的线条过长 */
     display: inline-block;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-bottom: 3px rgb(200, 160, 106) solid;
 }
 
@@ -48,13 +55,25 @@ p{
     /* 经过多次尝试，就是这种实现居中的方式最好了，不得不服啊 */
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 120%);
+    transform: translate(-50%, 140%);
     color: rgb(200, 160, 106);
     background-color: rgb(249, 233, 211);
 }
 
+.swiper-slide .now::after {
+    content: "正在上演";
+    font-size: 18px;
+    /* 经过多次尝试，就是这种实现居中的方式最好了，不得不服啊 */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 140%);
+    color: rgb(200, 160, 106);
+    background-color: rgb(249, 233, 211);
+}
+
+
 .title {
-    /* 使用flex盒模型快速实现水平垂直双居中 */
+    /* 因为限制了使用较高版本的浏览器，所以可以使用flex盒模型快速实现水平垂直居中 */
     display: flex;
     align-items: center;
     justify-content: center;
