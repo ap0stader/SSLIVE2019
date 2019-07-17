@@ -8,5 +8,6 @@
         "minute": 0
     },
     "Delta": 300000,
+    "Current": 0,
     "Content": "2019青春诗会"
 }

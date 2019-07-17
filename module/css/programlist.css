@@ -1,0 +1,83 @@
+@font-face{
+    font-family: FZQKBYSJT;
+    src: url(/src/font/FZQKBYSJT.ttf) format('truetype')
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+    font-family: FZQKBYSJT;
+}
+
+/* 使title中的p标签的默认margin去除 */
+p{
+    margin: 0;
+}
+
+.swiper-slide {
+    padding: 24px;
+    width: 288px;
+    height: 80%;
+    background-color: rgb(249, 233, 211);
+    border-radius: 15px;
+    color: #000;
+    overflow-y: auto;
+    display: inline-block;
+}
+
+.icon {
+    width: 45%;
+    margin-top: -5%;
+    margin-bottom: 5%;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.swiper-slide h2 {
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 3px rgb(200, 160, 106) solid;
+}
+
+.swiper-slide .original::after {
+    content: "原 创";
+    font-size: 18px;
+    /* 经过多次尝试，就是这种实现居中的方式最好了，不得不服啊 */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 120%);
+    color: rgb(200, 160, 106);
+    background-color: rgb(249, 233, 211);
+}
+
+.title {
+    /* 使用flex盒模型快速实现水平垂直双居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.titlecontainer{
+    border-right: 3px rgb(200, 160, 106) solid;
+    padding: 30px;
+}
+
+.titlebold {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.titlecommon  {
+    font-size: 32px;
+}
+
+.swiper-pagination{
+    margin-top: 36px;
+}
+
+.swiper-pagination-bullet {
+    background-color: rgb(200, 160, 106);
+}
