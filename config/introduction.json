@@ -1,0 +1,31 @@
+{
+    "swiperitems": [
+        {
+            "type": "img",
+            "url": {
+                "pc": "src/background/1.jpg",
+                "mobile": "src/background/1.jpg"
+            },
+            "time": 5000,
+            "des": "第四届“我们的黄金时代”青春诗会"
+        },
+        {
+            "type": "video",
+            "url": {
+                "pc": "src/media/1.mp4",
+                "mobile": "src/media/1.mp4"
+            },
+            "time": 77000,
+            "des": "第四届“我们的黄金时代”青春诗会，介绍视频"
+        },
+        {
+            "type": "img",
+            "url": {
+                "pc": "src/img/3.png",
+                "mobile": "src/img/3.png"
+            },
+            "time": 5000,
+            "des": "第四届“我们的黄金时代”青春诗会"
+        }
+    ]
+}

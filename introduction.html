@@ -1,0 +1,66 @@
+<!-- introduction.html -->
+
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
+        <meta name="renderer" content="webkit"/>  
+        <meta name="force-rendering" content="webkit"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+        <!-- 适配DRP > 1的屏幕 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>SSLIVE</title>
+        <!-- 图标 -->
+        <link rel="shortcut icon" href="src/img/sslive-rectangle-std.png" type="image/png">
+        <!-- Swiper和jQuery使用CDN加载 -->
+        <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <!-- 需要自行引入的js -->
+        <script src="src/js/countdown.js"></script>
+        <script src="src/js/introduction.js"></script>
+        <link rel="stylesheet" href="src/css/introduction.css">
+        
+        <script src="src/lib/jwplayer/jwplayer.js"></script>
+        <script>jwplayer.key = "sk1ys44vediU8m1LjyQxCetFLr1F4qhFEozgTw==";</script>
+        <!-- 暂时先不上百度分析 -->
+    </head>
+
+    <body>
+        <div class="header">
+            <img class="icon" src="src/img/sslive-rectangle-white.png" />
+            <span class="title">广东实验中学第四届“青春诗会”</span>
+            <!-- 占位符，以方便利用flex实现一左一中 -->
+            <span></span>
+        </div>
+
+        <div id="main">
+            <div id="timer">
+                <p id="timer-text">距离“青春诗会”开始还有</p>
+                <div class="timer"></div>
+            </div>
+            <img src="/src/img/青春诗会logo.png" alt="青春诗会" id="bgimg">
+        </div>
+
+        <iframe class="contents" src="/module/html/programlist.html" scrolling="no"></iframe>
+
+        <div id="footer">
+            <div id="footerlinks">
+                    <a class="footerlink" href="about.html">关于信息部</a>
+                    <a class="footerlink" href="creadit.html">关于本项目</a>
+            </div>
+            <p id="footerpb">Powered By</p>
+            <div id="footerlogos">
+                <img class="footerlogo" id="suitlogo" src="src/img/SUIT-white.png">
+                <img class="footerlogo" id="passlogo" src="src/img/PASS-white.png">
+            </div>
+            <p class="footertext">广东实验中学学生会信息部</p>
+            <p class="footertext">PASS+ 极光工作室</p>
+            <p class="footertext">Copyright © 2015-2019 SUIT+ All Rights Reserved.</p>
+        </div>
+    </body>
+
+</html>

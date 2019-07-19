@@ -23,8 +23,6 @@ p{
     width: 288px;
     /* 如果100%，slide的下部分的弧角将无法显示 */
     height: 80%;
-    /* 防止在IE浏览器中意外缩短 */
-    min-height: 288px;
     background-color: rgb(249, 233, 211);
     border-radius: 15px;
     color: #000;
@@ -71,7 +69,6 @@ p{
     background-color: rgb(249, 233, 211);
 }
 
-
 .title {
     /* 因为限制了使用较高版本的浏览器，所以可以使用flex盒模型快速实现水平垂直居中 */
     display: flex;
@@ -91,10 +88,6 @@ p{
 
 .titlecommon  {
     font-size: 32px;
-}
-
-.swiper-pagination{
-    margin-top: 36px;
 }
 
 .swiper-pagination-bullet {
