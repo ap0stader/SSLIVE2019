@@ -35,34 +35,3 @@ var ProgramListSwiper = new Swiper('#swiper', {
         dynamicMainBullets:5
     }
 });
-
-// 给定一个大于swiper-slide的数字，它会跳回第一张
-var ProgramListlastnow = 20;
-var ProgramListlastoriginal = false;
-
-function ProgramListquerynow(){
-    $.ajax({
-        url: '/config/livestatus.json',
-        dataType: "json",
-        cache: false,
-        success: function (data) {
-            // 更新的条件，有正确的值且不等于之前的值
-            if (data.Current >= 0 && data.Current != ProgramListlastnow) {
-                // 1.恢复之前节目本来的class
-                ProgramListlastoriginal == true ? $("#s" + ProgramListlastnow + " h2").attr("class", "original") : $("#s" + ProgramListlastnow + " h2").attr("class", " ");
-                // 2.保存当前节目本来的class
-                ProgramListlastnow = data.Current;
-                $("#s" + data.Current + " h2").attr("class") == undefined ? ProgramListlastoriginal = false : ProgramListlastoriginal = true;
-                // 3.更改当前节目的class
-                $("#s" + data.Current + " h2").attr("class", "now");
-                // 4.Swiper切换至当前的节目
-                // https://www.swiper.com.cn/api/methods/109.html
-                ProgramListSwiper.slideTo($("#s" + data.Current).index());
-            }
-        }
-    });
-}
-
-// TODO 此处只是权宜之计
-// 每3秒钟查询一次当前的节目
-setInterval(ProgramListquerynow, 3000);

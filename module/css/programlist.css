@@ -3,7 +3,7 @@
 /* 引用方正清刻本悦宋简体字体 */
 @font-face{
     font-family: FZQKBYSJT;
-    src: url(/src/font/FZQKBYSJT.ttf) format('truetype')
+    src: url(/src/font/fzqkb.ttf)
 }
 
 body {
@@ -49,17 +49,6 @@ p{
 
 .swiper-slide .original::after {
     content: "原 创";
-    font-size: 18px;
-    /* 经过多次尝试，就是这种实现居中的方式最好了，不得不服啊 */
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 140%);
-    color: rgb(200, 160, 106);
-    background-color: rgb(249, 233, 211);
-}
-
-.swiper-slide .now::after {
-    content: "正在上演";
     font-size: 18px;
     /* 经过多次尝试，就是这种实现居中的方式最好了，不得不服啊 */
     position: absolute;
