@@ -45,12 +45,7 @@ function load(){
                 // 1.剩余时间小于预设值  2.直播已经开始
                 if (leftTime < data.Delta && live) {
                     window.location.href = 'live.html'
-                }else {
-                    window.location.href = 'introduction.html';
                 }
-            },
-            error: function() {
-                $("#errmsg").text("错误！请检查网络链接并刷新页面");
             }
         });
     }, 3000);

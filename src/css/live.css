@@ -1,0 +1,44 @@
+/* 引用方正清刻本悦宋简体字体 */
+@font-face{
+    font-family: FZQKBYSJT;
+    src: url(/src/font/fzqkb.ttf)
+}
+
+body {
+    background: url("/src/img/bakcground.jpg") no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* 使用flex盒模型 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    font-family: FZQKBYSJT;
+    
+    /* 调剂字体大小 */
+    font-size: 24px;
+
+    margin: 0;
+}
+
+#title{
+    margin: 0;
+    margin-top: 1.5rem;
+    font-size: 2.25rem;
+    color: rgb(133, 83, 23);
+}
+
+#video-container{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

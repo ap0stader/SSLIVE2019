@@ -1,4 +1,5 @@
 <!-- test.html -->
+<!-- 经测试，test页面可以正常访问直播资源 -->
 
 <html>
 
@@ -24,29 +25,37 @@
     </head>
 
     <body>
-        <video id="video">
-            <!-- <source src="http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"> -->
-        </video>
+        <p id="onclick">ONCLICK</p>
+        <video id="video"></video>
     </body>
     <script>
         if(flvjs.isSupported()){
             var flvplayer = flvjs.createPlayer({
-                type = 'flv',
-                isLive = true,
+                type : 'flv',
+                isLive : true,
                 hasAudio: true,
                 hasVideo: true,
-                enableStashBuffer: true,
                 cors: true,
-                url: "https://suit.ssersay.cn/SUIT/stream.flv"
-            })
+                url: "http://suit.ssersay.cn/SUIT/stream.flv"
+            },{
+                enableStashBuffer: true,
+            });
+            var flvElement = document.getElementById('video');
+            flvplayer.attachMediaElement(flvElement);
+            flvplayer.load();
         }else{
             $('#video').addClass("video-js vjs-big-play-centered");
-            var hls = videojs('video', {
+            var hlsplayer = videojs('video', {
                 liveui: true,
                 controls: true,
                 preload: 'auto',
-                src: "http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"
             });
+            hlsplayer.src("http://suit.ssersay.cn/SUIT/stream.m3u8");
         }
+
+        $('#onclick').click(function(){
+            flvplayer.play();
+        });
+
     </script>
 </html>
