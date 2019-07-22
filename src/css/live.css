@@ -42,3 +42,40 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+#controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    height: 3rem;
+    padding: 2px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 12px 0px rgba(53, 53, 53, 0.3);
+    background-color: rgba(255,255,255);
+    margin-top: 0.5rem;
+}
+
+#play, #fullscreen {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 75% 75%;
+    background-position: center;
+}
+
+#play:hover, #fullscreen:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+#play {
+    margin-left: 0.5rem;
+}
+
+#fullscreen {
+    margin-right: 0.5rem;
+}
