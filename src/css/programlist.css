@@ -6,15 +6,15 @@
     src: url(/src/font/fzqkb.ttf)
 }
 
-body {
+#swiper {
     margin: 0;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
     font-family: FZQKBYSJT;
 }
 
 /* 使title中的p标签的默认margin去除 */
-p{
+#swiper p{
     margin: 0;
 }
 
@@ -30,7 +30,7 @@ p{
     overflow-y: auto;
 }
 
-.icon {
+.swiper-icon {
     width: 45%;
     margin-top: -5%;
     margin-bottom: 5%;

@@ -14,6 +14,8 @@ body {
     font-family: FZQKBYSJT;
     /* 抗锯齿，仅针对Mac OS */
     -webkit-font-smoothing: antialiased;
+
+    overflow-x: hidden;
 }
 
 .header {
@@ -163,7 +165,7 @@ body {
     margin:-bottom 
 }
 
-.contents {
+#swiper {
     /* margin-top: 100px; */
     width: 100%;
     background-color: transparent;
