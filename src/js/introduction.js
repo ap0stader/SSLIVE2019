@@ -4,30 +4,11 @@ function resize() {
         $('#timer').css('font-size', $(window).width() / 31.25 + 'px');
         $('.tips-container').css('font-size', $(window).width() / 31.25 + 'px');
         $('#promote').css('font-size', $(window).width() / 31.25 + 'px');
-    }
-    
-    $('#video').css('width', $(window).width() + 'px');
-    $('#video').css('max-width', $(window).width() + 'px');
-    $('#video').css('height', $(window).width() / 16 * 9 + 'px')
-    $('#video').css('max-height', $(window).height() - 60 + 'px');
-
-    $('#fullscreen').click(function(){
-        videojs('video').requestFullscreen();
-    });
-    
+    }  
 }
 
 function load(){
     newtime();
-    videojs('video',{
-        controls: true,
-        // autoplay: 'any',
-        preload: 'auto',
-    });
-    setInterval(function () { //“向下滑动”的动画
-        $("#promote").animate({ bottom: "+=2.5%" }, { duration: 1000 });
-        $("#promote").animate({ bottom: "-=2.5%" }, { duration: 1000 });
-    }, 2000);
     setInterval(function () {
         // getJSON文件以判断
         $.ajax({

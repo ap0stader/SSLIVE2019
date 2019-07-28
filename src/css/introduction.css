@@ -1,3 +1,5 @@
+/* introduction.css */
+
 /* 引用方正清刻本悦宋简体字体 */
 @font-face{
     font-family: FZQKBYSJT;
@@ -12,9 +14,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: FZQKBYSJT;
-    /* 抗锯齿，仅针对Mac OS */
-    -webkit-font-smoothing: antialiased;
-
+    font-size: 24px;
     overflow-x: hidden;
 }
 
@@ -70,7 +70,7 @@ body {
     padding: 10px;
     max-width: 90%;
 
-    color: white;
+    color: #000;
     
     /* 调剂timer的字体大小 */
     font-size: 24px;
@@ -83,6 +83,7 @@ body {
     right: 0;
     bottom: 0;
 
+    z-index: -5;
     content: '';
     background-color: #fff;
     filter: blur(5px);
@@ -96,7 +97,7 @@ body {
 #timer-title{
     margin: 0;
     font-size: 2em;
-    text-shadow: 4px 4px 10px #fff;
+    text-shadow: 4px 4px 10px #333;
 }
 
 #timer-countdown {
@@ -112,70 +113,10 @@ body {
 .small {
     font-size: .5em;
     padding: .5em;
-    -webkit-text-fill-color: #fff;
-}
-
-#promote {
-    position: absolute;
-    bottom: 0;
-    margin: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-#promote p {
-    margin: 0;
-    font-size: 1.25em;
-    color: #fff;
-}
-
-#promotedown {
-    height: 3em;
-}
-
-.tips-container {
-    background: url(../img/texture.jpg) no-repeat;
-    background-position: 50%;
-    background-origin: border-box;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 24px;
-    margin: 5% 0;
-}
-
-.tips{
-    font-size: 2.5em;
-    margin: 0
-}
-
-.small-tips{
-    font-size: 1em;
-    margin: 0;
-    margin-top: 1em;
-    cursor: pointer;
-}
-
-#video-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin:-bottom 
-}
-
-#swiper {
-    /* margin-top: 100px; */
-    width: 100%;
-    background-color: transparent;
-    /* 去除iframe的border */
-    border: none;
-    height: 400px;
+    -webkit-text-fill-color: black;
 }
 
 #footer {
-    margin-top: 5%;
     width: 100%;
     text-align: center;
     background-color: #2e2e2e;
