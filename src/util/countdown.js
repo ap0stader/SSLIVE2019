@@ -15,10 +15,10 @@ function newtime() {
     if (sec.toString().length == 1) { sec = "0" + sec }
 
     if (rest <= 0) {
-        $("#timer-countdown").html('00 <span class="small">天</span> 00 <span class="small">时</span> 00 <span class="small">分</span> 00 <span class="small">秒</span>');
+        $("#timer-countdown").html('00 <span class="timer-small">天</span> 00 <span class="timer-small">时</span> 00 <span class="timer-small">分</span> 00 <span class="timer-small">秒</span>');
         clearInterval(countdown);
     } else {
-        $("#timer-countdown").html(day + ' <span class="small">天</span> ' + hour + ' <span class="small">时</span> ' + min + ' <span class="small">分</span> ' + sec + ' <span class="small">秒</span>');
+        $("#timer-countdown").html(day + ' <span class="timer-small">天</span> ' + hour + ' <span class="timer-small">时</span> ' + min + ' <span class="timer-small">分</span> ' + sec + ' <span class="timer-small">秒</span>');
     }
 }
 
