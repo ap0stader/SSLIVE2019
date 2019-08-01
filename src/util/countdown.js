@@ -21,7 +21,3 @@ function newtime() {
         $("#timer-countdown").html(day + ' <span class="timer-small">天</span> ' + hour + ' <span class="timer-small">时</span> ' + min + ' <span class="timer-small">分</span> ' + sec + ' <span class="timer-small">秒</span>');
     }
 }
-
-window.onload = function () {
-    setInterval(newtime, 1000);
-}
