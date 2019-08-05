@@ -1,9 +1,9 @@
+// 调整页面的字体大小
 var rem = 16;
-
 function resize() {
-    if($(window).width() < 500){
+    if ($(window).width() < 500) {
         rem = $(window).width() / 31.25;
-    }else{
+    } else {
         rem = 16
     }
     $('html').css('font-size', rem + 'px')
@@ -30,7 +30,7 @@ function check() {
     });
 }
 
-function load(){
+function load() {
     setInterval(newtime, 1000);
     setInterval(check, 10000);
     resize();

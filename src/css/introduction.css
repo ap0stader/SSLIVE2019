@@ -1,6 +1,7 @@
 /* introduction.css */
 
 /* 引用方正清刻本悦宋简体字体 */
+
 @font-face {
     font-family: FZQKBYSJT;
     src: url(/src/font/fzqkb.ttf)
@@ -22,14 +23,14 @@ body {
 }
 
 #header {
-    padding: 0.5rem;
+    padding: 10px;
     z-index: 10;
     /* 使用盒模型快速实现icon和title一左一中 */
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 2.5rem;
+    height: 40px;
     position: fixed;
     top: 0;
     background: #2e2e2e;
@@ -41,13 +42,13 @@ body {
 
 #header-title {
     color: #b2c67a;
-    font-size: 1.25rem;
+    font-size: 20px;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 #main {
-    margin-top: 3.5rem;
+    margin-top: 60px;
     width: 100%;
 }
 
@@ -85,7 +86,7 @@ body {
     content: '';
 }
 
-#timer-title{
+#timer-title {
     margin: 0;
     font-size: 3rem;
     text-shadow: 0.25rem 0.25rem 10px #333;
@@ -105,7 +106,7 @@ body {
 }
 
 .timer-small {
-    padding: 1rem;
+    padding: 0.5rem;
     color: black;
     font-size: 1.5rem;
 }

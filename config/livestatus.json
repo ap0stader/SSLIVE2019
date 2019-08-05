@@ -2,12 +2,10 @@
     "Live": false,
     "Time": {
         "year": 2019,
-        "month": 3,
-        "date": 3,
-        "hour": 19,
+        "month": 8,
+        "date": 24,
+        "hour": 14,
         "minute": 0
     },
-    "Delta": 300000,
-    "Current": 10,
-    "Content": "2019青春诗会"
+    "Delta": 50000
 }

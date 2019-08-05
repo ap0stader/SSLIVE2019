@@ -1,4 +1,4 @@
-﻿var CountdownEnd = new Date("2019/09/03,19:00:00");
+﻿var CountdownEnd = new Date("2019/08/24,14:00:00");
 
 function newtime() {
     var now = new Date();
@@ -16,7 +16,7 @@ function newtime() {
 
     if (rest <= 0) {
         $("#timer-countdown").html('00 <span class="timer-small">天</span> 00 <span class="timer-small">时</span> 00 <span class="timer-small">分</span> 00 <span class="timer-small">秒</span>');
-        clearInterval(countdown);
+        clearInterval(newtime);
     } else {
         $("#timer-countdown").html(day + ' <span class="timer-small">天</span> ' + hour + ' <span class="timer-small">时</span> ' + min + ' <span class="timer-small">分</span> ' + sec + ' <span class="timer-small">秒</span>');
     }

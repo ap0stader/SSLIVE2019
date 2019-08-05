@@ -1,53 +1,52 @@
-<!-- live.html（低聚合） -->
+<!-- live.html -->
 <!-- 功能： -->
-<!-- 直播 --> 
+<!-- 进行直播 -->
 
 <!DOCTYPE html>
 
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
-        <meta name="renderer" content="webkit"/>  
-        <meta name="force-rendering" content="webkit"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-        <!-- 适配DRP > 1的屏幕 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-        <title>SSLIVE</title>
-        <!-- 图标 -->
-        <link rel="shortcut icon" href="src/img/sslive-rectangle-std.png" type="image/png">
-        <!-- jQuery和Video.js使用CDN加载 -->
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-        <link href="https://cdn.bootcss.com/video.js/7.6.0/video-js.min.css" rel="stylesheet">
-        <script src="https://cdn.bootcss.com/video.js/7.6.0/video.min.js"></script>
-        <script src="https://cdn.bootcss.com/video.js/7.6.0/lang/zh-CN.js"></script>
-        <script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.min.js"></script>
-        <!-- 暂时先不上百度分析 -->
-        <!-- 自主引入的库 -->
-        <script src="/src/lib/jquery.danmu.min.js"></script>
-        <!-- 自主设计的实用工具 -->
-        <link rel="stylesheet" href="/src/util/growl.css">
-        <script src="/src/util/growl.js"></script>
-        <script src="/src/util/checkwords.js"></script>
+<head>
+    <meta charset="utf-8" lang="zh-cn">
+    <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <!-- 适配DRP > 1的屏幕 -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>SSLIVE</title>
+    <!-- 图标 -->
+    <link rel="shortcut icon" href="src/img/sslive-rectangle-std.png" type="image/png">
+    <!-- jQuery和Video.js使用CDN加载 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/video.js/7.6.0/video-js.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/video.js/7.6.0/video.min.js"></script>
+    <script src="https://cdn.bootcss.com/video.js/7.6.0/lang/zh-CN.js"></script>
+    <script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.min.js"></script>
+    <!-- 暂时先不上百度分析 -->
+    <!-- 自主引入的库 -->
+    <script src="/src/lib/jquery.danmu.min.js"></script>
+    <!-- 自主设计的实用工具 -->
+    <link rel="stylesheet" href="/src/util/growl.css">
+    <script src="/src/util/growl.js"></script>
+    <script src="/src/util/checkwords.js"></script>
 
-        <link rel="stylesheet" href="/src/css/live.css">
-        <script src="/src/js/live.js"></script>
-    </head>
+    <link rel="stylesheet" href="/src/css/live.css">
+    <script src="/src/js/live.js"></script>
+</head>
 
-    <body>
-        <p id="title">广东实验中学“青春诗会”直播<br></p>
+<body>
+    <p id="title">广东实验中学“青春诗会”直播<br></p>
 
-        <div id="video-container">
-            <video id="video"></video>
-            <div id="controls">
-                <div id="play" style="background-image: url('/src/img/play.svg');"></div>
-                <!-- <div class="livelabel"><span class="mode"></span>直播</div>
-                <!-- <script>$(".mode").html(playmode);</script> -->
-                <div id="fullscreen" style="background-image: url('/src/img/fullscreen.svg');"></div>
-            </div>
+    <div id="video-container">
+        <video id="video"></video>
+        <div id="controls">
+            <div id="play" style="background-image: url('/src/img/play.svg');"></div>
+            <div id="fullscreen" style="background-image: url('/src/img/fullscreen.svg');"></div>
         </div>
-        
-    </body>
+    </div>
+
+</body>
 
 </html>

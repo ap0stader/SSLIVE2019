@@ -1,102 +1,48 @@
-<!-- index.html（高聚合页面） -->
+<!-- index.html -->
 <!-- 功能： -->
 <!-- 1.判断Javascript是否启用 -->
 <!-- 2.判断浏览器版本是否足够 -->
-<!-- 3.根据直播情况分发页面 -->
-
-<!-- TODO 要更改成用Browser进行判断 -->
-
+<!-- 3.提醒用户珍惜生命远离IE -->
+<!-- 4.根据直播情况分发页面 -->
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
-        <meta name="renderer" content="webkit"/>  
-        <meta name="force-rendering" content="webkit"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-        <title>SSLIVE</title>
-        <!-- 重置CSS，去除浏览器默认的所有样式 -->
-        <link rel="stylesheet" href="/src/css/cssreset.css">
-        <style>
-            body{
-                background-color: #333;
-                width: 100%;
-                height: 100%;
-            }
-            .container{
-                width: 100%;
-                height: 100%;
-                text-align: center;
-            }
-            #index-logo{
-                max-width: 75%;
-                max-height: 25%;
-                margin-top: 150px;
-            }
-            .errmsg{
-                margin-top: 150px;
-                color: red;
-                font-size: 50px;
-            }
-            .loading{
-                margin-top: 150px;
-                color: white;
-                font-size: 50px;
-            }
-        </style>
-        <!-- jQuery使用CDN加载 -->
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-        <script>
-            // debug模式，直接进入live.html，两种方式进入 1.在HTML中设置 2.在地址栏中输入?debug=1
-            var debugmode = false;
-            if (window.location.search.search("debug=1") >= 0) { debugmode = true; }
 
-            // getJSON文件以判断
-            $.ajax({
-                url: "/config/livestatus.json",
-                method: "GET",
-                success: function (data) {
-                    var live = data.Live;//是否开播
+<head>
+    <meta charset="utf-8" lang="zh-cn">
+    <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <!-- 适配DRP > 1的屏幕 -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>SSLIVE</title>
+    <!-- 重置CSS，去除浏览器默认的所有样式 -->
+    <!-- <link rel="stylesheet" href="/src/css/cssreset.css"> -->
+    <link rel="stylesheet" href="/src/css/index.css">
+    <!-- jQuery使用CDN加载 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/src/js/Browser.js"></script>
+    <script src="/src/js/index.js"></script>
+</head>
 
-                    var nowtime = new Date().getTime();//当前时间
-                    var livetime = new Date(data.Time.year, data.Time.month, data.Time.date, data.Time.hour, data.Time.minute).getTime();//开播时间
-                    var leftTime = livetime - nowtime;//计算时差
+<body>
+    <div class="container">
+        <img src="/src/img/sslive-rectangle-white.png" alt="SSLIVE" id="index-logo">
+        <!-- 判断Javascript是否启用 -->
+        <noscript>
+            <p class="errmsg">您的浏览器未启用Javascript，请启用</p>
+        </noscript>
+        <!-- 提醒用户珍惜生命远离IE -->
+        <!--[if lte IE 9]>
+            <script>
+                window.location.href="IE.html";
+            </script>
+        <![endif]-->
+        <!-- 用于报错 -->
+        <p class="errmsg" id="errmsg"></p>
+        <p class="loading" id="loading">请稍候</p>
+    </div>
+</body>
 
-                    // TODO 这儿的逻辑到底是什么？
-                    // 分发到直播页面条件：
-                    // 1.剩余时间小于预设值  2.直播已经开始  3.开启debug模式
-                    if ((leftTime < data.Delta && live) || debugmode) {
-                        window.location.href = 'live.html'
-                    }else {
-                        window.location.href = 'introduction.html';
-                    }
-                },
-                error: function() {
-                    $("#errmsg").text("错误！请检查网络链接并刷新页面");
-                }
-            });
-        </script>
-    </head>
-
-    <body>
-        <div class="container">
-            <img src="/src/img/sslive-rectangle-white.png" alt="SSLIVE" id="index-logo">
-            
-            <!-- 判断Javascript是否启用 -->
-            <noscript>
-                <p class="errmsg">您的浏览器未启用Javascript，请启用</p>
-            </noscript>
-
-            <!-- 判断IE版本是否足够（10以上） -->
-            <!--[if lte IE 10]>
-                <script>
-                    window.location.href="IE.html";
-                </script>
-            <![endif]-->
-
-            <!-- 用于报错 -->
-            <p class="errmsg" id="errmsg"></p>
-            <p class="loading" id="loading">请稍候</p>
-        </div>
-    </body>
 </html>

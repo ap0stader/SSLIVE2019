@@ -1,45 +1,52 @@
 <!-- IE.html（高聚合页面） -->
 <!-- 功能： -->
-<!-- 提醒用户 珍惜生命，远离IE -->
+<!-- 提醒用户：珍惜生命，远离IE -->
 
 <html>
-    <head>
-        <meta charset="utf-8">
-        <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
-        <meta name="renderer" content="webkit"/>  
-        <meta name="force-rendering" content="webkit"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-        <title>SSLIVE</title>
-        <link rel="stylesheet" href="/src/css/cssreset.css">
-        <style>
-            body{
-                background-color: #333;
-                width: 100%;
-                height: 100%;
-            }
-            .container{
-                width: 100%;
-                height: 100%;
-                text-align: center;
-            }
-            #index-logo{
-                /* 在IE9及以下，%前面的数字需要在10及以上版本的基础上除以6 */
-                max-width: 12.5%;
-                max-height: 4.16%;
-                margin-top: 150px;
-            }
-            .errmsg{
-                margin-top: 150px;
-                color: red;
-                font-size: 50px;
-            }
-        </style>
-    </head>
 
-    <body>
-        <div class="container">
-            <img src="/src/img/sslive-rectangle-white.png" alt="SSLIVE" id="index-logo">
-            <p class="errmsg">您的浏览器版本过低，请升级</p>
-        </div>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
+    <title>SSLIVE</title>
+    <style>
+        body,
+        p {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        body {
+            background-color: #333;
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        #index-logo {
+            width: 250px;
+            max-height: 250px;
+            margin-top: 150px;
+        }
+
+        .errmsg {
+            margin-top: 150px;
+            color: red;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="/src/img/sslive-rectangle-white.png" alt="SSLIVE" id="index-logo">
+        <p class="errmsg">温馨提示：珍惜生命，远离IE</p>
+    </div>
+</body>
+
 </html>
