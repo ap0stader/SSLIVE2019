@@ -1,5 +1,8 @@
+/* live.css */
+
 /* 引用方正清刻本悦宋简体字体 */
-@font-face{
+
+@font-face {
     font-family: FZQKBYSJT;
     src: url(/src/font/fzqkb.ttf)
 }
@@ -12,29 +15,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     height: 100%;
     width: 100%;
-
     overflow-x: hidden;
     overflow-y: auto;
-
     font-family: FZQKBYSJT;
-    
     /* 调剂字体大小 */
     font-size: 24px;
-
     margin: 0;
 }
 
-#title{
+#title {
     margin: 0;
     margin-top: 1.5rem;
     font-size: 2.25rem;
     color: rgb(133, 83, 23);
 }
 
-#video-container{
+#video-container {
     margin-top: 5rem;
     width: 100%;
     display: flex;
@@ -53,7 +51,7 @@ body {
     padding: 2px;
     border-radius: 5px;
     box-shadow: 0px 0px 12px 0px rgba(53, 53, 53, 0.3);
-    background-color: rgba(255,255,255);
+    background-color: rgba(255, 255, 255);
     margin-top: 0.5rem;
 }
 
