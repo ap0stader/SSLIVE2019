@@ -5,16 +5,6 @@ function load() {
     if (browser.browser == 'IE') {
         window.location.href = 'IE.html';
     }
-    else if (browser.browser == 'Chrome' && parseInt(browser.version) <= '43') {
-        $("#errmsg").text("浏览器版本过旧，请更新浏览器");
-    }
-    else if (browser.browser == 'Firefox' && parseInt(browser.version) <= '42') {
-        $("#errmsg").text("浏览器版本过旧，请更新浏览器");
-    }
-    else if (browser.browser == 'Edge' && parseInt(browser.version) <= '15') {
-        $("#errmsg").text("浏览器版本过旧，请更新浏览器");
-    }
-
 
     // debug模式，直接进入live.html，两种方式进入 1.在HTML中设置 2.在地址栏中输入?debug=1
     var debugmode = false;
@@ -41,6 +31,7 @@ function load() {
             }
         },
         error: function () {
+            $('#loading').text(" ")
             $("#errmsg").text("错误！请检查网络链接并刷新页面");
         }
     });
