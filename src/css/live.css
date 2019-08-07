@@ -7,6 +7,12 @@
     src: url(/src/font/fzqkb.ttf)
 }
 
+html {
+    /* jQuery */
+    font-size: 16px;
+    font-family: FZQKBYSJT;
+}
+
 body {
     margin: 0;
     display: flex;
@@ -20,21 +26,18 @@ body {
     background: url("/src/img/live-background.jpg") no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    /* jQuery */
-    font-size: 24px;
-    font-family: FZQKBYSJT;
 }
 
 #title {
     margin: 0;
-    margin-top: 1.5rem;
+    margin-top: 2.25rem;
     color: #b2c67a;
-    font-size: 2.25rem;
+    font-size: 3.375rem;
 }
 
 #video-container {
     margin: 0;
-    margin-top: 5rem;
+    margin-top: 7.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,22 +47,22 @@ body {
 
 #controls {
     margin: 0;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     padding: 2px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    height: 3rem;
+    height: 4.5rem;
     background: white;
     box-shadow: 0px 0px 12px 0px rgba(53, 53, 53, 0.3);
 }
 
 #play, #fullscreen {
     border: 0;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.75rem;
+    height: 3.75rem;
     background: transparent no-repeat;
     background-size: 75% 75%;
     background-position: center;
@@ -71,9 +74,9 @@ body {
 }
 
 #play {
-    margin-left: 0.5rem;
+    margin-left: 0.75rem;
 }
 
 #fullscreen {
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
 }
