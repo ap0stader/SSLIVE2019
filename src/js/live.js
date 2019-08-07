@@ -4,7 +4,7 @@ function resize() {
     if ($(window).width() < 750) {
         // 根据屏幕宽度更改文字，以保证文字在一行内显示
         $('#title').text('省实高中部军训会操直播')
-        $('html').css('font-size', $(window).width() / 31.25 + 'px');
+        $('html').css('font-size', $(window).width() / 46.875 + 'px');
         videowidth = $(window).width() * 0.95;
         videoheight = videowidth / 16 * 9;
         $('#video').css('width', videowidth);
