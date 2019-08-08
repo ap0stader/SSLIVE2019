@@ -19,12 +19,26 @@
     <link rel="stylesheet" href="/src/css/backend.css">
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="/src/util/countdown.js"></script>
     <script src="/src/js/backend.js"></script>
 </head>
 
 <body>
     <div id="header">
         <p id="title">SSLIVE 后端控制台</p>
+    </div>
+    <div class="main">
+        <div id="timer">
+            <p id="timer-title">距离直播开始还有</p>
+            <div id="timer-countdown"></div>
+        </div>
+        <div id="LiveControl">
+            <div id="LiveStatusReminder">
+                <span id="ONAIRDOT"></span>
+                <span id="ONAIR">ON AIR</span>
+            </div>
+            <button id="LiveControlButton">正在获取直播状态...</button>
+        </div>
     </div>
 </body>
 

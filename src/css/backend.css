@@ -1,5 +1,23 @@
 /* backend.css */
 
+@keyframes breathe {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes colorchange {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: rgba(0, 160, 233, 0.4);
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -11,4 +29,106 @@ body {
     overflow-y: scroll;
     color: white;
     background-color: #1b1b1b;
+}
+
+#header {
+    padding: 20px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #2e2e2e;
+    font-size: 24px;
+}
+
+#title {
+    margin: 0;
+    color: #00a0e9;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#main {
+    margin-top: 64px;
+    width: 100%;
+}
+
+#timer {
+    padding: 16px;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    white-space: nowrap;
+}
+
+#timer-title {
+    margin: 0;
+    font-size: 48px;
+}
+
+#timer-countdown {
+    margin-top: 16px;
+    /* 这里是让字透明，以透出背景图片 */
+    color: transparent;
+    background: url(../img/texture.jpg) no-repeat;
+    background-position: 50%;
+    background-origin: border-box;
+    /* 两行要同时书写，让背景图片仅渲染在文字处 */
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 3rem;
+}
+
+.timer-small {
+    padding: 8px;
+    color: white;
+    font-size: 24px;
+}
+
+#LiveControl {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#LiveStatusReminder {
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: breathe 1500ms infinite alternate;
+}
+
+#ONAIRDOT {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    display: inline-block;
+}
+
+#ONAIR {
+    margin-left: 20px;
+    font-size: 40px;
+    display: inline-block;
+}
+
+#LiveControlButton {
+    padding: 10px 20px;
+    border: 2px #00a0e9 solid;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    font-size: 24px;
+}
+
+#LiveControlButton:hover {
+    animation: colorchange 500ms;
+    background-color: rgba(0, 160, 233, 0.4);
 }
