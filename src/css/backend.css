@@ -1,0 +1,14 @@
+/* backend.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    color: white;
+    background-color: #1b1b1b;
+}
