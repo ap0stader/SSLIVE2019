@@ -1,5 +1,8 @@
 /* backend.css */
 
+/* 定义动画 */
+
+/* 呼吸 */
 @keyframes breathe {
     0% {
         opacity: 0;
@@ -9,6 +12,7 @@
     }
 }
 
+/* Button的背景颜色变化 */
 @keyframes colorchange {
     0% {
         background-color: transparent;

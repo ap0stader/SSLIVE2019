@@ -16,10 +16,13 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>SSLIVE</title>
-    <link rel="stylesheet" href="/src/css/backend.css">
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 需要自行引入的js -->
     <script src="/src/util/countdown.js"></script>
+    <link rel="stylesheet" href="/src/util/growl.css">
+    <script src="/src/util/growl.js"></script>
+    <link rel="stylesheet" href="/src/css/backend.css">
     <script src="/src/js/backend.js"></script>
 </head>
 
@@ -37,7 +40,7 @@
                 <span id="ONAIRDOT"></span>
                 <span id="ONAIR">ON AIR</span>
             </div>
-            <button id="LiveControlButton">正在获取直播状态...</button>
+            <div id="LiveControlButton">正在获取直播状态...</div>
         </div>
     </div>
 </body>
