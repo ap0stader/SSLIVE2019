@@ -9,10 +9,10 @@ function start() {
         },
         success: function (data) {
             if (data == "success") {
-                growl.show({ text: "直播已开始！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
                 live = true;
-                $("#LiveStatusReminder").css("visibility", "visible");
                 $('#LiveControlButton').text("停 止 直 播").click(end);
+                $("#LiveStatusReminder").css("visibility", "visible");
+                growl.show({ text: "直播已开始！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
             } else {
                 alert(data);
             }
@@ -29,10 +29,10 @@ function end() {
         },
         success: function (data) {
             if (data == "success") {
-                growl.show({ text: "直播已停止！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
                 live = false;
-                $("#LiveStatusReminder").css("visibility", "hidden");
                 $("#LiveControlButton").text("开 始 直 播").click(start);
+                $("#LiveStatusReminder").css("visibility", "hidden");
+                growl.show({ text: "直播已停止！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
             } else {
                 alert(data);
             }
@@ -63,4 +63,4 @@ function load() {
     get();
 }
 
-$('document').ready(load)
+$('document').ready(load);

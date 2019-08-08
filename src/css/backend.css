@@ -124,6 +124,7 @@ body {
 }
 
 #LiveControlButton {
+    margin-top: 24px;
     padding: 10px 20px;
     border: 2px #00a0e9 solid;
     color: white;
