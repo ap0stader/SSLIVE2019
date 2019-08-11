@@ -152,7 +152,7 @@ body {
 }
 
 .history-card {
-    margin: 1rem 0;
+    margin: 2rem 0;
     text-align: center;
     width: 100%;
 }
@@ -161,7 +161,7 @@ body {
     margin-top: 1rem;
     border: #b2c67a 2.5px dotted;
     border-radius: 20px;
-    width: 80%;
+    width: 90%;
 }
 
 #footer {
