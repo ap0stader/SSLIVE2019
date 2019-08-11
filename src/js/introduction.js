@@ -7,8 +7,7 @@ function resize() {
         rem = 16
     }
     $('html').css('font-size', rem + 'px')
-    $('#main').css('margin-top', rem * 3.5 + 'px');
-    $('#bgimg').css('font-size', $(window).height() - rem * 3.5 + 'px');
+    $('#timer-container').css('height', $(window).width() / 16 * 9 + 'px');
 }
 
 // 判断是否已经开播

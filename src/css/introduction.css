@@ -7,30 +7,32 @@
     src: url(/src/font/fzqkb.ttf)
 }
 
+
+@font-face {
+    font-family: HYYouYuanTiW;
+    src: url(/src/font/HYYouYuanTiW.ttf)
+}
+
 html {
     /* jQuery */
     font-size: 16px;
-    font-family: FZQKBYSJT;
+    font-family: HYYouYuanTiW;
 }
 
 body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
     overflow-x: hidden;
     background: black;
 }
 
 #header {
-    padding: 10px;
+    padding: 0.5rem 0;
     z-index: 10;
-    /* 使用盒模型快速实现icon和title一左一中 */
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    text-align: center;
     width: 100%;
-    height: 40px;
+    height: 3rem;
     position: fixed;
     top: 0;
     background: #2e2e2e;
@@ -40,32 +42,22 @@ body {
     height: 100%;
 }
 
-#header-title {
-    color: #b2c67a;
-    font-size: 20px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-#main {
-    margin-top: 60px;
+#timer-container {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-}
-
-#bgimg {
-    width: 100%;
-    /* jQuery */
-    height: 100%;
-    object-fit: cover;
+    background-image: url(/src/img/introduction-background.jpg);
+    background-size: cover;
 }
 
 #timer {
     padding: 1rem;
+    z-index: 5;
     text-align: center;
+    /* 让after听话。。。 */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: black;
     white-space: nowrap;
 }
@@ -80,9 +72,9 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.75;
     filter: blur(5px);
-    background: white;
+    background: #c2c2c2;
     content: '';
 }
 
@@ -111,12 +103,35 @@ body {
     font-size: 1.5rem;
 }
 
+#next {
+    padding: 0.5rem 0;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    background: #2e2e2e;
+}
+
+#next-name {
+    color: #b2c67a;
+    font-size: 2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#next-time {
+    color: #b2c67a;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 #footer {
     padding: 15px 0;
     text-align: center;
     width: 100%;
     color: #c2c2c2;
     background: #2e2e2e;
+    font-family: FZQKBYSJT;
 }
 
 #footerlinks {
