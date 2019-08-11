@@ -7,6 +7,7 @@
     src: url(/src/font/fzqkb.ttf)
 }
 
+/* 引用汉仪游园体字体 */
 
 @font-face {
     font-family: HYYouYuanTiW;
@@ -32,7 +33,7 @@ body {
     z-index: 10;
     text-align: center;
     width: 100%;
-    height: 3rem;
+    height: 4rem;
     position: fixed;
     top: 0;
     background: #2e2e2e;
@@ -43,7 +44,7 @@ body {
 }
 
 #timer-container {
-    margin-top: 4rem;
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +104,7 @@ body {
     font-size: 1.5rem;
 }
 
-#next {
+#next-container {
     padding: 0.5rem 0;
     z-index: 10;
     text-align: center;
@@ -123,6 +124,44 @@ body {
     font-size: 1.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+#history-container {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.title-container {
+    text-align: center;
+    background: url(/src/img/texture.jpg) no-repeat;
+    background-position: 50%;
+    background-origin: border-box;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title-text {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.title-small {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.history-card {
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.history-image {
+    margin-top: 1rem;
+    border: #b2c67a 2.5px dotted;
+    border-radius: 20px;
+    width: 80%;
 }
 
 #footer {
