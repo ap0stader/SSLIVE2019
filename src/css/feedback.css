@@ -39,11 +39,29 @@ body {
     width: 100%;
 }
 
-/* 浏览器信息 */
-
-#browserjs {
+.step-container {
     padding: 1rem;
 }
+
+/* 内容标题 */
+
+.title-container {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.title-text {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.title-small {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
+/* 浏览器信息 */
 
 #browserjs caption {
     text-align: left;
@@ -64,24 +82,6 @@ body {
     border: 1px solid white;
     text-align: center;
     color: white;
-}
-
-/* 内容标题 */
-
-.title-container {
-    margin: 1rem;
-    text-align: center;
-}
-
-.title-text {
-    margin: 0;
-    font-size: 2rem;
-}
-
-.title-small {
-    margin: 0;
-    margin-top: 1rem;
-    font-size: 1.5rem;
 }
 
 /* 页脚 */

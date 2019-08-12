@@ -36,80 +36,86 @@
             <p class="title-small" style="color: whitesmoke">反馈非常简单，请您按照说明完成</p>
         </div>
 
-        <div class="title-container" style="text-align: left">
-            <p class="title-text" style="color: whitesmoke">1.上传数据</p>
-            <p class="title-small" style="color: whitesmoke">为了我们能解决您的问题，我们需要且<span style="color: red">仅</span>需要以下<span style="color: red">不包含</span>您个人隐私的信息：</p>
+        <div id="step1" class="step-container">
+            <div class="title-container" style="text-align: left">
+                <p class="title-text" style="color: whitesmoke">1.上传数据</p>
+                <p class="title-small" style="color: whitesmoke">为了我们能解决您的问题，我们需要且<span
+                        style="color: red">仅</span>需要以下<span style="color: red">不包含</span>您个人隐私的信息：</p>
+            </div>
+
+            <div id="browserjs">
+                <script>
+                    var info = new Browser();
+                    if (info.device != 'Mobile') {
+                        document.writeln('<table>\
+                                                            <caption><p>User-Agent（浏览器标识信息）：</p></caption>\
+                                                            <caption><p>'+ navigator.userAgent + '</p></caption>\
+                                                            <caption><p>浏览器及系统信息：</p></caption>\
+                                                            <thead>\
+                                                                <tr>\
+                                                                    <th>浏览器</th>\
+                                                                    <th>版本</th>\
+                                                                    <th>内核</th>\
+                                                                    <th>操作系统</th>\
+                                                                    <th>版本</th>\
+                                                                    <th>设备类型</th>\
+                                                                </tr>\
+                                                            </thead>\
+                                                            <tbody>\
+                                                                <tr>\
+                                                                    <td>'+ info.browser + '</td>\
+                                                                    <td>'+ info.version + '</td>\
+                                                                    <td>'+ info.engine + '</td>\
+                                                                    <td>'+ info.os + '</td>\
+                                                                    <td>'+ info.osVersion + '</td>\
+                                                                    <td>'+ info.device + '</td>\
+                                                                </tr>\
+                                                            </tbody>\
+                                                        </table>');
+                    } else {
+                        document.writeln('<table>\
+                                                            <caption><p>User-Agent（浏览器标识信息）：</p></caption>\
+                                                            <caption><p>'+ navigator.userAgent + '</p></caption>\
+                                                            <caption><p>浏览器及系统信息：</p></caption>\
+                                                            <thead>\
+                                                                <tr>\
+                                                                    <th>浏览器</th>\
+                                                                    <th>版本</th>\
+                                                                    <th>内核</th>\
+                                                                </tr>\
+                                                            </thead>\
+                                                            <tbody>\
+                                                                <tr>\
+                                                                    <td>'+ info.browser + '</td>\
+                                                                    <td>'+ info.version + '</td>\
+                                                                    <td>'+ info.engine + '</td>\
+                                                                </tr>\
+                                                            </tbody>\
+                                                        </table>');
+                        document.writeln('<table>\
+                                                            <thead>\
+                                                                <tr>\
+                                                                    <th>操作系统</th>\
+                                                                    <th>版本</th>\
+                                                                    <th>设备类型</th>\
+                                                                </tr>\
+                                                            </thead>\
+                                                            <tbody>\
+                                                                <tr>\
+                                                                    <td>'+ info.os + '</td>\
+                                                                    <td>'+ info.osVersion + '</td>\
+                                                                    <td>'+ info.device + '</td>\
+                                                                </tr>\
+                                                            </tbody>\
+                                                        </table>');
+                    }
+                </script>
+                <div class="button-recommend">同意使用这些数据</div>
+                <div class="button-deprecated">不同意使用这些数据</div>
+            </div>
         </div>
 
-        <div id="browserjs">
-            <script>
-                var info = new Browser();
-                if (info.device != 'Mobile') {
-                    document.writeln('<table>\
-                                                <caption><p>User-Agent（浏览器标识信息）：</p></caption>\
-                                                <caption><p>'+ navigator.userAgent + '</p></caption>\
-                                                <caption><p>浏览器及系统信息：</p></caption>\
-                                                <thead>\
-                                                    <tr>\
-                                                        <th>浏览器</th>\
-                                                        <th>版本</th>\
-                                                        <th>内核</th>\
-                                                        <th>操作系统</th>\
-                                                        <th>版本</th>\
-                                                        <th>设备类型</th>\
-                                                    </tr>\
-                                                </thead>\
-                                                <tbody>\
-                                                    <tr>\
-                                                        <td>'+ info.browser + '</td>\
-                                                        <td>'+ info.version + '</td>\
-                                                        <td>'+ info.engine + '</td>\
-                                                        <td>'+ info.os + '</td>\
-                                                        <td>'+ info.osVersion + '</td>\
-                                                        <td>'+ info.device + '</td>\
-                                                    </tr>\
-                                                </tbody>\
-                                            </table>');
-                } else {
-                    document.writeln('<table>\
-                                                <caption><p>User-Agent（浏览器标识信息）：</p></caption>\
-                                                <caption><p>'+ navigator.userAgent + '</p></caption>\
-                                                <caption><p>浏览器及系统信息：</p></caption>\
-                                                <thead>\
-                                                    <tr>\
-                                                        <th>浏览器</th>\
-                                                        <th>版本</th>\
-                                                        <th>内核</th>\
-                                                    </tr>\
-                                                </thead>\
-                                                <tbody>\
-                                                    <tr>\
-                                                        <td>'+ info.browser + '</td>\
-                                                        <td>'+ info.version + '</td>\
-                                                        <td>'+ info.engine + '</td>\
-                                                    </tr>\
-                                                </tbody>\
-                                            </table>');
-                    document.writeln('<table>\
-                                                <thead>\
-                                                    <tr>\
-                                                        <th>操作系统</th>\
-                                                        <th>版本</th>\
-                                                        <th>设备类型</th>\
-                                                    </tr>\
-                                                </thead>\
-                                                <tbody>\
-                                                    <tr>\
-                                                        <td>'+ info.os + '</td>\
-                                                        <td>'+ info.osVersion + '</td>\
-                                                        <td>'+ info.device + '</td>\
-                                                    </tr>\
-                                                </tbody>\
-                                            </table>');
-                }
-            </script>
-        </div>
-        
+
     </div>
 
     <div id="footer">
