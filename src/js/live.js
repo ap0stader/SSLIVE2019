@@ -44,11 +44,11 @@ function load() {
     $('#play').click(function () {
         if (isplay) {
             player.pause();
-            $('#play').css('background-image', "url('/src/img/play.svg')");
+            $('#play').css('background-image', "url('/src/img/control/play.svg')");
             isplay = false;
         } else {
             player.play();
-            $('#play').css('background-image', "url('/src/img/pause.svg')");
+            $('#play').css('background-image', "url('/src/img/control/pause.svg')");
             isplay = true;
         }
     });
