@@ -1,3 +1,4 @@
+// index.js
 function load() {
     // 判断浏览器版本是否足够，以flv.js提供的为基准
     var browser = new Browser();

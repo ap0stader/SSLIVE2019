@@ -1,3 +1,4 @@
+// introduction.js
 // 调整页面的字体大小
 var rem = 16;
 function resize() {

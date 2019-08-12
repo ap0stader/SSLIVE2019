@@ -1,3 +1,4 @@
+// live.js
 var videowidth, videoheight;
 
 function resize() {
