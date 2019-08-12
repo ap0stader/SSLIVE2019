@@ -1,18 +1,53 @@
 /* introduction.css */
 
-/* 引用方正清刻本悦宋简体字体 */
+/* 字体引用区 */
+
+/* 方正清刻本悦宋简体 */
 
 @font-face {
     font-family: FZQKBYSJT;
     src: url(/src/font/fzqkb.ttf)
 }
 
-/* 引用汉仪游园体字体 */
+/* 汉仪游园体 */
 
 @font-face {
     font-family: HYYouYuanTiW;
     src: url(/src/font/HYYouYuanTiW.ttf)
 }
+
+/* 材质定义区 */
+
+.texture {
+    /* 让文字透明，以透出背景图片 */
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-origin: border-box;
+    /* 两行要同时书写，让背景图片仅渲染在文字处 */
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* 2019高中部军训会操直播 */
+
+.texture-20190824 {
+    background-image: url(/src/img/texture.jpg);
+}
+
+/* 2019青春诗会 */
+
+.texture-20190403 {
+    background-image: url(/history/src/img/texture/20190403.jpg);
+}
+
+/* 2019新年音乐会 */
+
+.texture-20181228 {
+    background-image: url(/history/src/img/texture/20181228.jpg);
+}
+
+/* 全局定义区 */
 
 html {
     /* jQuery */
@@ -28,6 +63,8 @@ body {
     background: black;
 }
 
+/* 页头 */
+
 #header {
     padding: 0.5rem 0;
     z-index: 10;
@@ -42,6 +79,8 @@ body {
 #header-icon {
     height: 100%;
 }
+
+/* 倒计时 */
 
 #timer-container {
     margin-top: 5rem;
@@ -87,22 +126,18 @@ body {
 
 #timer-countdown {
     margin-top: 1rem;
-    /* 这里是让字透明，以透出背景图片 */
-    color: transparent;
-    background: url(../img/texture.jpg) no-repeat;
-    background-position: 50%;
-    background-origin: border-box;
-    /* 两行要同时书写，让背景图片仅渲染在文字处 */
-    background-clip: text;
-    -webkit-background-clip: text;
     font-size: 3rem;
+    font-weight: bold;
 }
 
 .timer-small {
     padding: 0.5rem;
     color: black;
     font-size: 1.5rem;
+    font-weight: normal;
 }
+
+/* 下一场直播内容 */
 
 #next-container {
     padding: 0.5rem 0;
@@ -114,7 +149,7 @@ body {
 
 #next-name {
     color: #b2c67a;
-    font-size: 2rem;
+    font-size: 2.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -126,29 +161,28 @@ body {
     text-overflow: ellipsis;
 }
 
-#history-container {
-    margin: 2rem 0;
-    width: 100%;
-}
+/* 内容标题 */
 
 .title-container {
     text-align: center;
-    background: url(/src/img/texture.jpg) no-repeat;
-    background-position: 50%;
-    background-origin: border-box;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .title-text {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .title-small {
     margin: 0;
+    margin-top: 1rem;
     font-size: 1.5rem;
+}
+
+/* 历次直播 */
+
+#history-container {
+    margin: 2rem 0;
+    width: 100%;
 }
 
 .history-card {
@@ -159,13 +193,17 @@ body {
 
 .history-image {
     margin-top: 1rem;
-    border: #b2c67a 2.5px dotted;
+    border-width: 2.5px;
+    border-style: dotted;
     border-radius: 20px;
     width: 90%;
+    object-fit: cover;
 }
 
+/* 页脚 */
+
 #footer {
-    padding: 15px 0;
+    padding: 1rem 0;
     text-align: center;
     width: 100%;
     color: #c2c2c2;
@@ -179,17 +217,17 @@ body {
 }
 
 .footerlink {
-    margin: 0 25px;
+    margin: 0 1.5rem;
     display: inline;
     color: inherit;
-    font-size: 15px;
+    font-size: 1rem;
     text-decoration: none;
     cursor: pointer;
 }
 
 #footerpb, #footerlogos {
-    margin: 10px 0;
-    font-size: 15px;
+    margin: 0.75rem 0;
+    font-size: 1rem;
 }
 
 .footerlogo {
@@ -197,19 +235,19 @@ body {
 }
 
 #suitlogo {
-    padding-right: 10px;
+    padding-right: 0.75rem;
     border-right: 2px white solid;
-    height: 50px;
+    height: 3rem;
 }
 
 #passlogo {
-    margin-bottom: 5px;
-    padding-left: 10px;
-    height: 40px;
+    margin-bottom: 0.25rem;
+    padding-left: 0.75rem;
+    height: 3.5rem;
 }
 
 .footertext {
-    margin: 5px 0;
+    margin: 0.25rem 0;
     display: block;
-    font-size: 15px;
+    font-size: 1rem;
 }

@@ -8,6 +8,7 @@ function resize() {
     }
     $('html').css('font-size', rem + 'px')
     $('#timer-container').css('height', $(window).width() / 16 * 9 + 'px');
+    $(".history-image").css('height', $('.history-image').width() / 16 * 10 + 'px')
 }
 
 // 判断是否已经开播
