@@ -5,7 +5,6 @@
 html {
     /* jQuery */
     font-size: 16px;
-    font-family: HYYouYuanTiW;
 }
 
 body {
@@ -33,6 +32,58 @@ body {
     height: 100%;
 }
 
+/* 主要内容 */
+
+#main {
+    margin: 6rem 0;
+    width: 100%;
+}
+
+/* 浏览器信息 */
+
+#browserjs {
+    padding: 1rem;
+}
+
+#browserjs caption {
+    text-align: left;
+    width: 100%;
+    color: white;
+}
+
+#browserjs table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    font-size: 1.25rem;
+    table-layout: fixed;
+}
+
+#browserjs th, #browserjs td {
+    padding: 8px 0;
+    border: 1px solid white;
+    text-align: center;
+    color: white;
+}
+
+/* 内容标题 */
+
+.title-container {
+    margin: 1rem;
+    text-align: center;
+}
+
+.title-text {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.title-small {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}
+
 /* 页脚 */
 
 #footer {
@@ -41,7 +92,6 @@ body {
     width: 100%;
     color: #c2c2c2;
     background: #2e2e2e;
-    font-family: FZQKBYSJT;
 }
 
 #footerpb, #footerlogos {
