@@ -20,6 +20,8 @@
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <!-- 需要自行引入的js -->
     <script src="/src/lib/Browser.js"></script>
+    <link rel="stylesheet" href="/src/util/growl.css">
+    <script src="/src/util/growl.js"></script>
     <link rel="stylesheet" href="/src/css/feedback.css">
     <script src="/src/js/feedback.js"></script>
     <!-- TODO 加入百度分析 -->
@@ -124,11 +126,10 @@
                 <p class="title-small" style="color: whitesmoke">请您详细描述您的问题或您的反馈：</p>
             </div>
             <div class="textarea-container">
-                <textarea maxlength="200">
-                    
-                </textarea>
-                <!-- 可以加上一个计数器，以提醒用户输满了 -->
+                <textarea maxlength="200" class="textarea" id="textarea"></textarea>
+                <!-- TODO 可以加上一个计数器，以提醒用户输满了 -->
             </div>
+            <div class="button-recommend" id="submit">立即提交</div>
         </div>
 
     </div>
