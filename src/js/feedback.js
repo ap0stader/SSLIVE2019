@@ -17,7 +17,7 @@ function submit() {
         },
         success: function (data) {
             if (data == 'success') {
-                growl.show({ text: "提交成功！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
+                growl.show({ text: "提交成功！", type: "custom", imgsrc: "/src/img/growl/ok.gif", autoclose: 1000 });
             } else if (data == 'up') {
                 window.alert("您提交问题反馈次数过多，请等待我们处理完成之后再提交，感谢您的支持！");
             } else if (data == 'error') {

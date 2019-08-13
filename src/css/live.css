@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     /* TODO 更换图片 */
-    background: url("/src/img/live-background.jpg") no-repeat;
+    background: url("/src/img/background/live.jpg") no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }

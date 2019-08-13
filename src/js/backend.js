@@ -13,7 +13,7 @@ function start() {
                 live = true;
                 $('#LiveControlButton').text("停 止 直 播").click(end);
                 $("#LiveStatusReminder").css("visibility", "visible");
-                growl.show({ text: "直播已开始！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
+                growl.show({ text: "直播已开始！", type: "custom", imgsrc: "/src/img/growl/ok.gif", autoclose: 1000 });
             } else {
                 alert(data);
             }
@@ -33,7 +33,7 @@ function end() {
                 live = false;
                 $("#LiveControlButton").text("开 始 直 播").click(start);
                 $("#LiveStatusReminder").css("visibility", "hidden");
-                growl.show({ text: "直播已停止！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
+                growl.show({ text: "直播已停止！", type: "custom", imgsrc: "/src/img/growl/ok.gif", autoclose: 1000 });
             } else {
                 alert(data);
             }
