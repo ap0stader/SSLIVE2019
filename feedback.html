@@ -33,12 +33,12 @@
     <div id="main">
         <div class="title-container">
             <p class="title-text" style="color: whitesmoke">问题反馈</p>
-            <p class="title-small" style="color: whitesmoke">反馈非常简单，请您按照说明完成</p>
+            <p class="title-small" style="color: whitesmoke">提问、反馈非常简单，请您按照说明完成</p>
         </div>
 
         <div id="step1" class="step-container">
             <div class="title-container" style="text-align: left">
-                <p class="title-text" style="color: whitesmoke">1.上传数据</p>
+                <p class="title-text" style="color: whitesmoke">1.数据</p>
                 <p class="title-small" style="color: whitesmoke">为了我们能解决您的问题，我们需要且<span
                         style="color: red">仅</span>需要以下<span style="color: red">不包含</span>您个人隐私的信息：</p>
             </div>
@@ -110,11 +110,26 @@
                                                         </table>');
                     }
                 </script>
-                <div class="button-recommend">同意使用这些数据</div>
-                <div class="button-deprecated">不同意使用这些数据</div>
+                <div class="button-recommend" id="browserjs-agree">同意使用这些数据</div>
+                <div class="button-deprecated" id="browserjs-disagree">不同意使用这些数据</div>
+                <div class="title-container" style="text-align: left; display: none" id="browserjs-disagree-notice">
+                    <p class="title-small" style="color: red">以上数据不包含您的个人隐私，请您理解没有这些数据我们将无法解决您的问题，谢谢。</p>
+                </div>
             </div>
         </div>
 
+        <div id="step2" class="step-container" style="display: none">
+            <div class="title-container" style="text-align: left">
+                <p class="title-text" style="color: whitesmoke">2.问题/反馈</p>
+                <p class="title-small" style="color: whitesmoke">请您详细描述您的问题或您的反馈：</p>
+            </div>
+            <div class="textarea-container">
+                <textarea maxlength="200">
+                    
+                </textarea>
+                <!-- 可以加上一个计数器，以提醒用户输满了 -->
+            </div>
+        </div>
 
     </div>
 

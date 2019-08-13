@@ -84,6 +84,42 @@ body {
     color: white;
 }
 
+.button-recommend {
+    background-color: #07C160;
+    margin: 1rem 0;
+    padding: 8px 24px;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    line-height: 1.41176471;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.button-recommend:active {
+    color: #FFFFFF;
+    background-color: #06AD56;
+}
+
+.button-deprecated {
+    background-color: #F2F2F2;
+    margin: 1rem 0;
+    padding: 8px 24px;
+    font-weight: lighter;
+    font-size: 17px;
+    text-align: center;
+    color: #06AE56;
+    line-height: 1.41176471;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.button-deprecated:active {
+    color: #06AE56;
+    background-color: #D9D9D9;
+}
+
 /* 页脚 */
 
 #footer {
