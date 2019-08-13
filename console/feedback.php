@@ -13,52 +13,45 @@ $ip = $_SERVER['REMOTE_ADDR'];
 require  './Medoo.php';
 
 use Medoo\Medoo;
- 
+
 $database = new Medoo([
-	// required
-	'database_type' => 'mysql',
-	'database_name' => 'sslive',
-	'server' => 'feedback.ssersay.cn',
-	'username' => 'root',
-	'password' => 'lovesuit',
- 
-	// [optional]
-	'charset' => 'utf8',
-	'port' => 3306,
- 
-	// [optional] Table prefix
-	'prefix' => '',
- 
-	// [optional] Enable logging (Logging is disabled by default for better performance)
-	'logging' => true,
- 
-	// [optional] MySQL socket (shouldn't be used with server and port)
-	'socket' => '/tmp/mysql.sock',
- 
-	// [optional] driver_option for connection, read more from http://www.php.net/manual/en/pdo.setattribute.php
-	'option' => [
-		PDO::ATTR_CASE => PDO::CASE_NATURAL
-	],
- 
-	// [optional] Medoo will execute those commands after connected to the database for initialization
-	'command' => [
-		'SET SQL_MODE=ANSI_QUOTES'
-	]
+    // required
+    'database_type' => 'mysql',
+    'database_name' => 'sslive',
+    'server' => '47.101.195.41',
+    'username' => 'root',
+    'password' => 'lovesuit',
+
+    // [optional]
+    'charset' => 'utf8',
+    'port' => 3309,
 ]);
 
+$count = $database->count("feedback", [
+    "ip" => $ip,
+]);
 
-// 连接数据库
-$con = mysqli_connect("localhost:3306", "root", "lovesuit");
+echo $count;
 
-mysqli_select_db($con, "sslive");
-if (mysqli_num_rows(mysqli_query($con, "SELECT Id FROM feedback WHERE IP='$ip'")) <= 5) {
-    $result = mysqli_query($con, "INSERT INTO feedback VALUES(NULL,'$ip','$title','$content')");
-    if (!$result){
-        echo "错误！" . mysqli_error($con);
+
+if ($count < 5) {
+    $result = $database->insert("feedback", [
+        "ua" => $ua,
+        "browser" => $browser,
+        "version" => $version,
+        "engine" => $engine,
+        "os" => $os,
+        "osVersion" => $osVersion,
+        "device" => $device,
+        "text" => $text,
+        "ip" => $ip,
+    ]);
+
+    if ($database->error()[1] == NULL) {
+        echo 'success';
     } else {
-        echo "success";
+        echo 'error';
     }
 } else {
-    echo "您提交了过多的反馈";
+    echo "up";
 }
-mysqli_close($con);

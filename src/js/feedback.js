@@ -11,7 +11,6 @@ function browserjs_disagree() {
 }
 
 function submit() {
-    var Browser = Browser()
     $.ajax({
         url: "/console/feedback.php",
         method: "POST",
@@ -26,14 +25,7 @@ function submit() {
             text: $("#textarea").text()
         },
         success: function (data) {
-            if (data == "success") {
-                live = true;
-                $('#LiveControlButton').text("停 止 直 播").click(end);
-                $("#LiveStatusReminder").css("visibility", "visible");
-                growl.show({ text: "直播已开始！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
-            } else {
-                alert(data);
-            }
+            console.log(data)
         }
     });
     $("#submit").unbind("click");
@@ -53,6 +45,7 @@ function resize() {
 function load() {
     $("#browserjs-agree").click(browserjs_agree);
     $("#browserjs-disagree").click(browserjs_disagree);
+    // $("#textarea").click()
     $("#submit").click(submit);
     resize();
 }
