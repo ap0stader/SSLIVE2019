@@ -1,0 +1,22 @@
+/* title.css */
+
+/* 标题模块 */
+
+.title-container-c {
+    text-align: center;
+}
+
+.title-container-l {
+    text-align: center;
+}
+
+.title-text {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.title-small {
+    margin: 0;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+}

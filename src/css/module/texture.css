@@ -1,0 +1,34 @@
+/* texture.css */
+
+/* 定义材质 */
+
+/* 材质文件夹/history/src/img/texture/ */
+
+.texture {
+    /* 让文字透明，以透出背景图片 */
+    color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-origin: border-box;
+    /* 两行要同时书写，让背景图片仅渲染在文字处 */
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+/* 2019高中部军训会操直播 */
+
+.texture-20190824 {
+    background-image: url(/history/src/img/texture/20190824.jpg);
+}
+
+/* 2019青春诗会 */
+
+.texture-20190403 {
+    background-image: url(/history/src/img/texture/20190403.jpg);
+}
+
+/* 2019新年音乐会 */
+
+.texture-20181228 {
+    background-image: url(/history/src/img/texture/20181228.jpg);
+}
