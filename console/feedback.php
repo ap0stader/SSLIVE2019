@@ -18,7 +18,7 @@ $database = new Medoo([
     // required
     'database_type' => 'mysql',
     'database_name' => 'sslive',
-    'server' => '47.101.195.41',
+    'server' => 'feedback.ssersay.cn',
     'username' => 'root',
     'password' => 'lovesuit',
 
@@ -31,7 +31,7 @@ $count = $database->count("feedback", [
     "ip" => $ip,
 ]);
 
-if ($count < 5) {
+if ($count < 20) {
     $result = $database->insert("feedback", [
         "ua" => $ua,
         "browser" => $browser,

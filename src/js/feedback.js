@@ -11,8 +11,8 @@ function browserjs_disagree() {
 }
 
 function submit() {
-    $("#submit").html("正在提交，请稍候");
     $("#submit").unbind("click");
+    $("#submit").html("正在提交，请稍候");
     $.ajax({
         url: "/console/feedback.php",
         method: "POST",
@@ -24,7 +24,7 @@ function submit() {
             os: info.os,
             osVersion: info.osVersion,
             device: info.device,
-            text: $("#textarea").text()
+            text: $("#textarea").val()
         },
         success: function (data) {
             if (data == 'success') {
@@ -43,6 +43,7 @@ function submit() {
 
 function textarea_input() {
     if ($("#textarea").val() != '') {
+        $("#submit").unbind("click");
         $("#submit").click(submit);
     } else {
         $("#submit").unbind("click");
