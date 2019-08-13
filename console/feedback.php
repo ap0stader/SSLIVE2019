@@ -31,9 +31,6 @@ $count = $database->count("feedback", [
     "ip" => $ip,
 ]);
 
-echo $count;
-
-
 if ($count < 5) {
     $result = $database->insert("feedback", [
         "ua" => $ua,

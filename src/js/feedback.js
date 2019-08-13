@@ -11,6 +11,8 @@ function browserjs_disagree() {
 }
 
 function submit() {
+    $("#submit").html("正在提交，请稍候");
+    $("#submit").unbind("click");
     $.ajax({
         url: "/console/feedback.php",
         method: "POST",
@@ -25,10 +27,26 @@ function submit() {
             text: $("#textarea").text()
         },
         success: function (data) {
-            console.log(data)
+            if (data == 'success') {
+                growl.show({ text: "提交成功！", type: "custom", imgsrc: "src/img/ok.gif", autoclose: 1000 });
+            } else if (data == 'up') {
+                window.alert("您提交问题反馈次数过多，请等待我们处理完成之后再提交，感谢您的支持！");
+            } else if (data == 'error') {
+                window.alert("您提交问题反馈出现错误！")
+            }
+            setTimeout(function () {
+                window.location.href = 'index.html'
+            }, 1100);
         }
     });
-    $("#submit").unbind("click");
+}
+
+function textarea_input() {
+    if ($("#textarea").val() != '') {
+        $("#submit").click(submit);
+    } else {
+        $("#submit").unbind("click");
+    }
 }
 
 // 调整页面的字体大小
@@ -45,8 +63,7 @@ function resize() {
 function load() {
     $("#browserjs-agree").click(browserjs_agree);
     $("#browserjs-disagree").click(browserjs_disagree);
-    // $("#textarea").click()
-    $("#submit").click(submit);
+    $("#textarea").bind("input propertychange", textarea_input);
     resize();
 }
 
