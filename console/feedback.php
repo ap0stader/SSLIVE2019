@@ -1,4 +1,8 @@
 <?php
+// 解决跨域问题
+header("Access-Control-Allow-Origin:*");
+header('Access-Control-Allow-Methods:POST');
+
 // 读取POST中的数据
 $ua = $_POST["ua"];
 $browser = $_POST["browser"];
