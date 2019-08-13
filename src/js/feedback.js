@@ -1,15 +1,4 @@
 // feedback.js
-function browserjs_agree() {
-    $("#browserjs-disagree").css("display", "none");
-    $("#browserjs-disagree-notice").css("display", "none");
-    $("#browserjs-agree").text("已同意使用这些数据");
-    $("#step2").css("display", "block");
-}
-
-function browserjs_disagree() {
-    $("#browserjs-disagree-notice").css("display", "block");
-}
-
 function submit() {
     $("#submit").unbind("click");
     $("#submit").html("正在提交，请稍候");
@@ -62,8 +51,6 @@ function resize() {
 }
 
 function load() {
-    $("#browserjs-agree").click(browserjs_agree);
-    $("#browserjs-disagree").click(browserjs_disagree);
     $("#textarea").bind("input propertychange", textarea_input);
     resize();
 }
