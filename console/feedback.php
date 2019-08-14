@@ -14,7 +14,7 @@ $device = $_POST["device"];
 $text = $_POST["text"];
 $ip = $_SERVER['REMOTE_ADDR'];
 
-require  './Medoo.php';
+require  './lib/Medoo.php';
 
 use Medoo\Medoo;
 
