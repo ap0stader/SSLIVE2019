@@ -2,6 +2,13 @@
 
 /* 字体引用 */
 
+/* 方正清刻本悦宋简体 */
+
+@font-face {
+    font-family: FZQKBYSJT;
+    src: url(/src/font/fzqkb.ttf);
+}
+
 /* 汉仪游园体 */
 
 @font-face {
@@ -35,6 +42,58 @@ body {
 
 #video {
     width: 100%;
+}
+
+/* 直播内容 */
+
+#content-container {
+    padding: 0.5rem 0;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    background: #2e2e2e;
+}
+
+#content-name {
+    color: #b2c67a;
+    font-size: 2.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#content-time {
+    color: #b2c67a;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 历次直播 */
+
+#history-container {
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.history-card {
+    margin: 2rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.history-image {
+    margin-top: 1rem;
+    border-width: 2.5px;
+    border-style: dotted;
+    border-radius: 20px;
+    width: 90%;
+    object-fit: cover;
+}
+
+/* 页脚重写 */
+
+#footer {
+    font-family: FZQKBYSJT;
 }
 
 /* 重写videojs，删除不需要的按钮 */
