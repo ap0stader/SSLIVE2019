@@ -1,4 +1,4 @@
-// backend.js
+// console.js
 var live = false;
 
 function start() {
