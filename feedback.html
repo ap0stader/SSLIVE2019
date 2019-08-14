@@ -18,11 +18,15 @@
     <link rel="shortcut icon" href="src/img/logo/sslive-rectangle-std.png" type="image/png">
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-    <!-- 需要自行引入的js -->
-    <script src="/src/lib/Browser.js"></script>
+    <!-- 需要自行引入的CSS和JS -->
+    <link rel="stylesheet" href="/src/css/module/header.css">
+    <link rel="stylesheet" href="/src/css/module/title.css">
+    <link rel="stylesheet" href="/src/css/module/weui.css">
+    <link rel="stylesheet" href="/src/css/module/footer.css">
+    <link rel="stylesheet" href="/src/css/pages/feedback.css">
     <link rel="stylesheet" href="/src/util/growl.css">
+    <script src="/src/lib/Browser.js"></script>
     <script src="/src/util/growl.js"></script>
-    <link rel="stylesheet" href="/src/css/feedback.css">
     <script src="/src/js/feedback.js"></script>
     <!-- TODO 加入百度分析 -->
 </head>
@@ -33,31 +37,28 @@
     </div>
 
     <div id="main">
-        <div class="title-container">
+        <div class="title-container-c">
             <p class="title-text" style="color: #f5f5f5">问题反馈</p>
         </div>
 
-        <div class="step-container">
-            <div class="title-container" style="text-align: left">
-                <p class="title-small" style="color: #f5f5f5">请您详细描述您的问题或您的反馈：</p>
-            </div>
-            <div class="textarea-container">
-                <textarea maxlength="200" class="textarea" id="textarea"></textarea>
-                <!-- TODO 可以加上一个计数器，以提醒用户输满了 -->
-            </div>
-            <div class="button-recommend" id="submit">立即提交</div>
+        <div class="title-container-l" style="text-align: left">
+            <p class="title-small" style="color: #f5f5f5">请您详细描述您的问题或您的反馈：</p>
+        </div>
+        <div class="textarea-container">
+            <textarea maxlength="200" class="textarea" id="textarea"></textarea>
+            <!-- TODO 加上一个计数器，以提醒用户输满了 -->
+        </div>
+        <div class="button-recommend" id="submit">立即提交</div>
+
+        <div class="title-container-l" style="text-align: left">
+            <p class="title-small" style="color: #f5f5f5">以下是您的浏览器和系统信息：</p>
         </div>
 
-        <div class="step-container">
-            <div class="title-container" style="text-align: left">
-                <p class="title-small" style="color: #f5f5f5">以下是您的浏览器和系统信息：</p>
-            </div>
-
-            <div id="browserjs">
-                <script>
-                    var info = new Browser();
-                    if (info.device != 'Mobile') {
-                        document.writeln('<table>\
+        <div id="browserjs">
+            <script>
+                var info = new Browser();
+                if (info.device != 'Mobile') {
+                    document.writeln('<table>\
                                                             <caption><p>User-Agent（浏览器标识信息）：</p></caption>\
                                                             <caption><p>'+ navigator.userAgent + '</p></caption>\
                                                             <caption><p>浏览器及系统信息：</p></caption>\
@@ -82,8 +83,8 @@
                                                                 </tr>\
                                                             </tbody>\
                                                         </table>');
-                    } else {
-                        document.writeln('<table>\
+                } else {
+                    document.writeln('<table>\
                                                             <caption><p>User-Agent（浏览器标识信息）：</p></caption>\
                                                             <caption><p>'+ navigator.userAgent + '</p></caption>\
                                                             <caption><p>浏览器及系统信息：</p></caption>\
@@ -102,7 +103,7 @@
                                                                 </tr>\
                                                             </tbody>\
                                                         </table>');
-                        document.writeln('<table>\
+                    document.writeln('<table>\
                                                             <thead>\
                                                                 <tr>\
                                                                     <th>操作系统</th>\
@@ -118,9 +119,8 @@
                                                                 </tr>\
                                                             </tbody>\
                                                         </table>');
-                    }
-                </script>
-            </div>
+                }
+            </script>
         </div>
     </div>
 

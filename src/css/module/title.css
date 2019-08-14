@@ -1,18 +1,20 @@
 /* title.css */
 
-/* 标题模块 */
+/* 标题模块，单位为rem */
+
+/* 使用时请在标签中加入style以加入颜色 */
 
 .title-container-c {
     text-align: center;
 }
 
+.title-container-l {
+    text-align: left;
+}
+
 .title-container-c-t-t {
     text-align: center;
     font-size: 2rem;
-}
-
-.title-container-l {
-    text-align: center;
 }
 
 .title-text {

@@ -1,5 +1,6 @@
 // feedback.js
 function submit() {
+    var browser = new Browser();
     $("#submit").unbind("click");
     $("#submit").html("正在提交，请稍候");
     $.ajax({
@@ -7,12 +8,12 @@ function submit() {
         method: "POST",
         data: {
             ua: navigator.userAgent,
-            browser: info.browser,
-            version: info.version,
-            engine: info.engine,
-            os: info.os,
-            osVersion: info.osVersion,
-            device: info.device,
+            browser: browser.browser,
+            version: browser.version,
+            engine: browser.engine,
+            os: browser.os,
+            osVersion: browser.osVersion,
+            device: browser.device,
             text: $("#textarea").val()
         },
         success: function (data) {
