@@ -6,14 +6,14 @@
 
 @font-face {
     font-family: FZQKBYSJT;
-    src: url(/src/font/fzqkb.ttf)
+    src: url(/src/font/fzqkb.ttf);
 }
 
 /* 汉仪游园体 */
 
 @font-face {
     font-family: HYYouYuanTiW;
-    src: url(/src/font/HYYouYuanTiW.ttf)
+    src: url(/src/font/HYYouYuanTiW.ttf);
 }
 
 /* 全局定义 */
