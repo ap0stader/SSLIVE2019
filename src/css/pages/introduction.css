@@ -49,15 +49,13 @@ body {
     z-index: 5;
     text-align: center;
     /* 这样写让::after不覆盖全屏 */
-    position: absolute;
+    position: relative;
     color: black;
     white-space: nowrap;
 }
 
 #timer::after {
-    border-radius: 0.75rem;
-    border-top-right-radius: 1.25rem;
-    border-top-left-radius: 1.25rem;
+    border-radius: 1.25rem;
     z-index: -5;
     overflow-x: hidden;
     position: absolute;
@@ -84,7 +82,6 @@ body {
 }
 
 .timer-small {
-    padding: 0.25rem;
     color: black;
     font-size: 1.5rem;
     font-weight: normal;
