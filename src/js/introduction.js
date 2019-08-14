@@ -1,12 +1,5 @@
 // introduction.js
 
-// 调整页面
-function resizeer() {
-    resize();
-    $('#timer-container').css('height', $(window).width() / 16 * 9 + 'px');
-    $(".history-image").css('height', $('.history-image').width() / 16 * 10 + 'px')
-}
-
 // 判断是否已经开播
 function checker() {
     $.ajax({
@@ -28,6 +21,13 @@ function checker() {
             window.alert("请检查网络链接并刷新页面");
         }
     });
+}
+
+// 调整页面
+function resizeer() {
+    resize();
+    $('#timer-container').css('height', $(window).width() / 16 * 9 + 'px');
+    $(".history-image").css('height', $('.history-image').width() / 16 * 10 + 'px')
 }
 
 function load() {

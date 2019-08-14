@@ -1,0 +1,48 @@
+/* live.css */
+
+/* 字体引用 */
+
+/* 汉仪游园体 */
+
+@font-face {
+    font-family: HYYouYuanTiW;
+    src: url(/src/font/HYYouYuanTiW.ttf);
+}
+
+/* 全局定义 */
+
+html {
+    /* jQuery */
+    font-size: 16px;
+    font-family: HYYouYuanTiW;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background: black;
+}
+
+#video-container {
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#video {
+    width: 100%;
+}
+
+/* 重写videojs，删除不需要的按钮 */
+
+.vjs-progress-control {
+    visibility: hidden;
+}
+
+.vjs-picture-in-picture-control {
+    display: none !important;
+}
