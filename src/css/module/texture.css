@@ -4,6 +4,8 @@
 
 /* 材质文件夹/history/src/img/texture/ */
 
+/* 使用材质时文字应直接书写，不用任何标签包裹，以兼容Safari */
+
 .texture {
     /* 让文字透明，以透出背景图片 */
     color: transparent;
