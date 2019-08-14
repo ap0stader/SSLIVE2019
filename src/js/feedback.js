@@ -4,7 +4,7 @@ function submit() {
     $("#submit").unbind("click");
     $("#submit").html("正在提交，请稍候");
     $.ajax({
-        url: "/console/feedback.php",
+        url: "https://feedback.ssersay.cn/console/feedback.php",
         method: "POST",
         data: {
             ua: navigator.userAgent,
