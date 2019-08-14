@@ -19,28 +19,37 @@
     <title>SSLIVE</title>
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 需要自行引入的CSS和JS -->
+    <link rel="stylesheet" href="/src/css/pages/index.css">
     <script src="/src/lib/Browser.js"></script>
-    <link rel="stylesheet" href="/src/css/index.css">
     <script src="/src/js/index.js"></script>
+    <!-- 百度统计代码 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?4a565b34a1911929aaa6ea326e59a791";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </head>
 
 <body>
-    <div class="container">
-        <img src="src/img/logo/sslive-rectangle-white.png" id="index-logo">
-        <!-- 判断Javascript是否启用 -->
-        <noscript>
-            <p class="errmsg">您的浏览器未启用Javascript，请启用</p>
-        </noscript>
-        <!-- 提醒用户珍惜生命远离IE -->
-        <!--[if lte IE 9]>
+    <img src="src/img/logo/sslive-rectangle-white.png" id="logo">
+    <!-- 判断Javascript是否启用 -->
+    <noscript>
+        <p class="errmsg">您的浏览器未启用Javascript，请启用</p>
+    </noscript>
+    <!-- 提醒用户珍惜生命远离IE -->
+    <!--[if lte IE 9]>
             <script>
                 window.location.href="IE.html";
             </script>
         <![endif]-->
-        <!-- 用于报错 -->
-        <p class="errmsg" id="errmsg"></p>
-        <p class="loading" id="loading">请稍候</p>
-    </div>
+    <!-- 用于报错 -->
+    <p class="errmsg"></p>
+    <p id="loading">请稍候</p>
 </body>
 
 </html>

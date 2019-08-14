@@ -33,7 +33,7 @@ function load() {
         },
         error: function () {
             $('#loading').text(" ")
-            $("#errmsg").text("错误！请检查网络链接并刷新页面");
+            $("#errmsg").text("请检查网络链接并刷新页面");
         }
     });
 }
