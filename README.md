@@ -3,7 +3,7 @@
   
 Website Address: *(ssersay.cn)*  
 
-All the source code in this repository (**EXCEPT FOR** the code in src/lib/ folder) is written by The Students Union of GDSYZX.
+All the source code in this repository (**EXCEPT FOR** the code in src/lib/ folder) is written by The Students Union Information Technology Section of Guangdong Experimental High School.
 
 ---
 网站地址：  *(ssersay.cn)*
