@@ -39,6 +39,7 @@ body {
 
 #header {
     padding: 20px;
+    z-index: 100;
     text-align: center;
     vertical-align: middle;
     width: 100%;
@@ -79,14 +80,7 @@ body {
 
 #timer-countdown {
     margin-top: 16px;
-    /* 这里是让字透明，以透出背景图片 */
-    color: transparent;
-    background: url(/history/src/img/texture/20190824.jpg) no-repeat;
-    background-position: 50%;
-    background-origin: border-box;
-    /* 两行要同时书写，让背景图片仅渲染在文字处 */
-    background-clip: text;
-    -webkit-background-clip: text;
+    color: #b2c67a;
     font-size: 3rem;
 }
 
