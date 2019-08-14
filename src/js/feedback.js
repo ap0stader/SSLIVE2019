@@ -1,8 +1,8 @@
 // feedback.js
+
+// 提交反馈内容
 function submit() {
-    var browser = new Browser();
-    $("#submit").unbind("click");
-    $("#submit").html("正在提交，请稍候");
+    $("#submit").unbind("click").html("正在提交，请稍候").css("background-color", "#06AD56")
     $.ajax({
         url: "https://feedback.ssersay.cn/console/feedback.php",
         method: "POST",
@@ -27,33 +27,28 @@ function submit() {
             setTimeout(function () {
                 window.location.href = 'index.html'
             }, 1100);
+        },
+        error: function () {
+            window.alert("请检查网络链接并刷新页面");
         }
     });
 }
 
+// 判断是否可以提交
 function textarea_input() {
     if ($("#textarea").val() != '') {
-        $("#submit").unbind("click");
-        $("#submit").click(submit);
+        $("#submit").unbind("click").click(submit).css("background-color", "#07C160")
     } else {
-        $("#submit").unbind("click");
+        $("#submit").unbind("click").css("background-color", "#045C2E");
     }
-}
-
-// 调整页面的字体大小
-var rem = 16;
-function resize() {
-    if ($(window).width() < 500) {
-        rem = $(window).width() / 31.25;
-    } else {
-        rem = 16
-    }
-    $('html').css('font-size', rem + 'px')
 }
 
 function load() {
-    $("#textarea").bind("input propertychange", textarea_input);
-    resize();
+    if (check() == 1) {
+        $("#submit").css("background-color", "#045C2E");
+        $("#textarea").bind("input propertychange", textarea_input);
+        resize();
+    }
 }
 
 $('document').ready(load)
