@@ -19,9 +19,8 @@ $websocket->set(
 
 //监听WebSocket连接打开事件
 $websocket->on('open', function ($websocket, $request) {
-    // //var_dump($request->fd, $request->get, $request->server);
-    // //相当于记录一个日志吧，有连接时间和连接ip
-    // echo $request->fd . '-----time:' . date("Y-m-d H:i:s", $request->server['request_time']) . '--IP--' . $request->server['remote_addr'] . '-----';
+    file_put_contents("./log/php.log", date("Y-m-d H:i:s", $request->server['request_time']) + "    " + $request->server['remote_addr'] + "    " +  $request->fd);
+    $websocket->push("OpenSuccessful");
 });
 
 //监听WebSocket消息事件
@@ -42,7 +41,7 @@ $websocket->on('message', function ($websocket, $frame) {
 
 //监听WebSocket连接关闭事件
 $websocket->on('close', function ($websocket, $fd) {
-    // echo "client-{$fd} is closed\n";
+    
 });
 
 $websocket->start();
