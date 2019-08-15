@@ -1,29 +1,15 @@
-// Console版
-// 建立WebSocket
-var websocket = new WebSocket('wss://backend.ssersay.cn:9505');
+// danmu.js
+// 弹幕有关函数
+function add_danmu(text, color, size, position) {
+    
+}
 
-websocket.onopen = function (evt) {
-    console.log("Open");
-};
-
-websocket.onmessage = function (evt) {
-    console.log("Retrieved data from server: " + evt.data);
-    var json = $.parseJSON(evt.data);
-    console.log("todo:" + json.todo);
-    console.log("origin:" + json.origin);
-    console.log("data:" + json.data);
-};
-
-websocket.onclose = function (evt) {
-    console.log("Disconnected");
-};
-
-websocket.onerror = function (evt, e) {
-    console.log('Error occured: ' + evt.data);
-};
-
-function send() {
+function send_danmu(text, color, size, position) {
     // 合成data字符串
     var data_obj = '{"text":"' + text + '","color":"' + color + '","size":"' + size + '","position":"' + position + '"}';
-    websocket.send('{"command":"send","data":' + data_obj + '}');
+    websocket.send('{"command":"send_danmu","data":' + data_obj + '}');
+}
+
+function send_danmu_response(data) {
+    
 }
