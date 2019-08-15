@@ -19,8 +19,8 @@ $websocket->set(
 
 //监听WebSocket连接打开事件
 $websocket->on('open', function ($websocket, $request) {
-    file_put_contents("./log/php.log", date("Y-m-d H:i:s", $request->server['request_time']) + "    " + $request->server['remote_addr'] + "    " +  $request->fd);
-    $websocket->push($request->$fd, "OpenSuccessful");
+    file_put_contents("./log/php.log", date("Y-m-d H:i:s", $request->server['request_time']) . "    " . $request->server['remote_addr'] . "    " .  $request->fd);
+    $websocket->push($request->fd, "OpenSuccessful");
 });
 
 //监听WebSocket消息事件
