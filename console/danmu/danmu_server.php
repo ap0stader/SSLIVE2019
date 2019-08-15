@@ -8,7 +8,7 @@ $websocket = new swoole_websocket_server("0.0.0.0", 9505, SWOOLE_PROCESS, SWOOLE
 $websocket->set(
     array(
         // https://wiki.swoole.com/wiki/page/278.html
-        'daemonize' => 1,
+        // 'daemonize' => 1,
         // https://wiki.swoole.com/wiki/page/318.html
         'ssl_cert_file' => './cert/cert.pem',
         'ssl_key_file' => './cert/cert.key',
@@ -19,8 +19,8 @@ $websocket->set(
 
 //监听WebSocket连接打开事件
 $websocket->on('open', function ($websocket, $request) {
-    file_put_contents("./log/php.log", date("Y-m-d H:i:s", $request->server['request_time']) . "    " . $request->server['remote_addr'] . "    " .  $request->fd);
-    $websocket->push($request->fd, "OpenSuccessful");
+    $file = fopen("./log/php.log", "a");
+    fwrite($file, "Open    " . date("Y-m-d H:i:s", $request->server['request_time']) . "    " . $request->server['remote_addr'] . "    " .  $request->fd . "\n");
 });
 
 //监听WebSocket消息事件
@@ -41,7 +41,8 @@ $websocket->on('message', function ($websocket, $frame) {
 
 //监听WebSocket连接关闭事件
 $websocket->on('close', function ($websocket, $fd) {
-    
+    $file = fopen("./log/php.log", "a");
+    fwrite($file, "Shut    " . date("Y-m-d H:i:s", $websocket->connection_info($fd)["connect_time"]) . "    " . $websocket->connection_info($fd)["remote_ip"] . "    " . $fd . "\n");
 });
 
 $websocket->start();
