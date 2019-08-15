@@ -105,3 +105,9 @@ body {
 .vjs-picture-in-picture-control {
     display: none !important;
 }
+
+/* 重写danmu，使其margin正确 */
+
+#danmu {
+    top: 5rem !important;
+}
