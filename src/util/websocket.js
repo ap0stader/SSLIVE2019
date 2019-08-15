@@ -1,12 +1,9 @@
 // websocket.js
 // 建立WebSocket
+var websocket;
+
 function create_socket() {
-    var websocket = new WebSocket('wss://backend.ssersay.cn:9505');
-    websocket.onopen = function (evt) {
-        if (socket_open) {
-            socket_open(evt);
-        }
-    };
+    websocket = new WebSocket('wss://backend.ssersay.cn:9505');
     websocket.onmessage = function (evt) {
         var json = $.parseJSON(evt.data);
         // 请在此处注册利用websocket的各个事件
@@ -23,11 +20,6 @@ function create_socket() {
                     console.log("data:" + json.data);
                     break;
             }
-        }
-    };
-    websocket.onclose = function (evt) {
-        if (socket_close) {
-            socket_close(evt);
         }
     };
     websocket.onerror = function (evt) {

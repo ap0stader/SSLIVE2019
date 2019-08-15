@@ -34,7 +34,7 @@ $websocket->on('message', function ($websocket, $frame) {
     // https://wiki.swoole.com/wiki/page/987.html
     fwrite($file, "Send    " . date("Y-m-d H:i:s") . "    " . $websocket->getClientInfo($frame->fd)["remote_ip"] . "    " . $frame->fd . "    " . $frame->data . "    " . "\n");
     $data = json_decode($frame->data);
-    if ($data->command == 'send') {
+    if ($data->command == 'send_danmu') {
         // TODO 加入审查代码
         $send = json_encode($data->data);
         // 遍历所有连接，循环广播
