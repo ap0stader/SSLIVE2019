@@ -2,18 +2,17 @@
 // 建立WebSocket
 var websocket = new WebSocket('wss://backend.ssersay.cn:9505');
 
-
 websocket.onopen = function (evt) {
     console.log("Open");
 };
 
 websocket.onmessage = function (evt) {
     console.log("Retrieved data from server: " + evt.data);
-    console.log("todo:" + evt.data.todo);
-    console.log("origin:" + evt.data.origin);
-    console.log("data:" + evt.data.data);
+    var json = $.parseJSON(evt.data);
+    console.log("todo:" + json.todo);
+    console.log("origin:" + json.origin);
+    console.log("data:" + json.data);
 };
-
 
 websocket.onclose = function (evt) {
     console.log("Disconnected");

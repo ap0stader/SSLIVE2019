@@ -40,7 +40,7 @@ $websocket->on('message', function ($websocket, $frame) {
         // 遍历所有连接，循环广播
         // https://wiki.swoole.com/wiki/page/427.html
         foreach ($websocket->connections as $fd) {
-            $websocket->push($fd, '{"todo":"add","origin":"null","data":"' . $send . '"}');
+            $websocket->push($fd, '{"todo":"add","origin":"null","data":' . $send . '}');
         }
         $websocket->push($fd, '{"todo":"response-send","origin":"send","data":"success"}');
     }
