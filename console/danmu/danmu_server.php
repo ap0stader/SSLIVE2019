@@ -9,7 +9,7 @@ use Green\Request\V20180509 as Green;
 function check_danmu($danmu)
 {
     // 阿里云SDK代码
-    $iClientProfile = DefaultProfile::getProfile("cn-shanghai", "您自己的AccessKeyId", "您自己的AccessKeySecret");
+    $iClientProfile = DefaultProfile::getProfile("cn-shanghai", "LTAIUaPoLD4s1xJE", "XQDkuga9FUoYCcG5nV7f71e54AJYoR");
     DefaultProfile::addEndpoint("cn-shanghai", "cn-shanghai", "Green", "green.cn-shanghai.aliyuncs.com");
     $client = new DefaultAcsClient($iClientProfile);
     $request = new Green\TextScanRequest();
@@ -26,10 +26,8 @@ function check_danmu($danmu)
     try {
         $response = $client->getAcsResponse($request);
         if (200 == $response->code) {
-            var_dump($response->data);
             $taskResult = $response->data[0];
             if (200 == $taskResult->code) {
-                var_dump($taskResult->results);
                 $sceneResult = $taskResult->results[0];
                 $suggestion = $sceneResult->suggestion;
                 if ($suggestion == 'pass') {
@@ -93,11 +91,11 @@ $websocket->on('message', function ($websocket, $frame) {
                 $websocket->push($fd, '{"todo":"add_danmu","origin":"null","data":' . $send . '}');
             }
             // 返回结果
-            $websocket->push($fd, '{"todo":"response","origin":"send_danmu","data":"success"}');
+            $websocket->push($frame->fd, '{"todo":"response","origin":"send_danmu","data":"success"}');
         } elseif ($checkresult == 'block') {
-            $websocket->push($fd, '{"todo":"response","origin":"send_danmu","data":"block"}');
+            $websocket->push($frame->fd, '{"todo":"response","origin":"send_danmu","data":"block"}');
         } elseif ($checkresult == 'failed') {
-            $websocket->push($fd, '{"todo":"response","origin":"send_danmu","data":"failed"}');
+            $websocket->push($frame->fd, '{"todo":"response","origin":"send_danmu","data":"failed"}');
         }
     }
 });

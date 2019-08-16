@@ -35,7 +35,7 @@ function load() {
         add_danmu("Hello", "white", 1, 0)
     })
 
-    // create_socket();
+    create_socket();
 
     $("#danmu").danmu({
         //弹幕区宽度
