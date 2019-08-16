@@ -1,5 +1,54 @@
 <?php
 date_default_timezone_set('Asia/Shanghai');
+
+// 引用阿里云SDK
+include_once '../aliyuncs/aliyun-php-sdk-core/Config.php';
+
+use Green\Request\V20180509 as Green;
+
+function check_danmu($danmu)
+{
+    // 阿里云SDK代码
+    $iClientProfile = DefaultProfile::getProfile("cn-shanghai", "您自己的AccessKeyId", "您自己的AccessKeySecret");
+    DefaultProfile::addEndpoint("cn-shanghai", "cn-shanghai", "Green", "green.cn-shanghai.aliyuncs.com");
+    $client = new DefaultAcsClient($iClientProfile);
+    $request = new Green\TextScanRequest();
+    $request->setMethod("POST");
+    $request->setAcceptFormat("JSON");
+    $task = array(
+        'dataId' =>  uniqid(),
+        'content' => $danmu
+    );
+    $request->setContent(json_encode(array(
+        "tasks" => array($task),
+        "scenes" => array("antispam")
+    )));
+    try {
+        $response = $client->getAcsResponse($request);
+        if (200 == $response->code) {
+            var_dump($response->data);
+            $taskResult = $response->data[0];
+            if (200 == $taskResult->code) {
+                var_dump($taskResult->results);
+                $sceneResult = $taskResult->results[0];
+                $suggestion = $sceneResult->suggestion;
+                if ($suggestion == 'pass') {
+                    return 'ok';
+                } else {
+                    return 'block';
+                }
+            } else {
+                return 'failed';
+            }
+        } else {
+            return 'failed';
+        }
+    } catch (Exception $e) {
+        return 'failed';
+    }
+}
+
+
 // 创建websocket服务器对象，监听0.0.0.0:9505端口
 // https://wiki.swoole.com/wiki/page/14.html
 $websocket = new swoole_websocket_server("0.0.0.0", 9505, SWOOLE_PROCESS, SWOOLE_TCP | SWOOLE_SSL);
@@ -35,14 +84,21 @@ $websocket->on('message', function ($websocket, $frame) {
     fwrite($file, "Send    " . date("Y-m-d H:i:s") . "    " . $websocket->getClientInfo($frame->fd)["remote_ip"] . "    " . $frame->fd . "    " . $frame->data . "    " . "\n");
     $data = json_decode($frame->data);
     if ($data->command == 'send_danmu') {
-        // TODO 加入审查代码
-        $send = json_encode($data->data);
-        // 遍历所有连接，循环广播
-        // https://wiki.swoole.com/wiki/page/427.html
-        foreach ($websocket->connections as $fd) {
-            $websocket->push($fd, '{"todo":"add_danmu","origin":"null","data":' . $send . '}');
+        $checkresult = check_danmu($data->data->text);
+        if ($checkresult == 'ok') {
+            $send = json_encode($data->data);
+            // 遍历所有连接，循环广播
+            // https://wiki.swoole.com/wiki/page/427.html
+            foreach ($websocket->connections as $fd) {
+                $websocket->push($fd, '{"todo":"add_danmu","origin":"null","data":' . $send . '}');
+            }
+            // 返回结果
+            $websocket->push($fd, '{"todo":"response","origin":"send_danmu","data":"success"}');
+        } elseif ($checkresult == 'block') {
+            $websocket->push($fd, '{"todo":"response","origin":"send_danmu","data":"block"}');
+        } elseif ($checkresult == 'failed') {
+            $websocket->push($fd, '{"todo":"response","origin":"send_danmu","data":"failed"}');
         }
-        $websocket->push($fd, '{"todo":"response","origin":"send_danmu","data":"success"}');
     }
 });
 
