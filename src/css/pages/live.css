@@ -41,6 +41,7 @@ body {
 }
 
 #video {
+    z-index: 20;
     width: 100%;
 }
 
@@ -109,4 +110,14 @@ body {
 
 #danmu {
     top: 5rem !important;
+}
+
+.danmaku{
+    z-index: 300;
+}
+
+/* 重写growl-text，使其字体正确 */
+
+.growl-text {
+    font-family: initial;
 }

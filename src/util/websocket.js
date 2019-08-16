@@ -23,6 +23,14 @@ function create_socket() {
         }
     };
     websocket.onerror = function (evt) {
-        window.alert("WebSocket服务发生了错误，请您在页面底部找到问题反馈进行反馈，错误如下：" + evt.data + "  ");
+        window.alert("WebSocket服务发生了错误，请您在页面底部找到问题反馈进行反馈");
+    };
+    websocket.onopen = function (evt) {
+        console.log("Open");
+
+    }
+    websocket.onclose = function (evt) {
+        console.log(evt);
+        create_socket();
     };
 }

@@ -1,6 +1,5 @@
 // danmu.js
 // 弹幕有关函数，仅针对live.html页面
-create_socket();
 
 function add_danmu(text, color, size, position) {
     var time = $('#danmu').data("nowTime") + 1;
@@ -17,9 +16,8 @@ function send_danmu(text, color, size, position) {
 }
 
 function send_danmu_response(data) {
-    growl.show({ text: "弹幕发送成功！", type: "custom", imgsrc: "/src/img/growl/ok.gif", autoclose: 1000 });
+    if (data == "success") {
+        growl.show({ text: "弹幕发送成功！", type: "custom", imgsrc: "/src/img/growl/ok.gif", autoclose: 1000 });
+    }
+    // TODO 增加处理审查的代码
 }
-
-websocket.onclose = function (evt) {
-    console.log("close");
-};
