@@ -17,12 +17,8 @@ function send_danmu(text, color, size, position) {
 }
 
 function send_danmu_response(data) {
-    console.log(data);
+    growl.show({ text: "弹幕发送成功！", type: "custom", imgsrc: "/src/img/growl/ok.gif", autoclose: 1000 });
 }
-
-websocket.onopen = function (evt) {
-    console.log("open");
-};
 
 websocket.onclose = function (evt) {
     console.log("close");
