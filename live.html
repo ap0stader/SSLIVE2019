@@ -49,6 +49,7 @@
 </head>
 
 <body>
+    <!-- TODO加入推荐使用Chrome浏览器的header -->
     <div id="header">
         <img id="header-icon" src="src/img/logo/sslive-rectangle-white.png" />
     </div>
@@ -58,8 +59,8 @@
         <!-- x5-video-player-type="h5-page"让安卓微信视频使用H5同层播放器以实现弹幕 -->
         <!-- https://x5.tencent.com/tbs/guide/video.html -->
         <!-- 两个playsinline让iOS微信视频可仅在全屏状态下播放以实现弹幕 -->
-        <video x5-video-player-type="h5-page" webkit-playsinline="true" playsinline="true" id="video"
-            class="video-js vjs-big-play-centered vjs-fluid"></video>
+        <video x5-video-player-type="h5-page" webkit-playsinline="true" playsinline="true" x-webkit-airplay="true"
+            id="video" class="video-js vjs-big-play-centered vjs-fluid"></video>
     </div>
 
     <div id="video-controller-container">
@@ -69,6 +70,11 @@
         <div id="danmuswitch" style="background-image: url('/src/img/danmu/on.svg')" class="video-controller"></div>
         <div id="fullscreen" style="background-image: url('/src/img/control/fullscreen.svg');" class="video-controller">
         </div>
+    </div>
+
+    <div id="danmu-sender-container">
+        <!-- 以下两个内容不能换行，否则中间会有一个空格的间距 -->
+        <input id="danmu-sender-input" placeholder="请输入弹幕内容"/><div id="danmu-sender-button">发送弹幕</div>
     </div>
 
     <div id="content-container">
