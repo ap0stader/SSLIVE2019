@@ -41,8 +41,39 @@ body {
 }
 
 #video {
-    z-index: 20;
     width: 100%;
+}
+
+/* 视频控制*/
+
+#video-controller-container {
+    margin: 0;
+    padding: 0.5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.5rem;
+    background: white;
+}
+
+.video-controller {
+    margin: 1rem;
+    border: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.video-controller:active {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#play, #fullscreen {
+    background-size: 75%;
 }
 
 /* 直播内容 */
@@ -106,14 +137,16 @@ body {
     display: none !important;
 }
 
+.vjs-big-play-button {
+    z-index: 20;
+}
+
 /* 重写danmu，使其margin正确 */
 
 #danmu {
     top: 5rem !important;
-}
-
-.danmaku{
-    z-index: 300;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 /* 重写growl-text，使其字体正确 */
