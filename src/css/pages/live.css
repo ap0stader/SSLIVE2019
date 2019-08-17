@@ -117,25 +117,6 @@ body {
     line-height: 3rem;
 }
 
-/* #danmusettings-select {
-    margin: 0;
-    padding: 0.75rem;
-    border-radius: 5px;
-    z-index: 100;
-    display: block;
-    overflow: hidden;
-    position: absolute;
-    transform: translateX(50%) translateY(100%);
-    color: white;
-    background-color: #1b1b1b;
-    opacity: 0.9;
-    font-size: 1.25rem;
-}
-
-#color, #position {
-    color: white;
-} */
-
 /* 直播内容 */
 
 #content-container {

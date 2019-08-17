@@ -49,7 +49,7 @@
 </head>
 
 <body>
-    <!-- TODO加入推荐使用Chrome浏览器的header -->
+    <!-- TODO 加入推荐使用Chrome浏览器的header -->
     <div id="header">
         <img id="header-icon" src="src/img/logo/sslive-rectangle-white.png" />
     </div>
@@ -59,37 +59,15 @@
         <!-- x5-video-player-type="h5-page"让安卓微信视频使用H5同层播放器以实现弹幕 -->
         <!-- https://x5.tencent.com/tbs/guide/video.html -->
         <!-- 两个playsinline让iOS微信视频可仅在全屏状态下播放以实现弹幕 -->
+        <!-- 基本上达到了bilibili网页版的水平 -->
         <video x5-video-player-type="h5-page" webkit-playsinline="true" playsinline="true" x-webkit-airplay="true"
             id="video" class="video-js vjs-big-play-centered vjs-fluid"></video>
     </div>
 
     <div id="video-controller-container">
         <div id="play" style="background-image: url('/src/img/control/pause.svg');" class="video-controller"></div>
-        <!-- <div id="danmusettings-select">
-            <span>颜色：</span>
-            <select name="color" id="color">
-                <option value="white">白色</option>
-                <option value="red">红色</option>
-                <option value="green">绿色</option>
-                <option value="blue">蓝色</option>
-                <option value="yellow">黄色</option>
-                <option value="#660099">紫色</option>
-                <option value="#FF6633">橙色</option>
-                <option value="#FF6699">粉红色</option>
-                <option value="#33FFCC">蓝绿色</option>
-                <option value="#99FF00">草绿色</option>
-                <option value="#000099">蓝黑色</option>
-                <option value="#000000">黑色</option>
-            </select>
-            <br>
-            <span>类型：</span>
-            <select name="position" id="position">
-                <option value="0">滚动</option>
-                <option value="1">顶端</option>
-                <option value="2">底端</option>
-            </select>
-        </div> -->
-        <div id="danmusettings" style="background-image: url('/src/img/danmu/settings.svg');" class="video-controller">
+        <!-- TODO 开发弹幕设置 -->
+        <div id="danmusettings" style="background-image: url('/src/img/danmu/settings.svg');visibility: hidden;" class="video-controller">
         </div>
         <div id="danmuswitch" style="background-image: url('/src/img/danmu/on.svg')" class="video-controller"></div>
         <div id="fullscreen" style="background-image: url('/src/img/control/fullscreen.svg');" class="video-controller">
@@ -97,7 +75,6 @@
     </div>
 
     <div id="danmu-sender-container">
-        <!-- 以下两个内容不能换行，否则中间会有一个空格的间距 -->
         <input id="danmu-sender-input" placeholder="请输入弹幕内容" />
         <div id="danmu-sender-button">发送弹幕</div>
     </div>

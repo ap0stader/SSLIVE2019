@@ -9,7 +9,8 @@ use Green\Request\V20180509 as Green;
 function check_danmu($danmu)
 {
     // 阿里云SDK代码
-    $iClientProfile = DefaultProfile::getProfile("cn-shanghai", "LTAIUaPoLD4s1xJE", "XQDkuga9FUoYCcG5nV7f71e54AJYoR");
+    // 保管好AK
+    $iClientProfile = DefaultProfile::getProfile("cn-shanghai", "LTAIAc14JeM3afx4", "9d8aKQ1gRtUoOyL6CwIHMHyV9UBsjK");
     DefaultProfile::addEndpoint("cn-shanghai", "cn-shanghai", "Green", "green.cn-shanghai.aliyuncs.com");
     $client = new DefaultAcsClient($iClientProfile);
     $request = new Green\TextScanRequest();
@@ -25,6 +26,7 @@ function check_danmu($danmu)
     )));
     try {
         $response = $client->getAcsResponse($request);
+        var_dump($response);
         if (200 == $response->code) {
             $taskResult = $response->data[0];
             if (200 == $taskResult->code) {
