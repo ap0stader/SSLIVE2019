@@ -9,8 +9,8 @@ use Green\Request\V20180509 as Green;
 function check_danmu($danmu)
 {
     // 阿里云SDK代码
-    // 保管好AK
-    $iClientProfile = DefaultProfile::getProfile("cn-shanghai", "LTAIAc14JeM3afx4", "9d8aKQ1gRtUoOyL6CwIHMHyV9UBsjK");
+    // TODO 填写AK
+    $iClientProfile = DefaultProfile::getProfile("cn-shanghai", "AccessKeyId", "AccessKeySecret");
     DefaultProfile::addEndpoint("cn-shanghai", "cn-shanghai", "Green", "green.cn-shanghai.aliyuncs.com");
     $client = new DefaultAcsClient($iClientProfile);
     $request = new Green\TextScanRequest();
@@ -58,7 +58,7 @@ $websocket = new swoole_websocket_server("0.0.0.0", 9505, SWOOLE_PROCESS, SWOOLE
 $websocket->set(
     array(
         // https://wiki.swoole.com/wiki/page/278.html
-        // 'daemonize' => 1,
+        'daemonize' => 1,
         // https://wiki.swoole.com/wiki/page/318.html
         'ssl_cert_file' => './cert/cert.pem',
         'ssl_key_file' => './cert/cert.key',
