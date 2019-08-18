@@ -2,6 +2,7 @@
 
 // 提交反馈内容
 function submit() {
+    var browser = new Browser();
     $("#submit").unbind("click").html("正在提交，请稍候").css("background-color", "#06AD56")
     $.ajax({
         url: "https://feedback.ssersay.cn/console/feedback.php",
