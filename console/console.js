@@ -50,10 +50,10 @@ function get() {
             var live = data.Live;//是否开播
             if (live) {
                 $("#LiveStatusReminder").css("visibility", "visible");
-                $('#LiveControlButton').text("停 止 直 播").click(end);
+                $('#LiveControlButton').text("停 止 直 播").unbind("click").click(end);
             } else {
                 $("#LiveStatusReminder").css("visibility", "hidden");
-                $("#LiveControlButton").text("开 始 直 播").click(start);
+                $("#LiveControlButton").text("开 始 直 播").unbind("click").click(start);
             }
         }
     });
