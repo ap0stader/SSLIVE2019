@@ -1,4 +1,6 @@
 // websocket.js
+// WebSocket有关函数，仅针对live.html页面
+
 // 建立WebSocket
 var websocket;
 
