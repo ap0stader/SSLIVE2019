@@ -103,7 +103,7 @@ body {
 
 #danmu-sender-button {
     margin: 0;
-    border: 0.1rem #b2c67a solid;
+    border: 0.1rem #00a1d6 solid;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     display: inline-block;
@@ -111,7 +111,7 @@ body {
     width: 25%;
     max-width: 10rem;
     height: 2.8rem;
-    background-color: #b2c67a;
+    background-color: #00a1d6;
     font-size: 1.5rem;
     font-family: FZQKBYSJT;
     line-height: 3rem;
@@ -127,14 +127,14 @@ body {
 }
 
 #content-name {
-    color: #b2c67a;
+    color: #00a1d6;
     font-size: 2.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 #content-time {
-    color: #b2c67a;
+    color: #00a1d6;
     font-size: 1.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;

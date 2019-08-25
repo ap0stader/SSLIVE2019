@@ -45,9 +45,9 @@ function load() {
     });
     $("#danmu-sender-input").bind("input propertychange", function (param) {
         if ($("#danmu-sender-input").val() != '') {
-            $("#danmu-sender-button").unbind("click").click(danmu_submit).css("background-color", "#b2c67a")
+            $("#danmu-sender-button").unbind("click").click(danmu_submit).css("background-color", "#00a1d6")
         } else {
-            $("#danmu-sender-button").unbind("click").css("background-color", "#57613c");
+            $("#danmu-sender-button").unbind("click").css("background-color", "#005470");
         }
     });
     $("#danmu-sender-button").unbind("click").css("background-color", "#57613c");

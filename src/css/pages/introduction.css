@@ -98,14 +98,14 @@ body {
 }
 
 #next-name {
-    color: #b2c67a;
+    color: #00a1d6;
     font-size: 2.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 #next-time {
-    color: #b2c67a;
+    color: #00a1d6;
     font-size: 1.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;

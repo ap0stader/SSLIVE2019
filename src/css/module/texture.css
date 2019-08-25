@@ -17,10 +17,22 @@
     -webkit-background-clip: text;
 }
 
-/* 2019高中部军训会操直播 */
+/* 2019高中部体育节 */
+
+.texture-201910 {
+    background-image: url(/history/src/img/texture/201910.jpg);
+}
+
+/* 2019高中部军训会操 */
 
 .texture-20190824 {
     background-image: url(/history/src/img/texture/20190824.jpg);
+}
+
+/* 2019高中部军训拉歌比赛 */
+
+.texture-20190822 {
+    background-image: url(/history/src/img/texture/20190822.jpg);
 }
 
 /* 2019青春诗会 */
