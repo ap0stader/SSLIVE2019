@@ -50,7 +50,7 @@ function load() {
             $("#danmu-sender-button").unbind("click").css("background-color", "#005470");
         }
     });
-    $("#danmu-sender-button").unbind("click").css("background-color", "#57613c");
+    $("#danmu-sender-button").unbind("click").css("background-color", "#005470");
     growl.show({ text: "弹幕正在连接", type: "custom", imgsrc: "/src/img/growl/loading.gif" });
     // 在联通之后再展示弹幕发送组件
     $('#danmu-sender-container').css('display', 'none');
