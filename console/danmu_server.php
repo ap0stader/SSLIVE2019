@@ -26,7 +26,6 @@ function check_danmu($danmu)
     )));
     try {
         $response = $client->getAcsResponse($request);
-        var_dump($response);
         if (200 == $response->code) {
             $taskResult = $response->data[0];
             if (200 == $taskResult->code) {
