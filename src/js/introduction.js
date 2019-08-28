@@ -7,13 +7,8 @@ function checker() {
         method: "GET",
         success: function (data) {
             var live = data.Live;//是否开播
-            var nowtime = new Date().getTime();//当前时间
-            var livetime = new Date(data.Time.year, data.Time.month - 1, data.Time.date, data.Time.hour, data.Time.minute).getTime();//开播时间
-            // 请注意，这里的月份一定要减1，即1月应该是“0月”
-            var leftTime = livetime - nowtime;//计算剩余时间
-            // 分发到直播页面条件：
-            // 剩余时间小于预设值且直播已经开始
-            if (leftTime < data.Delta && live) {
+            // 分发到直播页面条件：JSON文件中直播已经开始
+            if (live) {
                 window.location.href = 'live.html'
             }
         },
