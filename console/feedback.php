@@ -14,27 +14,29 @@ $device = $_POST["device"];
 $text = $_POST["text"];
 $ip = $_SERVER['REMOTE_ADDR'];
 
+// 使用Medoo框架
 require  './lib/Medoo.php';
 
 use Medoo\Medoo;
 
+// 新建Medoo对象
 $database = new Medoo([
-    // required
     'database_type' => 'mysql',
     'database_name' => 'sslive',
     'server' => 'feedback.ssersay.cn',
     'username' => 'root',
-    'password' => 'lovesuit',
-
-    // [optional]
+    // TOOO 填写数据库密码
+    'password' => 'PASSWORD',
     'charset' => 'utf8',
     'port' => 3309,
 ]);
 
+// 查询该IP提交的反馈总数
 $count = $database->count("feedback", [
     "ip" => $ip,
 ]);
 
+// 如果该IP提交的反馈总数在20以内则调用Medoo写入数据库
 if ($count < 20) {
     $result = $database->insert("feedback", [
         "ua" => $ua,
