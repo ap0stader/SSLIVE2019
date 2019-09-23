@@ -40,7 +40,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-image: url(/src/img/background/introduction.jpg);
+    background-image: url(/src/img/background/introduction.png);
     background-position: center bottom;
     background-size: cover;
 }
