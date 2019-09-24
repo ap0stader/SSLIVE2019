@@ -17,8 +17,6 @@ function checker() {
                         // 分发到直播页面条件：JSON文件中直播已经开始
                         if (live) {
                             window.location.href = 'live.html'
-                        } else {
-                            window.location.href = 'introduction.html';
                         }
                     },
                     error: function () {
@@ -37,8 +35,6 @@ function checker() {
                         // 请注意，这里的月份一定要减1，即一月应该是“0月”
                         if (leftTime < 10000) {
                             window.location.href = 'https://live.bilibili.com/10038913'
-                        } else {
-                            window.location.href = 'introduction.html';
                         }
                     },
                     error: function () {
