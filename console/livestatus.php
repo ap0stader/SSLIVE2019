@@ -10,7 +10,7 @@ $data->Live = ($cmd == "start");
 // 将PHP对象转化为JSON
 $json_strings = json_encode($data);
 // 写入livestatus.json文件
-$code = file_put_contents("../config/livestatus.json", $json_strings);
+$code = file_put_contents("./livestatus.json", $json_strings);
 if ($code > 0) {
     echo "success";
 }

@@ -44,7 +44,7 @@ function end() {
 // 获得当前直播情况
 function get() {
     $.ajax({
-        url: "/config/livestatus.json",
+        url: "/console/livestatus.json",
         method: "GET",
         success: function (data) {
             var live = data.Live;//是否开播
