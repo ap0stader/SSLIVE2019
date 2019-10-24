@@ -2,18 +2,11 @@
 
 /* 字体引用 */
 
-/* 方正清刻本悦宋简体 */
+/* 思源黑体Light */
 
 @font-face {
-    font-family: FZQKBYSJT;
-    src: url(/src/font/fzqkb.ttf);
-}
-
-/* 汉仪游园体 */
-
-@font-face {
-    font-family: HYYouYuanTiW;
-    src: url(/src/font/HYYouYuanTiW.ttf);
+    font-family: SiYuanLight;
+    src: url(/src/font/SiYuanLight.otf);
 }
 
 /* 全局定义 */
@@ -21,7 +14,7 @@
 html {
     /* jQuery */
     font-size: 16px;
-    font-family: HYYouYuanTiW;
+    font-family: SiYuanLight;
 }
 
 body {
@@ -96,7 +89,6 @@ body {
     height: 2.8rem;
     background-color: #f1eded;
     font-size: 1.25rem;
-    font-family: FZQKBYSJT;
     line-height: 2.5rem;
     outline: none;
 }
@@ -113,7 +105,6 @@ body {
     height: 2.8rem;
     background-color: #00a1d6;
     font-size: 1.5rem;
-    font-family: FZQKBYSJT;
     line-height: 3rem;
 }
 
@@ -156,16 +147,9 @@ body {
 .history-image {
     margin-top: 1rem;
     border-width: 2.5px;
-    border-style: dotted;
     border-radius: 20px;
     width: 90%;
     object-fit: cover;
-}
-
-/* 页脚重写 */
-
-#footer {
-    font-family: FZQKBYSJT;
 }
 
 /* 重写videojs，删除不需要的按钮 */

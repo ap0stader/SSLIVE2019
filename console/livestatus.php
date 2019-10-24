@@ -1,4 +1,8 @@
 <?php
+// 解决跨域问题
+header("Access-Control-Allow-Origin:*");
+header('Access-Control-Allow-Methods:POST');
+
 // 获取POST中的cmd数据
 $cmd = $_POST["cmd"];
 // 读取livestatus.json文件
@@ -13,4 +17,6 @@ $json_strings = json_encode($data);
 $code = file_put_contents("./livestatus.json", $json_strings);
 if ($code > 0) {
     echo "success";
+} else {
+    echo $code;
 }
