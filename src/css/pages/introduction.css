@@ -120,6 +120,7 @@ body {
 .history-image {
     margin-top: 1rem;
     border-width: 2.5px;
+    border-style: solid;
     border-radius: 20px;
     width: 90%;
     object-fit: cover;
