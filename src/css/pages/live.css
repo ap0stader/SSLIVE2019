@@ -118,14 +118,14 @@ body {
 }
 
 #content-name {
-    color: #00a1d6;
+    color: #fbe45f;
     font-size: 2.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 #content-time {
-    color: #00a1d6;
+    color: #fbe45f;
     font-size: 1.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;

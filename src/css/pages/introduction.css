@@ -33,7 +33,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-image: url(/src/img/background/introduction.jpg);
+    background-image: url(/src/img/background/introduction.png);
     background-position: center bottom;
     background-size: cover;
 }
@@ -91,14 +91,14 @@ body {
 }
 
 #next-name {
-    color: #00a1d6;
+    color: #fbe45f;
     font-size: 2.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 #next-time {
-    color: #00a1d6;
+    color: #fbe45f;
     font-size: 1.5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
