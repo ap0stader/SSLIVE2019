@@ -1,5 +1,8 @@
 // introduction.js
 
+// 全局变量，以适应多重请求嵌套
+var liveTimeLeft, stopTimeLeft;
+
 // 判断是否已经开播
 function checker() {
     // 根据直播情况分发页面
