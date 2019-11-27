@@ -2,6 +2,7 @@
 
 // 判断是否已经开播
 function checker() {
+    // 根据直播情况分发页面
     $.ajax({
         url: "/config/livemode.json",
         method: "GET",
@@ -24,24 +25,38 @@ function checker() {
                         $("#errmsg").text("请检查网络链接并刷新页面");
                     }
                 });
-            } else if (mode == 'bilibili') {
+            } else if (mode == 'coding') {
                 $.ajax({
-                    url: "/config/livetime.json",
+                    url: "/config/coding/livestart.json",
                     method: "GET",
                     success: function (data) {
                         var nowtime = new Date().getTime();//当前时间
-                        var livetime = new Date(data.year, data.month - 1, data.day, data.hour, data.minute).getTime();//开播时间
-                        var leftTime = livetime - nowtime;//计算时差
                         // 请注意，这里的月份一定要减1，即一月应该是“0月”
-                        if (leftTime < 10000) {
-                            window.location.href = 'https://live.bilibili.com/10038913'
-                        }
+                        var livetime = new Date(data.year, data.month - 1, data.day, data.hour, data.minute).getTime();//开播时间
+                        liveTimeLeft = livetime - nowtime;//计算时差
                     },
                     error: function () {
                         $('#loading').text(" ")
                         $("#errmsg").text("请检查网络链接并刷新页面");
                     }
                 });
+                $.ajax({
+                    url: "/config/coding/livestop.json",
+                    method: "GET",
+                    success: function (data) {
+                        var nowtime = new Date().getTime();//当前时间
+                        // 请注意，这里的月份一定要减1，即一月应该是“0月”
+                        var stoptime = new Date(data.year, data.month - 1, data.day, data.hour, data.minute).getTime();//开播时间
+                        stopTimeLeft = stoptime - nowtime;//计算时差
+                    },
+                    error: function () {
+                        $('#loading').text(" ")
+                        $("#errmsg").text("请检查网络链接并刷新页面");
+                    }
+                });
+                if ((liveTimeLeft < 10000) && (stopTimeLeft > 0)) {
+                    window.location.href = 'https://live.bilibili.com/10038913'
+                }
             }
         },
         error: function () {
