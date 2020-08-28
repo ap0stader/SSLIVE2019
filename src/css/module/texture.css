@@ -17,20 +17,32 @@
     -webkit-background-clip: text;
 }
 
-/* 2020青春诗会 */
+/* 2020军训会操 */
 
-.texture-20200403 {
+.texture-20200829 {
     background-image: url(/src/img/texture/texture.jpg);
+}
+
+/* 2019军训 */
+
+.texture-20190824 {
+    background-image: url(https://static.ssersay.cn/history/texture/20190824.jpg);
+}
+
+/* 2019校庆 */
+
+.texture-20191130 {
+    background-image: url(https://static.ssersay.cn/history/texture/20191130.jpg);
+}
+
+/* 2019布服来战 */
+
+.texture-20191024 {
+    background-image: url(https://static.ssersay.cn/history/texture/20191024.jpg);
 }
 
 /* 2019青春诗会 */
 
 .texture-20190403 {
     background-image: url(https://static.ssersay.cn/history/texture/20190403.jpg);
-}
-
-/* 2019新年音乐会 */
-
-.texture-20181228 {
-    background-image: url(https://static.ssersay.cn/history/texture/20181228.jpg);
 }
