@@ -37,7 +37,8 @@ function load() {
                         success: function (data) {
                             var nowtime = new Date().getTime();//当前时间
                             // 请注意，这里的月份一定要减1，即一月应该是“0月”
-                            var livetime = new Date(data.year, data.month - 1, data.day, data.hour, data.minute).getTime();//开播时间
+                            var livetime = new Date(data.year, data.month - 1, data.day, data.hour, data.minute).getTime();
+                            //开播时间
                             liveTimeLeft = livetime - nowtime;//计算时差
                         },
                         error: function () {
@@ -51,7 +52,8 @@ function load() {
                         success: function (data) {
                             var nowtime = new Date().getTime();//当前时间
                             // 请注意，这里的月份一定要减1，即一月应该是“0月”
-                            var stoptime = new Date(data.year, data.month - 1, data.day, data.hour, data.minute).getTime();//开播时间
+                            var stoptime = new Date(data.year, data.month - 1, data.day, data.hour, data.minute).getTime();
+                            //停播时间
                             stopTimeLeft = stoptime - nowtime;//计算时差
                         },
                         error: function () {
