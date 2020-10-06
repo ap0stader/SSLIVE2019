@@ -1,0 +1,6 @@
+# Robots.txt file from http://www.seovip.cn
+# All robots will spider the domain
+
+User-agent: *
+Disallow: 
+#允许爬虫访问全部
