@@ -2,7 +2,7 @@
     text-align: center;
     height: 40vh;
     margin: 0 auto;
-    margin-top: 25vh;
+    margin-top: 5vh;
     width: 30vw;
     border: 2px solid darkslategray;
     border-radius: 30px;
@@ -18,11 +18,23 @@ input {
     height: 3vw;
     margin-top: 5px;
 }
-
+#Header{
+	font-size:8vw;
+	text-align:center;
+	display:block;
+	margin-top:3vh;
+	margin-bottom:5vh;
+}
 #um {
     margin-top: 10px;
 }
-
+#tips{
+	margin-top:0.5vh;
+	color:red;
+	font-size: 3vh;
+	text-align: center;
+	display:block;
+}
 input:focus {
     border-color: #66afe9;
     outline: 0;
@@ -31,7 +43,7 @@ input:focus {
 }
 
 #bu {
-    margin-top: 20px;
+    margin-top: 2vh;
     width: 15vw;
 }
 
@@ -58,7 +70,10 @@ button {
     background: -moz-linear-gradient(top, #00adee, #00678e);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#00678e');
 }
-
+body{
+	height:100%;
+	width:100%;
+}
 button:hover {
     background: #007ead;
     background: -webkit-gradient(linear, left top, left bottom, from(#00678e), to(#0095cc));
