@@ -17,7 +17,7 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <title>SSLIVE 后端控制台</title>
     <!-- 图标 -->
-    <link rel="shortcut icon" href="./src/img/logo/SUIT-white.png" type="image/png">
+    <link rel="shortcut icon" href="/src/img/logo/SUIT-white.png" type="image/png">
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <!-- 需要自行引入的CSS和JS -->
@@ -28,14 +28,15 @@
 	<script src="jquery.cookie.js"></script>
     <script src="console.js"></script>
 	<script>
-
-function load(){
-if($.cookie('ver')!="yes"){
-//无cookie
-window.location.href=window.location.href.substring(0,window.location.href.lastIndexOf('\/'))+"/login/index.html";
-}
-}
-</script>
+		function load(){
+			if($.cookie('token')!="yes"){
+				//无cookie
+				window.location.href="login/index.html";
+				//another way: window.location.href=window.location.href.substring(0,window.location.href.lastIndexOf('\/'))+"/login/index.html"
+			}
+			console.log("Welcome %s, hope you can have fun in here",$.cookie('user'));
+		}
+	</script>
 </head>
 
 <body onload="load()">

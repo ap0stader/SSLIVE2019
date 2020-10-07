@@ -1,13 +1,13 @@
 #input_f {
     text-align: center;
-    height: 40vh;
+    height: auto;
     margin: 0 auto;
     margin-top: 5vh;
     width: 30vw;
     border: 2px solid darkslategray;
     border-radius: 30px;
     background-color: rgb(170, 169, 169);
-	margin-bottom: 2vh;
+	margin-bottom: 5vh;
 }
 
 input {
@@ -31,8 +31,8 @@ input {
 }
 #tips{
 	margin-top:0.5vh;
-	color:red;
-	font-size: 3vh;
+	color:#CD5C5C;
+	font-size: 1vh;
 	text-align: center;
 	display:block;
 }
@@ -46,6 +46,7 @@ input:focus {
 #bu {
     margin-top: 2vh;
     width: 15vw;
+	margin-bottom: 2.5vh;
 }
 
 /*以下来自https://blog.csdn.net/genius_yym/article/details/79670326 的博客，如有侵权，请联系删除*/
@@ -74,6 +75,7 @@ button {
 body{
 	height:100%;
 	width:100%;
+	background-color:	#DCDCDC;
 }
 button:hover {
     background: #007ead;
