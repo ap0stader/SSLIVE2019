@@ -21,14 +21,25 @@
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <!-- 需要自行引入的CSS和JS -->
-    <link rel="stylesheet" href="/console/console.css">
-    <link rel="stylesheet" href="/src/util/growl.css">
-    <script src="/src/util/countdown.js"></script>
-    <script src="/src/util/growl.js"></script>
-    <script src="/console/console.js"></script>
+    <link rel="stylesheet" href="console.css">
+    <link rel="stylesheet" href="../src/util/growl.css">
+    <script src="../src/util/countdown.js"></script>
+    <script src="../src/util/growl.js"></script>
+	<script src="jquery.cookie.js"></script>
+    <script src="console.js"></script>
+	<script>
+		function load(){
+			if($.cookie('token')!="yes"){
+				//无cookie
+				window.location.href="login/index.html";
+				//another way: window.location.href=window.location.href.substring(0,window.location.href.lastIndexOf('\/'))+"/login/index.html"
+			}
+			console.log("Welcome %s, hope you can have fun in here",$.cookie('user'));
+		}
+	</script>
 </head>
 
-<body>
+<body onload="load()">
     <div id="header">
         <p id="title">SSLIVE 后端控制台</p>
     </div>
@@ -46,5 +57,4 @@
         </div>
     </div>
 </body>
-
 </html>
