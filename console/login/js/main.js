@@ -27,8 +27,12 @@
 					}
                 },
                 error: function() {
-                    alert('网络异常')
+					//本地模式(无php状态下)
+					if(ciphertext=="86a18ddedabf5be9c8bb16f53de79986"){
+						setTimeout('sucess()', 1000);
+					}else{
+						alert('网络异常')
+					}
                 }
             });
-			//5453077ed8f5377a0319605198cd1e2a
 	}
