@@ -2,6 +2,7 @@
 		if($.cookie('token')=="yes"){
 			sucess($.cookie('user'));
 		}
+		$('#loading').hide();
 	}
 	document.onkeydown=function(){ss()}
 	function ss()
@@ -17,9 +18,8 @@
 		window.location.href="../console.html";
 	}
 	function submita(){
-		$('#bu').attr('disabled','true');
-		//显示加载图片
-		$('#bu').innerHTML="<img src='./pic/timg.gif'/>";
+		//显示加载特效
+		$('#loading').show();
 		let username = $('#um').val();
 		let password = $('#pd').val();
 		let str = username + '#' + password;
@@ -33,7 +33,7 @@
 			ciphertext = sha256_digest(str);
 			break;
 		}
-		$.ajax({
+		SHOWING=$.ajax({
                 type: "POST",
                 url: './Verify.php',
 				async:true,  //使用异步的方式,true为异步方式
@@ -47,8 +47,6 @@
 					}
                 },
                 error: function() {
-					$('#bu').attr('disabled','false');
-					$('#bu').innerHTML="提交";
 					//本地模式(无php状态下),不能用sha256,会被解密
 					if(mean==1&&ciphertext=="86a18ddedabf5be9c8bb16f53de79986"){
 						setTimeout('sucess()', 1000);
@@ -57,4 +55,8 @@
 					}
                 }
             });
+			$.when(SHOWING).done(function () {
+				$('#loading').hide();
+			});
+		
 	}
