@@ -1,6 +1,8 @@
 	function load(){
-		if($.cookie('token')=="yes"){
-			sucess($.cookie('user'));
+		if($.cookie('user')!=null&&$.cookie('token')!=null){
+			if($.cookie('token')==$.md5($.cookie('user'))){
+				sucess($.cookie('user'));
+			}
 		}
 		$('#loading').hide();
 	}
@@ -11,10 +13,8 @@
 		}
 	}
 	function sucess(name=$('#um').val()){
-		var expire= new Date();
-		var expiresDate.setTime(expire.getTime() + (7 * 60 * 1000));
-		$.cookie('user',name,{ expires: expiresDate , path: '/' })
-		$.cookie('token', 'yes', { expires: expiresDate , path: '/' });
+		$.cookie('user',name,{ expires: 7, path: '/' })
+		$.cookie('token', $.md5(name), { expires: 7, path: '/' });
 		window.location.href="../console.html";
 	}
 	function submita(){
@@ -27,7 +27,7 @@
 			$('#loading').hide();
 		}else{
 			let str = username + '#' + password;
-			let mean=2;//模式选择
+			let mean=1;//模式选择
 			let ciphertext='';
 			switch(mean){
 				case 1://md5加密
