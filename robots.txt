@@ -1,6 +1,8 @@
-# Robots.txt file from http://www.seovip.cn
-# All robots will spider the domain
-
+# robots.txt generated at http://tool.chinaz.com/robots/ 
 User-agent: *
 Disallow: 
-#允许爬虫访问全部
+Disallow: /console/
+Disallow: /config/
+Disallow: /src/
+#不允许上面3个路径
+#爬虫限制文件
