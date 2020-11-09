@@ -1,6 +1,6 @@
 	function load(){
-		if($.cookie('user')!=null&&$.cookie('token')!=null){
-			if($.cookie('token')==$.md5($.cookie('user'))){
+		if($.cookie('user')!=null&&$.cookie('token')!=null&&$.cookie('time')!=null){
+			if($.cookie('token')==$.md5($.cookie('user')+"|"+$.cookie('time'))){
 				sucess($.cookie('user'));
 			}
 		}
@@ -13,8 +13,10 @@
 		}
 	}
 	function sucess(name=$('#um').val()){
-		$.cookie('user',name,{ expires: 7, path: '/' })
-		$.cookie('token', $.md5(name), { expires: 7, path: '/' });
+		let now=(new Date()).getTime();
+		$.cookie('user',name,{ expires: 7, path: '/' });
+		$.cookie('token', $.md5(name+"|"+now), { expires: 7, path: '/' });
+		$.cookie('time',now,{ expires: 7, path: '/' });
 		window.location.href="../console.html";
 	}
 	function submita(){
