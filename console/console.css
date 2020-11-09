@@ -133,6 +133,7 @@ body {
     background-color: rgba(0, 160, 233, 0.4);
     animation: colorchange 500ms;
 }
+/*弹窗优化代码，来源https://www.cnblogs.com/xiao-zhi/p/9970788.html*/
 #msg{
 	z-index:9999;
     height: 2rem;
@@ -153,3 +154,4 @@ body {
     padding: 0 3rem;
     border-radius: 5px;
 }
+/*结束*/
