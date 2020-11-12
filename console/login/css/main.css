@@ -9,7 +9,6 @@
     background-color: rgb(170, 169, 169);
 	margin-bottom: 5vh;
 }
-
 input {
     outline-style: none;
     border: 1px solid #ccc;
@@ -42,13 +41,15 @@ input:focus {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
 }
-
+#footer{
+	position:absolute;
+	margin-bottom:0px;
+}
 #bu {
     margin-top: 2vh;
     width: 15vw;
 	margin-bottom: 2.5vh;
 }
-
 /*以下来自https://blog.csdn.net/genius_yym/article/details/79670326 的博客，如有侵权，请联系删除*/
 button {
     display: inline-block;

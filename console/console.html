@@ -21,6 +21,8 @@
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <!-- 需要自行引入的CSS和JS -->
+	<script src="http://www.gongjuji.net/Content/files/jquery.md5.js"></script>
+	<link rel="stylesheet" href="./login/css/loading.css">
     <link rel="stylesheet" href="console.css">
     <link rel="stylesheet" href="../src/util/growl.css">
     <script src="../src/util/countdown.js"></script>
@@ -29,17 +31,49 @@
     <script src="console.js"></script>
 	<script>
 		function load(){
-			if($.cookie('token')!="yes"){
+			$('#loading').show();
+			if($.cookie('user')==null||$.cookie('token')==null||$.cookie('time')==null||$.cookie('token')!=$.md5($.cookie('user')+'|'+$.cookie('time'))){
 				//无cookie
-				window.location.href="login/index.html";
+				$("body").append("<div id='msg'><span>you should relogin</span></div>");
+					setTimeout(function(){
+						$("#msg").remove();
+						window.location.href="login/index.html";
+					},2000);
 				//another way: window.location.href=window.location.href.substring(0,window.location.href.lastIndexOf('\/'))+"/login/index.html"
+			}else{
+				let re=((new Date()).getTime()-$.cookie('time'))/86400000;
+				if(re>7){
+					$("body").append("<div id='msg'><span>you should relogin</span></div>");
+					setTimeout(function(){
+						$("#msg").remove();
+						window.location.href="login/index.html";
+					},2000);
+				}else{
+					$('#loading').hide();
+					console.log("Welcome %s, hope you can have fun in here,\nyou have been login %s days, you should relogin next %s day",$.cookie('user'),re,7-re);
+				}
 			}
-			console.log("Welcome %s, hope you can have fun in here",$.cookie('user'));
+			
 		}
 	</script>
 </head>
 
 <body onload="load()">
+<div id="loading">
+	<div class='loader loader3' id="loader3">
+	  <div>
+		<div>
+		  <div>
+			<div>
+			  <div>
+				<div></div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
     <div id="header">
         <p id="title">SSLIVE 后端控制台</p>
     </div>
