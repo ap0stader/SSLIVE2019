@@ -1,7 +1,7 @@
 # SSLIVE
 ### The source code of _SSLIVE_ website  
   
-Website Address: *(ssersay.cn)*  
+Website Address: *(http://ssersay.cn/)*或测试地址*(http://106.15.93.200/)*  
 
 All the source code in this repository (**EXCEPT FOR** the code in src/lib/ and console/lib/ folder) is written by The Students Union Information Technology Section of Guangdong Experimental High School.
 
