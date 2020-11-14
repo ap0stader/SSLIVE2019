@@ -1,4 +1,4 @@
-﻿var CountdownEnd = new Date("2020/04/03,19:00:00");
+﻿var CountdownEnd = new Date("2020/12/03,00:00:00");
 
 function newtime() {
     var now = new Date();
