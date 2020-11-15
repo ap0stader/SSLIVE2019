@@ -1,8 +1,11 @@
 	function load(){
 		if($.cookie('user')!=null&&$.cookie('token')!=null&&$.cookie('time')!=null){
-			if($.cookie('token')==$.md5($.cookie('user')+"|"+$.cookie('time'))){
-				sucess($.cookie('user'));
-			}
+			$.post("../CHEACKIN.php",{a:$.cookie('user'),b:$.cookie('time'),c:$.cookie('token')},function(result){
+						if(result=="valid"){
+							sucess($.cookie('user'));
+						}
+					 });
+			
 		}
 		$('#loading').hide();
 	}
@@ -14,10 +17,12 @@
 	}
 	function sucess(name=$('#um').val()){
 		let now=(new Date()).getTime();
-		$.cookie('user',name,{ expires: 7, path: '/' });
-		$.cookie('token', $.md5(name+"|"+now), { expires: 7, path: '/' });
-		$.cookie('time',now,{ expires: 7, path: '/' });
-		window.location.href="../console.html";
+		$.post("../CHEACKIN.php",{a:name,b:now,c:'1'},function(result){
+			$.cookie('user',name,{ expires: 7, path: '/' });
+			$.cookie('token', result, { expires: 7, path: '/' });
+			$.cookie('time',now,{ expires: 7, path: '/' });
+			window.location.href="../console.html";
+		});
 	}
 	function submita(){
 		//显示加载特效
