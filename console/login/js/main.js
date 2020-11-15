@@ -1,15 +1,17 @@
 	function load(){
+		//验证token
 		if($.cookie('user')!=null&&$.cookie('token')!=null&&$.cookie('time')!=null){
 			$.post("../CHEACKIN.php",{a:$.cookie('user'),b:$.cookie('time'),c:$.cookie('token')},function(result){
-						if(result=="valid"){
-							sucess($.cookie('user'));
-						}
-					 });
-			
+				if(result=="valid"){
+					sucess($.cookie('user'));
+				}
+			});
 		}
+		//加载遮蔽罩关闭
 		$('#loading').hide();
 	}
 	document.onkeydown=function(){
+		//回车提交
 		if(event.keyCode==13)
 		{
 			$('#bu').click();
@@ -17,6 +19,7 @@
 	}
 	function sucess(name=$('#um').val()){
 		let now=(new Date()).getTime();
+		//取token
 		$.post("../CHEACKIN.php",{a:name,b:now,c:'1'},function(result){
 			$.cookie('user',name,{ expires: 7, path: '/' });
 			$.cookie('token', result, { expires: 7, path: '/' });
