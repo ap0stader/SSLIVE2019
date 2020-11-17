@@ -61,12 +61,7 @@
 						}
 					},
 					error: function() {
-						//md5本地模式(无php状态下),不能用sha256,会被解密
-						if(mean==1&&ciphertext=="86a18ddedabf5be9c8bb16f53de79986"){
-							setTimeout('sucess()', 1000);
-						}else{
-							$("#tips").text('服务器或网络异常')
-						}
+						$("#tips").text('服务器或网络异常')
 					}
 				});
 				$.when(SHOWING).done(function () {
