@@ -20,7 +20,13 @@ function start() {
         }
     })
 }
-
+function logOut(){
+	//登出
+	$.cookie('user', "", { expires: -1, path: '/' });
+	$.cookie('time', "", { expires: -1, path: '/' });
+	$.cookie('token', "", { expires: -1, path: '/' });
+	location.reload();
+}
 function end() {
     $.ajax({
         url: "/console/livestatus.php",

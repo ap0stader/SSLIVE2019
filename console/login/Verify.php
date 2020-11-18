@@ -1,6 +1,10 @@
 <?php
+//功能: 验证传入密码
+//账号数组
 $user=array('suit');
+//密码数组
 $pw=array('lovesuit');
+
 //循环账号密码(字典)集
 for($x=0;$x<count($user);$x++)
 {
@@ -15,5 +19,4 @@ for($x=0;$x<count($user);$x++)
 		}
 	}
 }
-
 ?>

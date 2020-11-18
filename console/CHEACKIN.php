@@ -1,4 +1,5 @@
 <?php
+//功能: token生成和验证
 $a=$_POST['a'];//user
 $b=$_POST['b'];//time
 $c=$_POST['c'];//1 or token

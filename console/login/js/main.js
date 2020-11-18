@@ -19,7 +19,7 @@
 	}
 	function sucess(name=$('#um').val()){
 		let now=(new Date()).getTime();
-		//取token
+		//取token 设置cookie
 		$.post("../CHEACKIN.php",{a:name,b:now,c:'1'},function(result){
 			$.cookie('user',name,{ expires: 7, path: '/' });
 			$.cookie('token', result, { expires: 7, path: '/' });
@@ -30,6 +30,7 @@
 	function submita(){
 		//显示加载特效
 		$('#loading').show();
+		//用jq取值
 		let username = $('#um').val();
 		let password = $('#pd').val();
 		if(username==""||password==""){

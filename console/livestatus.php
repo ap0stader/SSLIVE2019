@@ -1,4 +1,5 @@
 <?php
+//功能: 开始直播
 // 解决跨域问题
 header("Access-Control-Allow-Origin:*");
 header('Access-Control-Allow-Methods:POST');
@@ -9,6 +10,7 @@ $b=$_COOKIE["time"];
 $c=$_COOKIE["token"];
 $X=substr($c, 0, 3);//取key
 $random_chars="fsajfsjhs";//注意这里要和CHEACKIN.php同步
+//验证token md5和过期
 if($c==$X.md5($X.$a.$random_chars.$b)&&(time()-$b)/86400000<=7){
 	// 获取POST中的cmd数据
 	$cmd = $_POST["cmd"];

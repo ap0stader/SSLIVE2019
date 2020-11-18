@@ -1,6 +1,6 @@
 <!-- console.html（PC优先页面） -->
-<!-- 功能： -->
-<!-- 后端管理 --><!DOCTYPE html>
+<!-- 功能：后端管理 -->
+<!DOCTYPE html>
 <html>
  <head> 
   <meta charset="utf-8" lang="zh-cn" /> 
@@ -24,15 +24,28 @@
   <script src="../src/util/growl.js"></script> 
   <script src="jquery.cookie.js"></script> 
   <script src="console.js"></script> 
-  <script>
-		function load(){
+  <style>
+	#LinkToBack:hover{
+		color:#C0C0C0;
+		text-decoration: none;
+	}
+	#LinkToBack{
+		color:white;
+		text-decoration: none;
+	}
+	</style>
+	<script>
+	function load(){
+		//显示加载特效
 			$('#loading').show();
 			if($.cookie('user')!=null&&$.cookie('token')!=null&&$.cookie('time')!=null){
+			//验证token
 				$.post("CHEACKIN.php",{a:$.cookie('user'),b:$.cookie('time'),c:$.cookie('token')},function(result){
 					if(result=="valid"){
 							$('#loading').hide();
 							console.log("Welcome %s, hope you can have fun in here\nyou already login %s days",$.cookie('user'),((new Date()).getTime()-$.cookie('time'))/86400000);
 					}else{
+					//重新登录指引
 						$("body").append("<div id='msg'><span>you should relogin</span></div>");
 					setTimeout(function(){
 						window.location.href="login/index.html";
@@ -46,9 +59,10 @@
 					},2000);
 					}
 		}
-	</script> 
+	</script>
  </head> 
  <body onload="load()"> 
+ <!-- 加载特效和遮蔽罩 -->
   <div id="loading"> 
    <div class="loader loader3" id="loader3"> 
     <div> 
@@ -66,6 +80,7 @@
   </div> 
   <div id="header"> 
    <p id="title">SSLIVE 后端控制台</p> 
+   <div style="position:absolute;right:2rem;top:1.5rem;color:white;font-size:1rem;"><a id="LinkToBack" href="javascript:logOut();">退出</a></div>
   </div> 
   <div class="main"> 
    <div id="timer"> 
