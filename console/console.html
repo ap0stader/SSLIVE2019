@@ -2,100 +2,64 @@
 <!-- 功能：后端管理 -->
 <!DOCTYPE html>
 <html>
- <head> 
-  <meta charset="utf-8" lang="zh-cn" /> 
-  <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 --> 
-  <meta name="renderer" content="webkit" /> 
-  <meta name="force-rendering" content="webkit" /> 
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" /> 
-  <!-- 适配DRP > 1的屏幕 --> 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> 
-  <title>SSLIVE 后端控制台</title> 
-  <!-- 图标 --> 
-  <link rel="shortcut icon" href="/src/img/logo/SUIT-white.png" type="image/png" /> 
-  <!-- jQuery使用CDN加载 --> 
-  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script> 
-  <!-- 需要自行引入的CSS和JS --> 
-  <script src="http://www.gongjuji.net/Content/files/jquery.md5.js"></script> 
-  <link rel="stylesheet" href="./login/css/loading.css" /> 
-  <link rel="stylesheet" href="console.css" /> 
-  <link rel="stylesheet" href="../src/util/growl.css" /> 
-  <script src="../src/util/countdown.js"></script> 
-  <script src="../src/util/growl.js"></script> 
-  <script src="jquery.cookie.js"></script> 
-  <script src="console.js"></script> 
-  <style>
-	#LinkToBack:hover{
-		color:#C0C0C0;
-		text-decoration: none;
-	}
-	#LinkToBack{
-		color:white;
-		text-decoration: none;
-	}
-	</style>
-	<script>
-	function load(){
-		//显示加载特效
-			$('#loading').show();
-			if($.cookie('user')!=null&&$.cookie('token')!=null&&$.cookie('time')!=null){
-			//验证token
-				$.post("CHEACKIN.php",{a:$.cookie('user'),b:$.cookie('time'),c:$.cookie('token')},function(result){
-					if(result=="valid"){
-							$('#loading').hide();
-							console.log("Welcome %s, hope you can have fun in here\nyou already login %s days",$.cookie('user'),((new Date()).getTime()-$.cookie('time'))/86400000);
-					}else{
-					//重新登录指引
-						$("body").append("<div id='msg'><span>you should relogin</span></div>");
-					setTimeout(function(){
-						window.location.href="login/index.html";
-					},2000);
-				}
-				});
-			}else{
-			$("body").append("<div id='msg'><span>you should relogin</span></div>");
-					setTimeout(function(){
-						window.location.href="login/index.html";
-					},2000);
-					}
-		}
-	</script>
- </head> 
- <body onload="load()"> 
- <!-- 加载特效和遮蔽罩 -->
-  <div id="loading"> 
-   <div class="loader loader3" id="loader3"> 
-    <div> 
-     <div> 
-      <div> 
-       <div> 
-        <div> 
-         <div></div> 
-        </div> 
-       </div> 
-      </div> 
-     </div> 
-    </div> 
-   </div> 
-  </div> 
-  <div id="header"> 
-   <p id="title">SSLIVE 后端控制台</p> 
-   <div style="position:absolute;right:2rem;top:1.5rem;color:white;font-size:1rem;"><a id="LinkToBack" href="javascript:logOut();">退出</a></div>
-  </div> 
-  <div class="main"> 
-   <div id="timer"> 
-    <p id="timer-title">距离直播开始还有</p> 
-    <div id="timer-countdown"></div> 
-   </div> 
-   <div id="LiveControl"> 
-    <div id="LiveStatusReminder"> 
-     <span id="ONAIRDOT"></span> 
-     <span id="ONAIR">ON AIR</span> 
-    </div> 
-    <div id="LiveControlButton">
-      正在获取直播状态... 
-    </div> 
-   </div> 
-  </div>  
- </body>
+  
+  <head>
+    <meta charset="utf-8" lang="zh-cn" />
+    <!-- 使IE在最高版本下渲染，国产浏览器用Chrome内核渲染 -->
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <!-- 适配DRP> 1的屏幕 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>SSLIVE 后端控制台</title>
+    <!-- 图标 -->
+    <link rel="shortcut icon" href="/src/img/logo/SUIT-white.png" type="image/png" />
+    <!-- jQuery使用CDN加载 -->
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 需要自行引入的CSS和JS -->
+    <script src="http://www.gongjuji.net/Content/files/jquery.md5.js"></script>
+    <link rel="stylesheet" href="./login/css/loading.css" />
+    <link rel="stylesheet" href="console.css" />
+    <link rel="stylesheet" href="../src/util/growl.css" />
+    <script src="../src/util/countdown.js"></script>
+    <script src="../src/util/growl.js"></script>
+    <script src="jquery.cookie.js"></script>
+    <script src="console.js"></script>
+    <style>#LinkToBack:hover{ color:#C0C0C0; text-decoration: none; } #LinkToBack{ color:white; text-decoration: none; }</style></head>
+  
+  <body>
+    <!-- 加载特效和遮蔽罩 -->
+    <div id="loading">
+      <div class="loader loader3" id="loader3">
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="header">
+      <p id="title">SSLIVE 后端控制台</p>
+      <div style="position:absolute;right:2rem;top:1.5rem;color:white;font-size:1rem;">
+        <a id="LinkToBack" href="javascript:logOut();">退出</a></div>
+    </div>
+    <div class="main">
+      <div id="timer">
+        <p id="timer-title">距离直播开始还有</p>
+        <div id="timer-countdown"></div>
+      </div>
+      <div id="LiveControl">
+        <div id="LiveStatusReminder">
+          <span id="ONAIRDOT"></span>
+          <span id="ONAIR">ON AIR</span></div>
+        <div id="LiveControlButton">正在获取直播状态...</div></div>
+    </div>
+  </body>
+
 </html>
