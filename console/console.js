@@ -27,6 +27,7 @@ function start() {
 }
 function logOut() {
     //登出
+	//取消这3个cookie，通过把过期设为-1
     $.cookie('user', "", {
         expires: -1,
         path: '/'

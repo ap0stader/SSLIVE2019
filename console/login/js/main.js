@@ -51,10 +51,17 @@ function submita() {
     //用jq取值
     let username = $('#um').val();
     let password = $('#pd').val();
+	//这里调用了用户输入，本应该进行安全排查替换，但是本处暂时没在php中用，所以就执行了简易的替换，希望注意用户输入，
+	//本处可能出现的漏洞参考XSS跨站攻击，务必谨慎
+	//其实因为下面有加密，此处的替换也可有可无了，但是以防止下面的if语句出现问题还是替换一下
+	username=username.replace(/</gi,'&lt;').replace(/</gi,'gt;');  // 忽略大小写替换所有匹配  
+	password=password.replace(/</gi,'&lt;').replace(/</gi,'gt;');  // 忽略大小写替换所有匹配  
     if (username == "" || password == "") {
         $("#tips").text("密码或用户名不能为空");
         $('#loading').hide();
     } else {
+		//用加密传输可以避免一定程度的暴力破解密码，参考Burp Suite
+		//也可以防止一些XSS跨站攻击命令的执行
         let str = username + '#' + password;
         let mean = 1; //模式选择
         let ciphertext = '';
