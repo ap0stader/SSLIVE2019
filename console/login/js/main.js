@@ -1,3 +1,28 @@
+function htmlSpecialChars(str)  
+//来源 https://www.cnblogs.com/web-leader/p/4742362.html  
+    {    
+            var s = "";  
+            if (str.length == 0) return "";  
+            for   (var i=0; i<str.length; i++)  
+            {  
+                switch (str.substr(i,1))  
+                {  
+                    case "<": s += "&lt;"; break;  
+                    case ">": s += "&gt;"; break;  
+                    case "&": s += "&amp;"; break;  
+                    case " ":  
+                        if(str.substr(i + 1, 1) == " "){  
+                            s += " &nbsp;";  
+                            i++;  
+                        } else s += " ";  
+                        break;  
+                    case "\"": s += "&quot;"; break;  
+                    case "\n": s += "<br>"; break;  
+                    default: s += str.substr(i,1); break;  
+                }  
+            }  
+            return s;  
+        }  
 function load() {
     //验证token
     if ($.cookie('user') != null && $.cookie('token') != null && $.cookie('time') != null) {
@@ -54,8 +79,8 @@ function submita() {
 	//这里调用了用户输入，本应该进行安全排查替换，但是本处暂时没在php中用，所以就执行了简易的替换，希望注意用户输入，
 	//本处可能出现的漏洞参考XSS跨站攻击，务必谨慎
 	//其实因为下面有加密，此处的替换也可有可无了，但是以防止下面的if语句出现问题还是替换一下
-	username=username.replace(/</gi,'&lt;').replace(/</gi,'gt;');  // 忽略大小写替换所有匹配  
-	password=password.replace(/</gi,'&lt;').replace(/</gi,'gt;');  // 忽略大小写替换所有匹配  
+	username=htmlSpecialChars(username); 
+	password=htmlSpecialChars(password);
     if (username == "" || password == "") {
         $("#tips").text("密码或用户名不能为空");
         $('#loading').hide();
