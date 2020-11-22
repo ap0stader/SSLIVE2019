@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" lang="zh-cn">
+        <!-- 使国产浏览器用Chrome内核渲染 -->
+        <meta name="renderer" content="webkit" />
+        <meta name="force-rendering" content="webkit" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+        <!-- 适配DRP > 1的屏幕 -->
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <title>SSLIVE</title>
+        <!-- 图标 -->
+        <link rel="shortcut icon" href="src/img/logo/sslive-rectangle-std.png" type="image/png">
+        <!-- jQuery使用CDN加载 -->
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <!-- 加载Material Design Lite -->
+        <link rel="stylesheet" href="./mdl/material.min.css">
+        <script src="./mdl/material.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="/src/css/pages/newintroduction.css">
+    </head>
+
+    <body>
+        <div id="container">
+            <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+                <header class="mdl-layout__header">
+                  <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">SSLIVE</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                    <nav class="mdl-navigation mdl-layout--large-screen-only">
+                      <a class="mdl-navigation__link" href="">介绍</a>
+                      <a class="mdl-navigation__link" href="">回播</a>
+                      <a class="mdl-navigation__link" href="">直播</a>
+                      <a class="mdl-navigation__link" href="">关于</a>
+                    </nav>
+                  </div>
+                </header>
+                <div class="mdl-layout__drawer">
+                  <span class="mdl-layout-title">SSLIVE</span>
+                  <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="">介绍</a>
+                    <a class="mdl-navigation__link" href="">回播</a>
+                    <a class="mdl-navigation__link" href="">直播</a>
+                    <a class="mdl-navigation__link" href="">关于</a>
+                  </nav>
+                </div>
+                <main class="mdl-layout__content">
+                    <div class="page-content">
+                        <div id="current-stream">
+                            <div id="countdown-title">距离体育节开幕式直播还有</div>
+                            <div id="countdown">0天 0小时 0分钟 0秒</div>
+                            <div id="button-to-live">
+                                <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    转跳到直播间
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="mdl-mini-footer">
+                        <div id="footer-section" class="mdl-mini-footer__left-section">
+                          <div class="mdl-logo">Title</div>
+                          <ul class="mdl-mini-footer__link-list">
+                            <li><a href="#">Help</a></li>
+                            <li><a href="#">Privacy & Terms</a></li>
+                          </ul>
+                        </div>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </body>
+
+    
+</html>

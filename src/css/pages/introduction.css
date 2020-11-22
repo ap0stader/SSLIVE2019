@@ -33,6 +33,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 10px;
     background-image: url(/src/img/background/introduction.jpg);
     background-position: center bottom;
     background-size: cover;
