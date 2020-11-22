@@ -1,6 +1,6 @@
 // live.js
 var player;
-var isplay = false;
+var isplay = true;
 var isdanmu = true;
 
 function danmu_submit() {
@@ -17,7 +17,8 @@ function load() {
         preload: true,
         fullscreen: { options: { navigationUI: 'show' } }
     });
-    player.src("https://suit.ssersay.cn/SUIT/stream.m3u8");
+    //player.src("https://suit.ssersay.cn/SUIT/stream.m3u8");//直播地址
+	player.src("http://ivi.bupt.edu.cn/hls/cctv1.m3u8");//连接CCTV-1测试
     $('#play').click(function () {
         if (isplay) {
             player.pause();
