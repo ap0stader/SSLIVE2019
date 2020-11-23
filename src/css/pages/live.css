@@ -11,14 +11,26 @@
 
 /* 全局定义 */
 
-html {
-    /* jQuery */
-    font-size: 16px;
-    font-family: SiYuanLight;
+.mdl-layout__header {
+    color:black;
+    background-color:whitesmoke;
+}
+
+.mdl-navigation {
+    color: #757575;
+}
+
+.material-icons {
+    color:black;
+}
+
+.mdl-layout__header-row .mdl-navigation__link {
+    color: #757575;
 }
 
 body {
-    margin: 0;
+    font-family:Product Sans;
+    margin:0;
     padding: 0;
     width: 100%;
     overflow-x: hidden;
@@ -26,7 +38,6 @@ body {
 }
 
 #video-container {
-    margin-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;

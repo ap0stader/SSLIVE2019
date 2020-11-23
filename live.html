@@ -18,6 +18,10 @@
     <title>SSLIVE</title>
     <!-- 图标 -->
     <link rel="shortcut icon" href="src/img/logo/sslive-rectangle-std.png" type="image/png">
+    <!-- 加载Material Design Lite -->
+    <link rel="stylesheet" href="./mdl/material.min.css">
+    <script src="./mdl/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- jQuery和Video.js使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdn.bootcss.com/video.js/7.6.0/video-js.min.css" rel="stylesheet">
@@ -49,9 +53,33 @@
 
 <body>
     <!-- TODO 加入推荐使用Chrome浏览器的header -->
-    <div id="header">
-        <img id="header-icon" src="src/img/logo/sslive-rectangle-white.png" />
-    </div>
+    <div id="container">
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+              <!-- Title -->
+              <span class="mdl-layout-title">SSLIVE</span>
+              <!-- Add spacer, to align navigation to the right -->
+              <div class="mdl-layout-spacer"></div>
+              <!-- Navigation. We hide it in small screens. -->
+              <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" href="introduction.html#intro">介绍</a>
+                <a class="mdl-navigation__link" href="introduction.html#review">回播</a>
+                <a class="mdl-navigation__link" onclick="isLive()">直播</a>
+                <a class="mdl-navigation__link" href="about.html">关于</a>
+              </nav>
+            </div>
+          </header>
+          <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">SSLIVE</span>
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="introduction.html#intro">介绍</a>
+              <a class="mdl-navigation__link" href="introduction.html#review">回播</a>
+              <a class="mdl-navigation__link">直播</a>
+              <a class="mdl-navigation__link" href="about.html">关于</a>
+            </nav>
+          </div>
+          <main class="mdl-layout__content">
 
     <div id="video-container">
         <!-- <div id="danmu"></div> -->
@@ -135,6 +163,8 @@
         <p class="footertext">Copyright © 2015-2020 SUIT+ All Rights Reserved.</p>
         <a class="footertext" href="http://beian.miit.gov.cn/" style="text-decoration:none; color: #c2c2c2;">粤ICP备15048640号-1</a>
     </div>
+    
+</main>
 </body>
 
 </html>

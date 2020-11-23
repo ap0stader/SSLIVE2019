@@ -55,7 +55,6 @@ function listener() {
 							if (sec.toString().length == 1) {
 								sec = "0" + sec
 							}
-<<<<<<< HEAD
 							//alert("还有"+day+"天"+hour+"小时"+min+"分钟才开始直播");//随便写的
 
 							//显示直播未开始
@@ -67,11 +66,6 @@ function listener() {
 							};
 							snackbarContainer.MaterialSnackbar.showSnackbar(data);
 
-
-=======
-							alert("还有"+day+"天"+hour+"小时"+min+"分钟才开始直播");//随便写的
-							return;
->>>>>>> 4571c06b5ea4fc01277c6a07dec36f1d7ad20cc7
 						},
 						error: function () {
 							$('#loading').text(" ");
