@@ -8,10 +8,10 @@ function toLive() {
 	window.location.href = livePath;
 }
 
-function listener() {
+function listener(showSnackbarButton, snackbarContainer) {
 	'use strict';
-	var snackbarContainer = document.querySelector('#demo-snackbar-example');
-	var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+	//var snackbarContainer = document.querySelector('#live-not-on-snackbar');
+	//var showSnackbarButton = document.querySelector('#button-redirect-to-live');
 	var handler = function (event) {
 		showSnackbarButton.style.backgroundColor = '';
 	};
@@ -56,13 +56,15 @@ function listener() {
 								sec = "0" + sec
 							}
 							//alert("还有"+day+"天"+hour+"小时"+min+"分钟才开始直播");//随便写的
-
+							var handler = function(event) {
+								toLive();
+							  };
 							//显示直播未开始
-							var snackbarContainer = document.querySelector(
-								'#demo-snackbar-example');
 							var data = {
 								message: "还有" + day + "天" + hour + "小时" + min + "分钟才开始直播",
-								timeout: 2000
+								timeout: 2000,
+								actionHandler: handler,
+      							actionText: '强制跳转'
 							};
 							snackbarContainer.MaterialSnackbar.showSnackbar(data);
 
@@ -85,6 +87,7 @@ function listener() {
 	});
 }
 
+/*
 function isLive() {
 	// 根据直播情况分发页面
 	// 分发到直播页面条件：JSON文件中直播已经开始
@@ -128,7 +131,7 @@ function isLive() {
 						//alert("还有"+day+"天"+hour+"小时"+min+"分钟才开始直播");//随便写的
 
 						//显示直播未开始
-						var snackbarContainer = document.querySelector('#demo-snackbar-example');
+						var snackbarContainer = document.querySelector('#live-not-on-snackbar');
 						var data = {
 							message: 'Button color changed.',
 							timeout: 2000,
@@ -155,7 +158,7 @@ function isLive() {
 		}
 	});
 }
-
+*/
 // 判断是否已经开播
 function checker() {
 	// 根据直播情况分发页面
