@@ -49,6 +49,7 @@ function isLive(){
 							    sec = "0" + sec
 							}
 							alert("还有"+day+"天"+hour+"小时"+min+"分钟才开始直播");//随便写的
+							return;
 						},
 						error: function() {
 							$('#loading').text(" ");

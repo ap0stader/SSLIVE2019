@@ -1,7 +1,9 @@
 // live.js
 var player;
-var isplay = true;
-var isdanmu = true;
+var isplay = false;
+var lastRunTime=new Date().getTime();//初始化保护的时间
+var protectTime=1000;//设置保护性延时 单位毫秒，不要小于50 建议100以上，1000是1s
+//var isdanmu = true;
 
 function danmu_submit() {
     send_danmu($('#danmu-sender-input').val(), "white", 0, 0);
@@ -19,7 +21,13 @@ function load() {
     });
     //player.src("https://suit.ssersay.cn/SUIT/stream.m3u8");//直播地址
 	player.src("http://ivi.bupt.edu.cn/hls/cctv1.m3u8");//连接CCTV-1测试
+	$('#play').css('background-image', "url('/src/img/control/play.svg')");
     $('#play').click(function () {
+		var currentTime=new Date().getTime();
+		if((currentTime-lastRunTime)<protectTime){
+			return;//两次执行太过频繁，直接退出
+		}
+		lastRunTime=new Date().getTime();
         if (isplay) {
             player.pause();
             $('#play').css('background-image', "url('/src/img/control/play.svg')");
@@ -30,7 +38,7 @@ function load() {
             isplay = true;
         }
     });
-    $('#danmuswitch').click(function () {
+    /*$('#danmuswitch').click(function () {
         if (isdanmu) {
             $('#danmu').danmu("setOpacity", 0);
             $('#danmuswitch').css('background-image', "url('/src/img/danmu/off.svg')");
@@ -40,11 +48,11 @@ function load() {
             $('#danmuswitch').css('background-image', "url('/src/img/danmu/on.svg')");
             isdanmu = true;
         }
-    })
+    })*/
     $('#fullscreen').click(function () {
         player.requestFullscreen();
     });
-    $("#danmu-sender-input").bind("input propertychange", function (param) {
+    /*$("#danmu-sender-input").bind("input propertychange", function (param) {
         if ($("#danmu-sender-input").val() != '') {
             $("#danmu-sender-button").unbind("click").click(danmu_submit).css("background-color", "#00a1d6")
         } else {
@@ -74,7 +82,7 @@ function load() {
         //是否位置优化，位置优化是指像AB站那样弹幕主要漂浮于区域上半部分
         positionOptimize: true,
     });
-    $('#danmu').danmu('danmuStart');
+    $('#danmu').danmu('danmuStart');*/
 }
 
 $('document').ready(load)
