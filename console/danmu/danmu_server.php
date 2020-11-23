@@ -1,8 +1,10 @@
 <?php
+//jquery.danmu.js (//github.com/chiruom/danmu/) - Licensed under the MIT license
 date_default_timezone_set('Asia/Shanghai');
 
 // 引用阿里云SDK
-include_once './lib/aliyuncs/aliyun-php-sdk-core/Config.php';
+//include_once './lib/aliyuncs/aliyun-php-sdk-core/Config.php';
+include_once "https://github.com/aliyun/aliyun-openapi-php-sdk/blob/master/aliyun-php-sdk-core/Config.php";
 
 use Green\Request\V20180509 as Green;
 
