@@ -30,31 +30,32 @@ body {
 
 #countdown-title {
     float:top;
-    font-size:32px;
+    font-size:2.3rem;
     height:10%;
-    padding-top:10%;
+    padding-top:10rem;
     text-align:center;
 }
 
 #timer-countdown {
     float:buttom;
-    font-size:42px;
+    font-size:2.5rem;
     height:20%;
     padding-top:20px;
     text-align:center;
+	line-height:5rem;
     font-weight:bolder;
 }
 
 #button-to-live {
     text-align:center;
     height:10%;
-    padding-top:20px;
+    padding-top:3rem;
     color:white;
 }
 
 #button-to-live .mdl-button {
     color:white;
-    font-size:20px;
+    font-size:2rem;
     font-family:Product Sans;
 }
 
@@ -66,10 +67,11 @@ body {
 }
 
 #content-review-title {
-    font-size:36px;
+    font-size:3rem;
     font-weight:bolder;
     text-align:center;
-    padding-top:60px;
+	line-height: 3rem;
+    padding-top:5rem;
     float:top;
 }
 
