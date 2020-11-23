@@ -10,7 +10,6 @@ function toLive(){
 
 function isLive(){
 	// 根据直播情况分发页面
-	var inTro="introduction.html";//不在的跳转地址
 	// 分发到直播页面条件：JSON文件中直播已经开始
 		$.ajax({
 			url: "/console/livestatus.json",
