@@ -30,10 +30,10 @@
     <link rel="stylesheet" href="/src/css/pages/live.css">
     <link rel="stylesheet" href="/src/util/growl.css">
     <script src="/src/lib/Browser.js"></script>
-    <script src="/src/lib/jquery.danmu.js"></script>
+    <!-- <script src="/src/lib/jquery.danmu.js"></script> -->
     <script src="/src/util/growl.js"></script>
     <script src="/src/util/checkandresize.js"></script>
-    <script src="/src/util/danmu.js"></script>
+    <!--<script src="/src/util/danmu.js"></script>-->
     <script src="/src/js/live.js"></script>
     <!-- 百度统计代码 -->
     <script>
@@ -54,7 +54,7 @@
     </div>
 
     <div id="video-container">
-        <div id="danmu"></div>
+        <!-- <div id="danmu"></div> -->
         <!-- x5-video-player-type="h5-page"让安卓微信视频使用H5同层播放器以实现弹幕 -->
         <!-- https://x5.tencent.com/tbs/guide/video.html -->
         <!-- 两个playsinline让iOS微信视频可仅在全屏状态下播放以实现弹幕 -->
@@ -66,22 +66,23 @@
     <div id="video-controller-container">
         <div id="play" style="background-image: url('/src/img/control/pause.svg');" class="video-controller"></div>
         <!-- TODO 开发弹幕设置 -->
-        <div id="danmusettings" style="background-image: url('/src/img/danmu/settings.svg');visibility: hidden;"
+        <!--<div id="danmusettings" style="background-image: url('/src/img/danmu/settings.svg');visibility: hidden;"
             class="video-controller">
         </div>
         <div id="danmuswitch" style="background-image: url('/src/img/danmu/on.svg')" class="video-controller"></div>
-        <div id="fullscreen" style="background-image: url('/src/img/control/fullscreen.svg');" class="video-controller">
+        -->
+		<div id="fullscreen" style="background-image: url('/src/img/control/fullscreen.svg');" class="video-controller">
         </div>
     </div>
 
-    <div id="danmu-sender-container">
+    <!-- <div id="danmu-sender-container">
         <input id="danmu-sender-input" placeholder="请输入弹幕内容" />
         <div id="danmu-sender-button">发送弹幕</div>
-    </div>
+    </div>-->
 
     <div id="content-container">
-        <span id="next-name">2020级军训会操直播</span><br>
-        <span id="next-time">2020-8-29 15:00</span>
+        <span id="next-name">2020级体育节直播</span><br>
+        <span id="next-time">2020-12-03 00:00</span>
     </div>
 
     <div id="history-container">
