@@ -21,9 +21,8 @@ function listener() {
 			url: "/console/livestatus.json",
 			method: "GET",
 			success: function (data) {
-				var live = data.Live; //是否开播
 				// 分发到直播页面条件：JSON文件中直播已经开始
-				if (live) {
+				if (data.Live) {//是否开播
 					toLive();
 				} else {
 					$.ajax({
