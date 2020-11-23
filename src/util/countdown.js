@@ -24,7 +24,7 @@ function newtime() {
         sec = "0" + sec
     }
 
-    if (rest <= 0) {
+    if (false/*rest <= 0*/) {
         $("#timer-countdown").html('00 <span class="timer-small">天</span> 00 <span class="timer-small">时</span> 00 <span class="timer-small">分</span> 00 <span class="timer-small">秒</span>');
         clearInterval(newtime);
     } else {
