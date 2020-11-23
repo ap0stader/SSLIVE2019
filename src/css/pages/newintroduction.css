@@ -59,7 +59,7 @@ body {
 
 #button-to-live .mdl-button {
     color:white;
-    font-size:2rem;
+    font-size:1.4rem;
     font-family:Product Sans;
 }
 
@@ -71,11 +71,11 @@ body {
 }
 
 #content-review-title {
-    font-size:3rem;
+    font-size:2.4rem;
     font-weight:bolder;
     text-align:center;
-	line-height: 3rem;
-    padding-top:5rem;
+	line-height: 2.4rem;
+    padding-top:6.8rem;
     float:top;
 }
 
