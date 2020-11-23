@@ -1,146 +1,131 @@
 body {
-    font-family:Product Sans;
-    margin:0;
+	font-family: Product Sans;
+	margin: 0;
 }
 
 .mdl-layout__header {
-    color:black;
-    background-color:whitesmoke;
+	color: black;
+	background-color: whitesmoke;
 }
 
 .mdl-navigation {
-    color: #757575;
+	color: #757575;
 }
 
 .material-icons {
-    color:black;
+	color: black;
 }
 
 .mdl-layout__header-row .mdl-navigation__link {
-    color: #757575;
+	color: #757575;
 }
 
 #current-stream {
-    background: url('../../img/background/newintro.jpg') center / cover;
-    width:100%;
-    height:520px;
-    color:white;
-    float:top;
+	background: url('../../img/background/newintro.jpg') center / cover;
+	width: 100%;
+	height: 520px;
+	color: white;
+	float: top;
 }
 
 #countdown-title {
-    float:top;
-    font-size:2.3rem;
-    height:10%;
-    padding-top:10rem;
-    text-align:center;
+	float: top;
+	font-size: 2.3rem;
+	height: 10%;
+	padding-top: 10rem;
+	text-align: center;
 }
 
 #timer-countdown {
-    float:buttom;
-    font-size:2.5rem;
-    height:20%;
-    padding-top:20px;
-    text-align:center;
-	line-height:5rem;
-    font-weight:bolder;
+	float: buttom;
+	font-size: 2.5rem;
+	height: 20%;
+	padding-top: 20px;
+	text-align: center;
+	line-height: 5rem;
+	font-weight: bolder;
 }
 
 #to-live-link:hover {
-    cursor:pointer;
+	cursor: pointer;
 }
 
 #button-to-live {
-    text-align:center;
-    height:10%;
-    padding-top:3rem;
-    color:white;
+	text-align: center;
+	height: 10%;
+	padding-top: 3rem;
+	color: white;
 }
 
 #button-to-live .mdl-button {
-    color:white;
-    font-size:1.4rem;
-    font-family:Product Sans;
+	color: white;
+	font-size: 1.4rem;
+	font-family: Product Sans;
 }
 
 #content-review {
-    height:1024px;
-
-    margin-left:30px;
-    margin-right:30px;
-
-    margin-left:1rem;
-    margin-right:1rem;
-    margin-bottom:10rem;
-
+	height: 64rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+	margin-bottom: 10rem;
 }
 
 #content-review-title {
-    font-size:2.4rem;
-    font-weight:bolder;
-    text-align:center;
-
+	font-size: 2.4rem;
+	font-weight: bolder;
+	text-align: center;
 	line-height: 3rem;
-    padding-top:3rem;
-
+	padding-top: 3rem;
 	line-height: 2.4rem;
-    padding-top:6.8rem;
-
-    float:top;
+	padding-top: 6.8rem;
+	float: top;
 }
 
 #content-review-list {
-    float:bottom;
-    width:100%;
-
-    margin-top:0rem;
-
-    height:1024px;
-    margin-top:50px;
-    
-
+	float: bottom;
+	width: 100%;
+	height: 64rem;
+	margin-top: 3.125rem;
 }
 
 #content-review-list-left {
-    float:left;
-    width:50%;
+	float: left;
+	width: 50%;
 }
 
 #content-review-list-right {
-    float:right;
-    width:50%;
+	float: right;
+	width: 50%;
 }
 
 .content-review-card-left.mdl-card {
+	margin-top: 3rem;
+	margin-right: 2rem;
+	width: 80%;
+	margin-top: 5rem;
+	margin-right: 1.2rem;
+	width: 92%;
+	height: 23.75rem;
+	float: right;
+}
 
-    margin-top:3rem;
-    margin-right:2rem;
-    width: 80%;
-
-    margin-top:80px;
-    margin-right:1.2rem;
-    width: 92%;
-
-    height: 380px;
-    float:right;
-  }
-.content-review-card-left > .mdl-card__title {
-    color: #fff;
+.content-review-card-left>.mdl-card__title {
+	color: #fff;
 }
 
 .content-review-card-right.mdl-card {
-
-    margin-top:3rem;
-    margin-left:2rem;
-    width: 80%;
-
-    margin-top:80px;
-    margin-left:1.2rem;
-    width: 92%;
-
-    height: 380px;
-    float:left;
+	margin-top: 3rem;
+	margin-left: 2rem;
+	width: 80%;
+	margin-top: 5rem;
+	margin-left: 1.2rem;
+	width: 92%;
+	height: 23.75rem;
+	float: left;
 }
-.content-review-card-right > .mdl-card__title {
-    color: #fff;
+
+.content-review-card-right>.mdl-card__title {
+	color: #fff;
 }
