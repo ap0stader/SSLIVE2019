@@ -18,10 +18,6 @@
     <title>SSLIVE</title>
     <!-- 图标 -->
     <link rel="shortcut icon" href="src/img/logo/sslive-rectangle-std.png" type="image/png">
-    <!-- 加载Material Design Lite -->
-    <link rel="stylesheet" href="./mdl/material.min.css">
-    <script src="./mdl/material.min.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- jQuery和Video.js使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://cdn.bootcss.com/video.js/7.6.0/video-js.min.css" rel="stylesheet">
@@ -53,33 +49,9 @@
 
 <body>
     <!-- TODO 加入推荐使用Chrome浏览器的header -->
-    <div id="container">
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-          <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-              <!-- Title -->
-              <span class="mdl-layout-title">SSLIVE</span>
-              <!-- Add spacer, to align navigation to the right -->
-              <div class="mdl-layout-spacer"></div>
-              <!-- Navigation. We hide it in small screens. -->
-              <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" href="introduction.html#intro">介绍</a>
-                <a class="mdl-navigation__link" href="introduction.html#review">回播</a>
-                <a class="mdl-navigation__link" onclick="isLive()">直播</a>
-                <a class="mdl-navigation__link" href="about.html">关于</a>
-              </nav>
-            </div>
-          </header>
-          <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">SSLIVE</span>
-            <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="introduction.html#intro">介绍</a>
-              <a class="mdl-navigation__link" href="introduction.html#review">回播</a>
-              <a class="mdl-navigation__link">直播</a>
-              <a class="mdl-navigation__link" href="about.html">关于</a>
-            </nav>
-          </div>
-          <main class="mdl-layout__content">
+    <div id="header">
+        <img id="header-icon" src="src/img/logo/sslive-rectangle-white.png" />
+    </div>
 
     <div id="video-container">
         <!-- <div id="danmu"></div> -->
@@ -103,87 +75,12 @@
         </div>
     </div>
 
-    <div id="content-review">
-        <a name="review"></a>
-        <div id="content-review-title">观看我们以往的内容</div>
-        <div id="content-review-list">
-          <div id="content-review-list-left">
-            <div class="content-review-card-left mdl-card mdl-shadow--2dp">
-              <div class="mdl-card__title mdl-card--expand"
-                style="background:url('https://static.ssersay.cn/history/img/20190824.jpg') center / cover #46B6AC;">
-                <h2 class="mdl-card__title-text">2019军训回放</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenan convallis.
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="https://www.bilibili.com/video/BV1q441167Xs"
-                  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  跳转到B站
-                </a>
-              </div>
-            </div>
-            <div class="content-review-card-left mdl-card mdl-shadow--2dp">
-              <div class="mdl-card__title mdl-card--expand"
-                style="background:url('https://static.ssersay.cn/history/img/20191130.jpg') center / cover #46B6AC;">
-                <h2 class="mdl-card__title-text">2019校庆</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenan convallis.
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="https://www.bilibili.com/video/BV1yJ411b7YJ"
-                  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  跳转到B站
-                </a>
-              </div>
-            </div>
-          </div>
-          <div id="content-review-list-right">
-            <div class="content-review-card-right mdl-card mdl-shadow--2dp">
-              <div class="mdl-card__title mdl-card--expand "
-                style="background:url('https://static.ssersay.cn/history/img/20191024.jpg') center / cover #46B6AC;">
-                <h2 class="mdl-card__title-text">2019布服来战</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenan convallis.
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="https://www.bilibili.com/video/BV1bE41117Mv"
-                  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  跳转到B站
-                </a>
-              </div>
-            </div>
-            <div class="content-review-card-right mdl-card mdl-shadow--2dp">
-              <div class="mdl-card__title mdl-card--expand"
-                style="background:url('https://static.ssersay.cn/history/img/20190403.png') center / cover #46B6AC;">
-                <h2 class="mdl-card__title-text">2019青春诗会</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Aenan convallis.
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-                <a href="https://www.bilibili.com/video/BV1eb411T7t4"
-                  class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                  跳转到B站
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     <!-- <div id="danmu-sender-container">
         <input id="danmu-sender-input" placeholder="请输入弹幕内容" />
         <div id="danmu-sender-button">发送弹幕</div>
     </div>-->
 
-    <!--div id="content-container">
+    <div id="content-container">
         <span id="next-name">2020级体育节直播</span><br>
         <span id="next-time">2020-12-03 00:00</span>
     </div>
@@ -221,7 +118,7 @@
                 <img class="history-image" src="https://static.ssersay.cn/history/img/20190403.png" style="border-color: #fbe45f">
             </a>
         </div>
-    </div-->
+    </div>
 
     <div id="footer">
         <div id="footerlinks">
@@ -238,8 +135,6 @@
         <p class="footertext">Copyright © 2015-2020 SUIT+ All Rights Reserved.</p>
         <a class="footertext" href="http://beian.miit.gov.cn/" style="text-decoration:none; color: #c2c2c2;">粤ICP备15048640号-1</a>
     </div>
-    
-</main>
 </body>
 
 </html>
