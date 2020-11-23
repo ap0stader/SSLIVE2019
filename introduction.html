@@ -41,15 +41,15 @@
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" href="">介绍</a>
             <a class="mdl-navigation__link" href="#review">回播</a>
-            <a id="a-to-live" class="mdl-navigation__link">直播</a>
+            <a id="to-live-link" class="mdl-navigation__link">直播</a>
             <a class="mdl-navigation__link" href="about.html">关于</a>
             <div id="live-not-on-snackbar" class="mdl-js-snackbar mdl-snackbar">
               <div class="mdl-snackbar__text"></div>
               <button class="mdl-snackbar__action" type="button"></button>
             </div>
             <script>
-              var button=document.querySelector("#a-to-live");
-              var snackbar=document.querySelector("#live-not-on-snackbar");
+              var button = document.querySelector("#to-live-link");
+              var snackbar = document.querySelector("#live-not-on-snackbar");
               listener(button, snackbar);
             </script>
           </nav>
@@ -60,8 +60,12 @@
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="#intro">介绍</a>
           <a class="mdl-navigation__link" href="#review">回播</a>
-          <a class="mdl-navigation__link">直播</a>
+          <a id="to-live-link-alter" class="mdl-navigation__link">直播</a>
           <a class="mdl-navigation__link" href="about.html">关于</a>
+          <script>
+            var button = document.querySelector("#to-live-link-alter");
+            listenerAlter(button, snackbar);
+          </script>
         </nav>
       </div>
       <main class="mdl-layout__content">
@@ -79,8 +83,8 @@
                   <button class="mdl-snackbar__action" type="button"></button>
                 </div>
                 <script>
-                  var button=document.querySelector("#button-redirect-to-live");
-                  var snackbar=document.querySelector("#live-not-on-snackbar");
+                  var button = document.querySelector("#button-redirect-to-live");
+                  var snackbar = document.querySelector("#live-not-on-snackbar");
                   listener(button, snackbar);
                 </script>
               </div>

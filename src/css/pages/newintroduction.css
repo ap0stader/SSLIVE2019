@@ -46,6 +46,10 @@ body {
     font-weight:bolder;
 }
 
+#to-live-link:hover {
+    cursor:pointer;
+}
+
 #button-to-live {
     text-align:center;
     height:10%;
