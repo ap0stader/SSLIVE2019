@@ -65,40 +65,26 @@ body {
 
 #content-review {
     height:1024px;
-<<<<<<< HEAD
-    margin-left:30px;
-    margin-right:30px;
-=======
     margin-left:1rem;
     margin-right:1rem;
     margin-bottom:10rem;
->>>>>>> b6260e237ba62847eb3f00d315feb554a097ebda
 }
 
 #content-review-title {
     font-size:2.4rem;
     font-weight:bolder;
     text-align:center;
-<<<<<<< HEAD
-	line-height: 3rem;
-    padding-top:3rem;
-=======
 	line-height: 2.4rem;
     padding-top:6.8rem;
->>>>>>> b6260e237ba62847eb3f00d315feb554a097ebda
     float:top;
 }
 
 #content-review-list {
     float:bottom;
     width:100%;
-<<<<<<< HEAD
-    margin-top:0rem;
-=======
     height:1024px;
     margin-top:50px;
     
->>>>>>> b6260e237ba62847eb3f00d315feb554a097ebda
 }
 
 #content-review-list-left {
@@ -112,15 +98,9 @@ body {
 }
 
 .content-review-card-left.mdl-card {
-<<<<<<< HEAD
-    margin-top:3rem;
-    margin-right:2rem;
-    width: 80%;
-=======
     margin-top:80px;
     margin-right:1.2rem;
     width: 92%;
->>>>>>> b6260e237ba62847eb3f00d315feb554a097ebda
     height: 380px;
     float:right;
   }
@@ -129,15 +109,9 @@ body {
 }
 
 .content-review-card-right.mdl-card {
-<<<<<<< HEAD
-    margin-top:3rem;
-    margin-left:2rem;
-    width: 80%;
-=======
     margin-top:80px;
     margin-left:1.2rem;
     width: 92%;
->>>>>>> b6260e237ba62847eb3f00d315feb554a097ebda
     height: 380px;
     float:left;
 }
