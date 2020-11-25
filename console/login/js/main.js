@@ -70,9 +70,20 @@ function sucess(name = $('#um').val()) {
         window.location.href = "../console.html";
     });
 }
+function showSB(msg) {
+                        var snackbartip = document.querySelector('#snackbar-tip');
+                        var data = {
+                            message: msg,
+                            timeout: 2000,
+                            actionText: 'Undo'
+
+                        };
+                        document.querySelector('#snackbar-tip').MaterialSnackbar.showSnackbar(data);
+
+                    }
 function submita() {
     //显示加载特效
-    $('#loading').show();
+    //$('#loading').show();
     //用jq取值
     let username = $('#um').val();
     let password = $('#pd').val();
@@ -82,8 +93,9 @@ function submita() {
 	username=htmlSpecialChars(username); 
 	password=htmlSpecialChars(password);
     if (username == "" || password == "") {
-        $("#tips").text("密码或用户名不能为空");
-        $('#loading').hide();
+        //$("#tips").text("密码或用户名不能为空");
+        showSB("密码或用户名不能为空")
+        //$('#loading').hide();
     } else {
 		//用加密传输可以避免一定程度的暴力破解密码，参考Burp Suite
 		//也可以防止一些XSS跨站攻击命令的执行
@@ -111,14 +123,17 @@ function submita() {
             },
             success: function(result) {
                 if (result == "success") {
-                    $("#tips").text("用户名和密码正确");
+                    //$("#tips").text("用户名和密码正确");
+                    showSB("登陆成功 正在跳转")
                     setTimeout('sucess()', 1000);
                 } else {
-                    $("#tips").text("密码或用户名错误");
+                    //$("#tips").text("密码或用户名错误");
+                    showSB('用户名或密码错误')
                 }
             },
             error: function() {
-                $("#tips").text('服务器或网络异常')
+                //$("#tips").text('服务器或网络异常')
+                showSB('网络异常 请稍后再试')
             }
         });
         $.when(SHOWING).done(function() {

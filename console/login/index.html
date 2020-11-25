@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- 登录页面 -->
 <!-- 可参考blog https://blog.csdn.net/qq_40832960/article/details/104100918 -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,71 +17,132 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="SSER" />
-	<meta charset="utf-8" lang="zh-cn">
+    <meta charset="utf-8" lang="zh-cn">
     <!-- 使国产浏览器用Chrome内核渲染 -->
     <meta name="renderer" content="webkit" />
     <meta name="force-rendering" content="webkit" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
     <!--声明结束-->
-	<!-- 图标 -->
+    <!-- 图标 -->
     <link rel="shortcut icon" href="/src/img/logo/sslive-rectangle-std.png" type="image/png">
+    <!--引入MDL文件-->
+    <link rel="stylesheet" href="/mdl/material.min.css">
+    <script src="/mdl/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/src/css/pages/newintroduction.css">
+    <link rel="stylesheet" href="/src/css/module/footer.css">
     <!--引入css&js文件-->
-	<link rel="stylesheet" type="text/css" href="./css/loading.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/loading.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+        type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" type="text/css" href="./css/main.css">
-	<link rel="stylesheet" href="/src/css/module/header.css">
-	<link rel="stylesheet" href="/src/css/module/footer.css">
-	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-	<script src="http://www.gongjuji.net/Content/files/jquery.md5.js"></script>
-	<script type="text/javascript" src="./js/sha256-0.8.0.js"></script>
-	<script src="../jquery.cookie.js"></script>
-	<script src="./js/main.js"></script>
+    <link rel="stylesheet" href="/src/css/module/header.css">
+    <link rel="stylesheet" href="/src/css/module/footer.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://www.gongjuji.net/Content/files/jquery.md5.js"></script>
+    <script type="text/javascript" src="./js/sha256-0.8.0.js"></script>
+    <script src="../jquery.cookie.js"></script>
+    <script src="./js/main.js"></script>
     <!--引入结束-->
     <title>登录</title>
 </head>
 
 <body onload="load()">
-<!-- 遮蔽罩 -->
-<div id="loading">
-	<div class='loader loader3' id="loader3">
-	  <div>
-		<div>
-		  <div>
-			<div>
-			  <div>
-				<div></div>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
-</div>
-<div id="header"><img id="header-icon" src="/src/img/logo/sslive-rectangle-white.png"></div>
-	<p id="Header-text">SSLIVE 管理平台</p>
-	<div style="text-align:center;display:block;margin-top:0.1vh;">SUIT</div>
-    <div id="input_f">
-        <div style="font-size: 3vw;">Login</div>
-        <input id="um" type="text" placeholder="username" /><br />
-        <input id="pd"  type="password" placeholder="passwords" /><br />
-		<div id="tips"></div>
-        <button id="bu" onclick="submita()">提交</button>
-    </div>
-	<div id="footer">
-        <div id="footerlinks">
-            <a class="footerlink" href="about.html">关于我们</a>
-            <a class="footerlink" href="linence.html">开源软件许可证</a>
+    <div class="mdl-layout-translarent mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--transparent">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span id="header-title" class="mdl-layout-title">SSLIVE Console</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="/introduction.html">介绍</a>
+                    <a class="mdl-navigation__link" href="/introduction.html#review">回播</a>
+                    <a id="to-live-link" class="mdl-navigation__link" href="/live.html">直播</a>
+                    <a class="mdl-navigation__link" href="/about.html">关于</a>
+                    <!--<div id="live-not-on-snackbar" class="mdl-js-snackbar mdl-snackbar">-->
+                    <!--<div class="mdl-snackbar__text"></div>-->
+                    <!--<button class="mdl-snackbar__action" type="button"></button>-->
+                    <!--</div>-->
+                    <!--<script>-->
+                    <!--var button = document.querySelector("#to-live-link");-->
+                    <!--var snackbar = document.querySelector("#live-not-on-snackbar");-->
+                    <!--listener(button, snackbar);-->
+                    <!--</script>-->
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">SSLIVE Console</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="introduction.html#intro">介绍</a>
+                <a class="mdl-navigation__link" href="introduction.html#review">回播</a>
+                <a id="to-live-link-alter" class="mdl-navigation__link">直播</a>
+                <a class="mdl-navigation__link" href="about.html">关于</a>
+                <script>
+                    var button = document.querySelector("#to-live-link-alter");
+                    listenerAlter(button, snackbar);
+                </script>
+            </nav>
         </div>
-        <p id="footerpb">Powered By</p>
-        <div id="footerlogos">
-            <img class="footerlogo" id="suitlogo" src="/src/img/logo/SUIT-white.png">
-            <img class="footerlogo" id="passlogo" src="/src/img/logo/PASS-white.png">
-        </div>
-        <p class="footertext">广东实验中学学生会信息部</p>
-        <p class="footertext">PASS+ 极光工作室</p>
-        <p class="footertext">Copyright © 2015-2020 SUIT+ All Rights Reserved.</p>
-        <a class="footertext" href="http://beian.miit.gov.cn/" style="text-decoration:none; color: #c2c2c2;">粤ICP备15048640号-1</a>
-    </div>
+        <main class="mdl-layout__content">
+            <div id="login-container">
+                <div id="login-title">登录到 Console</div>
+                <div id="account-textfield">
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input id="um" class="mdl-textfield__input" type="text" id="sample3">
+                            <label class="mdl-textfield__label" for="sample3">用户名</label>
+                        </div>
+                    </form>
+                </div>
+                <div id="password-textfield">
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input id="pd" class="mdl-textfield__input" type="password" id="sample3">
+                            <label class="mdl-textfield__label" for="sample3">密码</label>
+                        </div>
+                    </form>
+                </div>
+                <div id="buttons-container">
+                    <div id="login-button-container">
+                        <button id="login-button"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"
+                            onclick="submita()">
+                            登录
+                        </button>
+                    </div>
+                    <div id="register-button-container">
+                        <button id="register-button"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                            注册
+                        </button>
+                    </div>
+                </div>
+                <div id="snackbar-tip" class="mdl-js-snackbar mdl-snackbar">
+                    <div class="mdl-snackbar__text"></div>
+                    <button class="mdl-snackbar__action" type="button"></button>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footerlinks">
+                    <a class="footerlink" href="about.html">关于我们</a>
+                    <a class="footerlink" href="linence.html">开源软件许可证</a>
+                </div>
+                <p id="footerpb">Powered By</p>
+                <div id="footerlogos">
+                    <img class="footerlogo" id="suitlogo" src="/src/img/logo/SUIT-white.png">
+                    <img class="footerlogo" id="passlogo" src="/src/img/logo/PASS-white.png">
+                </div>
+                <p class="footertext">广东实验中学学生会信息部</p>
+                <p class="footertext">PASS+ 极光工作室</p>
+                <p class="footertext">Copyright © 2015-2020 SUIT+ All Rights Reserved.</p>
+                <a class="footertext" href="http://beian.miit.gov.cn/"
+                    style="text-decoration:none; color: #c2c2c2;">粤ICP备15048640号-1</a>
+            </div>
+        </main>
 </body>
+
 </html>
