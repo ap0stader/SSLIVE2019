@@ -18,7 +18,7 @@ function listener(showSnackbarButton, snackbarContainer) {
 	showSnackbarButton.addEventListener('click', function () {
 		'use strict';
 		$.ajax({
-			url: "/console/livestatus.json",
+			url: "../../console/livestatus.json",
 			method: "GET",
 			success: function (data) {
 				// 分发到直播页面条件：JSON文件中直播已经开始
@@ -96,7 +96,7 @@ function listenerAlter(showSnackbarButton, snackbarContainer) {
 	showSnackbarButton.addEventListener('click', function () {
 		'use strict';
 		$.ajax({
-			url: "/console/livestatus.json",
+			url: "../../console/livestatus.json",
 			method: "GET",
 			success: function (data) {
 				// 分发到直播页面条件：JSON文件中直播已经开始
