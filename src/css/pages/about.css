@@ -29,34 +29,110 @@ body {
     background-size: cover;
 }
 
+.mdl-layout_drawer-button {
+    margin-top:8px;
+    margin-buttom:8px;
+}
+
+.material-icons {
+    margin-top:10px;
+}
+
 /* 主要内容 */
 
+body {
+    font-family:Product Sans;
+    margin:0;
+}
+
+.mdl-layout__header {
+    color:black;
+    background-color:whitesmoke;
+}
+
+.mdl-navigation {
+    color: #757575;
+}
+
+#header-title {
+    color: whitesmoke;
+}
+
+.material-icons {
+    color:whitesmoke;
+}
+
+.mdl-layout__header-row .mdl-navigation__link {
+    /*color: #757575;*/
+    color:whitesmoke;
+}
+
+.mdl-navigation a:hover {
+    font-weight: bolder;
+    cursor:pointer; 
+}
+
 #main {
-    margin: 5rem 0;
-    padding: 0.5rem 1rem;
     text-align: center;
     line-height: 2;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 5rem;
 }
 
 #main p {
-    text-align: left;
+    text-align: center;
     font-size: 1.5rem;
+    line-height: 3rem;
+    color: black;
 }
 
-#main img {
+#title-container {
+    padding-top:4rem;
+    padding-bottom: 18rem;
+}
+
+#title-text-container {
+    /*float:left;*/
+    float:right;
+    margin-right:25%;
+    text-align: left;
+    /*margin-left: 1.2rem;*/
+}
+
+#logo {
+    float:left;
+    width: 50%;
+    max-width: 250px;
+    margin-left:25%;
+}
+
+#title-text-container p {
+    color: whitesmoke;
+    font-size:3rem;
+    line-height:5rem;
+    text-align:left;
+}
+
+#main-content-area {
+    background-color:whitesmoke;
+    border-radius: 8px;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#main-content-area img {
     width: 90%;
     max-width: 750px;
+    margin-bottom: 1rem;
 }
 
 #main #title {
     margin: 0;
-    text-align: center;
+    color: whitesmoke;
+    text-align: left;
     font-size: 3rem;
     line-height: 1.5;
-}
-
-#main #logo {
-    margin: 1rem 0;
-    width: 50%;
-    max-width: 250px;
 }

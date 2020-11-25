@@ -32,6 +32,11 @@
     color: #757575;
 }
 
+.mdl-navigation a:hover {
+    background-color:#e0e0e0;
+}
+
+
 body {
     font-family:Product Sans;
     margin:0;

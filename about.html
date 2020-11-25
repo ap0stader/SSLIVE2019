@@ -18,9 +18,13 @@
     <link rel="shortcut icon" href="src/img/logo/sslive-rectangle-std.png" type="image/png">
     <!-- jQuery使用CDN加载 -->
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <!-- 加载Material Design Lite -->
+    <link rel="stylesheet" href="./mdl/material.min.css">
+    <script src="./mdl/material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- 需要自行引入的CSS和JS -->
     <link rel="stylesheet" href="/src/css/module/header.css">
-	<link rel="stylesheet" href="/src/css/module/footer.css">
+    <link rel="stylesheet" href="/src/css/module/footer.css">
     <link rel="stylesheet" href="/src/css/pages/about.css">
     <script src="/src/util/checkandresize.js"></script>
     <script src="/src/js/about.js"></script>
@@ -37,52 +41,101 @@
 </head>
 
 <body>
-    <div id="header">
-        <img id="header-icon" src="src/img/logo/sslive-rectangle-white.png" />
-    </div>
+    <!--<div id="header">-->
+    <!--<img id="header-icon" src="src/img/logo/sslive-rectangle-white.png" />-->
+    <!--</div>-->
 
-    <div id="main">
-        <img src="/src/img/logo/SUIT-white.png" id="logo">
-        <p id="title">省实学生会</p>
-        <p id="title">信息部</p>
-        <p id="title">简介</p>
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2016年12月30日，一年一度的省实新年音乐会在中山纪念堂拉开帷幕。除去精彩纷呈的节目，最吸引人眼球的当然要数SSLIVE。据不完全统计，当天全网累计观看量二十余万。
-        </p>
-        <img src="/src/img/about/1.png">
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在网络直播时代，直播正在变得越来越简单，一台手机，连上网络，就是一场直播。然而，SSLIVE绝非这样的“大路货”！我们看到的SSLIVE，是和电视上相同级别的实时直播。攻克直播绝非易事，从拍摄、编码、传输、分发，中间充满着各种各样的技术难点。第一版SSLIVE完全由学生自主完成，历时一年零三个月。
-        </p>
-        <img src="/src/img/about/2.png">
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在这场成功的直播背后，是一个优秀的学生会部门，省实学生会信息部（SUIT+）。信息部成立于2015年6月。至今四年的时间，取得了巨大的成功。信息部的工作范围包括视频制作、网络直播、航拍、视频图片拍摄、网站搭建及管理、大型活动现场包装等。2016年4月，信息部完成了青春诗会活动的全部视频包装，宣传视频观看量达七千余次；2016年6月，信息部对历时五天的学农进行了跟踪拍摄，共拍摄三百余GB素材，制作的纪念视频观看量达八千次；2016年12月，信息部制作的省实直播宣传视频，观看量达两万次。
-        </p>
-        <img src="/src/img/about/3.png">
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp尽管SSLIVE取得了巨大的成功，但它的发展绝非一帆风顺。2015年10月，刚刚建立4个月的信息部对体育节进行网络直播，由于网络原因，原定两天的直播在持续三小时后不得不终止；2016年4月，信息部计划对青春诗会进行直播，但由于稳定性无法达到要求，不得不取消计划；2016年10月，信息部再次对体育节入场式进行直播，小米和苹果系手机均无法观看……
-        </p>
-        <img src="/src/img/about/4.png">
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在反复的调试、试错之后，最终，我们成功在2016年新年音乐会完成了省实人自己的直播！</p>
-        <img src="/src/img/about/5.png">
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2017年10月，信息部总结以往直播的经验，成功对体育节入场式和“布服来战”班服秀进行了直播，大大减少了直播断线频率，配合直播宣传视频，观看流量创了新高；2018年3月，信息部采用了新的技术对2018WCA省实公开赛进行了直播，把断线次数降到了0！在同月的校园开放日直播中，信息部使用直播的方式，带领对省实感兴趣的学生在线游览校园
-        </p>
-        <img src="/src/img/about/6.png">
-        <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp省实是一个大舞台，每一个学生，都有可能在这里绽放自己的光彩！</p>
-        <img src="/src/img/about/7.png">
-        <p style="text-align: center">省实，期待你的加入！</p>
-        <p style="text-align: center">省实信息部，期待你的加入！</p>
-    </div>
-	<div id="footer">
-        <div id="footerlinks">
-            <a class="footerlink" href="about.html">关于我们</a>
-            <a class="footerlink" href="linence.html">开源软件许可证</a>
+    <div class="mdl-layout-translarent mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--transparent">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span id="header-title" class="mdl-layout-title">SSLIVE</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="introduction.html">介绍</a>
+                    <a class="mdl-navigation__link" href="introduction.html#review">回播</a>
+                    <a id="to-live-link" class="mdl-navigation__link">直播</a>
+                    <a class="mdl-navigation__link" href="about.html">关于</a>
+                    <div id="live-not-on-snackbar" class="mdl-js-snackbar mdl-snackbar">
+                        <div class="mdl-snackbar__text"></div>
+                        <button class="mdl-snackbar__action" type="button"></button>
+                    </div>
+                    <script>
+                        var button = document.querySelector("#to-live-link");
+                        var snackbar = document.querySelector("#live-not-on-snackbar");
+                        listener(button, snackbar);
+                    </script>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">SSLIVE</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="introduction.html#intro">介绍</a>
+                <a class="mdl-navigation__link" href="introduction.html#review">回播</a>
+                <a id="to-live-link-alter" class="mdl-navigation__link">直播</a>
+                <a class="mdl-navigation__link" href="about.html">关于</a>
+                <script>
+                    var button = document.querySelector("#to-live-link-alter");
+                    listenerAlter(button, snackbar);
+                </script>
+            </nav>
         </div>
-        <p id="footerpb">Powered By</p>
-        <div id="footerlogos">
-            <img class="footerlogo" id="suitlogo" src="/src/img/logo/SUIT-white.png">
-            <img class="footerlogo" id="passlogo" src="/src/img/logo/PASS-white.png">
-        </div>
-        <p class="footertext">广东实验中学学生会信息部</p>
-        <p class="footertext">PASS+ 极光工作室</p>
-        <p class="footertext">Copyright © 2015-2020 SUIT+ All Rights Reserved.</p>
-        <a class="footertext" href="http://beian.miit.gov.cn/" style="text-decoration:none; color: #c2c2c2;">粤ICP备15048640号-1</a>
-    </div>
+        <main class="mdl-layout__content">
+            <div id="main">
+                <div id="title-container">
+                <img src="/src/img/logo/SUIT-white.png" id="logo">
+                <script>goPAGE()</script>
+                <div id="title-text-container">
+                <!--<p id="title">省实学生会</p>-->
+                <!--<p id="title">信息部</p>-->
+                <!--<p id="title">简介</p>-->
+                <p>省实学生会<br/>信息部<br/>简介</p>
+                </div>
+                </div>
+                <div id="main-content-area">
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2016年12月30日，一年一度的省实新年音乐会在中山纪念堂拉开帷幕。除去精彩纷呈的节目，最吸引人眼球的当然要数SSLIVE。据不完全统计，当天全网累计观看量二十余万。
+                </p>
+                <img src="/src/img/about/1.png">
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在网络直播时代，直播正在变得越来越简单，一台手机，连上网络，就是一场直播。然而，SSLIVE绝非这样的“大路货”！我们看到的SSLIVE，是和电视上相同级别的实时直播。攻克直播绝非易事，从拍摄、编码、传输、分发，中间充满着各种各样的技术难点。第一版SSLIVE完全由学生自主完成，历时一年零三个月。
+                </p>
+                <img src="/src/img/about/2.png">
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在这场成功的直播背后，是一个优秀的学生会部门，省实学生会信息部（SUIT+）。信息部成立于2015年6月。至今四年的时间，取得了巨大的成功。信息部的工作范围包括视频制作、网络直播、航拍、视频图片拍摄、网站搭建及管理、大型活动现场包装等。2016年4月，信息部完成了青春诗会活动的全部视频包装，宣传视频观看量达七千余次；2016年6月，信息部对历时五天的学农进行了跟踪拍摄，共拍摄三百余GB素材，制作的纪念视频观看量达八千次；2016年12月，信息部制作的省实直播宣传视频，观看量达两万次。
+                </p>
+                <img src="/src/img/about/3.png">
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp尽管SSLIVE取得了巨大的成功，但它的发展绝非一帆风顺。2015年10月，刚刚建立4个月的信息部对体育节进行网络直播，由于网络原因，原定两天的直播在持续三小时后不得不终止；2016年4月，信息部计划对青春诗会进行直播，但由于稳定性无法达到要求，不得不取消计划；2016年10月，信息部再次对体育节入场式进行直播，小米和苹果系手机均无法观看……
+                </p>
+                <img src="/src/img/about/4.png">
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp在反复的调试、试错之后，最终，我们成功在2016年新年音乐会完成了省实人自己的直播！</p>
+                <img src="/src/img/about/5.png">
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp2017年10月，信息部总结以往直播的经验，成功对体育节入场式和“布服来战”班服秀进行了直播，大大减少了直播断线频率，配合直播宣传视频，观看流量创了新高；2018年3月，信息部采用了新的技术对2018WCA省实公开赛进行了直播，把断线次数降到了0！在同月的校园开放日直播中，信息部使用直播的方式，带领对省实感兴趣的学生在线游览校园
+                </p>
+                <img src="/src/img/about/6.png">
+                <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp省实是一个大舞台，每一个学生，都有可能在这里绽放自己的光彩！</p>
+                <img src="/src/img/about/7.png">
+                <p style="text-align: center">省实，期待你的加入！</p>
+                <p style="text-align: center">省实信息部，期待你的加入！</p>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footerlinks">
+                    <a class="footerlink" href="about.html">关于我们</a>
+                    <a class="footerlink" href="linence.html">开源软件许可证</a>
+                </div>
+                <p id="footerpb">Powered By</p>
+                <div id="footerlogos">
+                    <img class="footerlogo" id="suitlogo" src="/src/img/logo/SUIT-white.png">
+                    <img class="footerlogo" id="passlogo" src="/src/img/logo/PASS-white.png">
+                </div>
+                <p class="footertext">广东实验中学学生会信息部</p>
+                <p class="footertext">PASS+ 极光工作室</p>
+                <p class="footertext">Copyright © 2015-2020 SUIT+ All Rights Reserved.</p>
+                <a class="footertext" href="http://beian.miit.gov.cn/"
+                    style="text-decoration:none; color: #c2c2c2;">粤ICP备15048640号-1</a>
+            </div>
+        </main>
 </body>
 
 </html>
