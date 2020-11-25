@@ -4,7 +4,7 @@
 header("Access-Control-Allow-Origin:*");
 header('Access-Control-Allow-Methods:POST');
 //用referer防止CSFR跨站攻击，CSFR请自行百度，也有其他方式比如带token，记个代办以后可能补
-if( stripos( $_SERVER[ 'HTTP_REFERER' ] ,$_SERVER[ 'SERVER_NAME' ]) !== false ){
+//if( stripos( $_SERVER[ 'HTTP_REFERER' ] ,$_SERVER[ 'SERVER_NAME' ]) !== false ){
 	//验证token是否正确
 	$a=$_COOKIE["user"];
 	$b=$_COOKIE["time"];
@@ -33,6 +33,6 @@ if( stripos( $_SERVER[ 'HTTP_REFERER' ] ,$_SERVER[ 'SERVER_NAME' ]) !== false ){
 	}else{
 		echo "不要尝试在没token的情况下登录了，先去登录吧，刷新下页面就可以登录";
 	}
-}else{
-	echo "求求了别CSRF跨站攻击了";
-}
+// }else{
+// 	echo "求求了别CSRF跨站攻击了";
+// }
