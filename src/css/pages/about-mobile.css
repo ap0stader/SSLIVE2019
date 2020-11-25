@@ -1,3 +1,18 @@
 #title-text-container {
     display:none;
 }
+ 
+#title-text-container {
+    /*float:left;*/
+    float:right;
+    margin-right:25%;
+    text-align: left;
+    /*margin-left: 1.2rem;*/
+}
+
+#logo {
+    float:left;
+    width: 50%;
+    max-width: 250px;
+    margin-left:25%;
+}

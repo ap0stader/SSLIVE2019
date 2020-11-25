@@ -89,7 +89,7 @@ body {
 
 #title-container {
     padding-top:4rem;
-    padding-bottom: 18rem;
+    padding-bottom: 4rem;
 }
 
 #title-text-container {
@@ -101,10 +101,10 @@ body {
 }
 
 #logo {
-    float:left;
+    /*float:left;*/
     width: 50%;
     max-width: 250px;
-    margin-left:25%;
+    /*margin-left:25%;*/
 }
 
 #title-text-container p {
@@ -117,10 +117,17 @@ body {
 #main-content-area {
     background-color:whitesmoke;
     border-radius: 8px;
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 5rem;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+#main-content-area h1 {
+    color: black;
+    padding-bottom:2rem;
+    font-size:3rem;
+    line-height:4rem;
 }
 
 #main-content-area img {
